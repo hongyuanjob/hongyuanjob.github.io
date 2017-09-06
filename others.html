@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>青云校招</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.bdootcss.com/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.bdootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    .contain{
+      height: 760px;
+      width: 1200px;
+      margin: 0 auto;
+      /*background-color: pink;*/
+      margin-top: 25px;
+    }
+    .top{
+      height: 25px;
+      background-color: #6d6d6d;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .top span{
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+    .top span a{
+      text-decoration: none;
+      color: #d8d8d8;
+    }
+    .top span a:hover{
+      color: white;
+    }
+    .top ul{
+      display: inline-block;
+    }
+    .top ul ul{
+      display: none;
+    }
+    .top ul li:hover >ul{
+      display: block;
+    }
+    .nav{
+      height: 60px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .logo{
+      height: 50px;
+      width: 170px;
+      background-image: url(./pic/logo.png);
+      float: left;
+    }
+    .navul{
+      float: left;
+      width: 600px;
+      height: 50px;
+      margin-left: 400px;
+    }
+    .navli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+      margin: 0 10px;
+    }
+    .navlia{
+      display: inline-block;
+      height: 50px;
+      width: 60px;
+      text-align: center;
+      line-height: 50px;
+      color: #999;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .navlia:hover{
+      color: #545454;
+      border-bottom: 3px solid #00aa81;
+      text-decoration: none;
+    }
+    .search-wrapper{
+      height: 150px;
+      width: 100%;
+      background-color: #f2f5f4;
+      position: relative;
+      text-align: center;
+    }
+    .search-box{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 46px;
+      width: 720px;
+      border: 1px solid #E8E8E8;
+      padding: 5px;
+      font-size: 14px;
+      margin-left: -120px;
+      margin-top: 30px;
+      outline:none;
+      color: black;
+
+    }
+    .search-box:focus{
+
+      border: 1px solid #00aa81;
+
+    }
+
+    .search-button{
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 5px;
+      height: 46px;
+      width: 140px;
+      background-color: #00aa81;
+      margin-top: 30px;
+      line-height: 36px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover{
+        background-color: #5ce6c5  ;
+      color: #fff;
+    }
+    .reul{
+      float: left;
+      width: 1000px;
+      height: 30px;
+      margin-left: -62px;
+
+    }
+    .reli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+    }
+    .relia{
+      display: inline-block;
+      padding-right: 2px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #00aa81;
+    }
+    .relia:hover{
+      color: #757575;
+      text-decoration: none;
+
+    }
+
+
+    .jobbox{
+      height: 600px;
+      width: 1200px;
+      box-sizing: border-box;
+      border: 2px solid #eeeeee;
+      box-sizing: border-box;
+    }
+
+    .bigselect{
+      width: 180px;
+      height: 600px;
+      display: flex;
+      position: relative;
+      float: left;
+      flex-direction: column;
+      /*justify-content: flex-start;*/
+      box-sizing: border-box;
+
+      align-items: center;
+    }
+    .select{
+      height: 50px;
+      width: 180px;
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 1.6px solid #dedede;
+      color: #a2a2a2;
+      /*margin-top: 4px;*/
+      /*border-right: 1.6px solid #00aa81;*/
+      /*color: #00aa81;*/
+    }
+    .select span:hover{
+      color: #00aa81;
+    }
+    .select span{
+
+      font-size: 17px;
+      line-height: 50px;
+
+    }
+    .selectright{
+      float: left;
+      height:598px;
+      width: 1016px;
+      padding: 12px 40px;
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      border-right: 0px solid #eee;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .selectright1{
+      float: left;
+      height:598px;
+      width: 1016px;
+      /*padding: 12px 40px;*/
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      border-right: 0px solid #eee;
+      /*display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;*/
+    }
+    .quan{
+      float: left;
+      height: 598px;
+      width: 300px;
+      /*background-color: pink;*/
+      overflow: scroll;
+      padding: 8px;
+    }
+    .and{
+      position: relative;
+      float: right;
+      height: 598px;
+      width: 710px;
+      /*background-color: green;*/
+      padding: 20px;
+      border-left: 2px solid #eeeeee;
+      box-sizing: border-box;
+    }
+    .askbox1{
+      margin-bottom: 15px;
+      height:116px;
+      width: 702px;
+      box-sizing: border-box;
+    }
+    .askbox{
+      margin-bottom: 15px;
+      height:112px;
+      width: 286px;
+      box-sizing: border-box;
+      /*background: yellow;*/
+      border: 2px solid #dedede;
+      cursor: pointer;
+    }
+    .askbox:hover{
+      box-shadow: 0 0 5px gray;
+    }
+
+    .manimg{
+      height: 90px;
+      width: 90px;
+      float: left;
+      background: orange;
+      border-radius: 90px;
+      margin-right: 6px;
+      margin-left: 5px;
+      margin-top: 8px;
+    }
+    .ques{
+      margin-top: 3px;
+      height: 50px;
+      width: 180px;
+      /*background: red;*/
+      float: left;
+      font-size: 16px;
+      color: #848484;
+      line-height: 24px;
+    }
+    .ans{
+      height: 22px;
+      width: 66px;
+      margin-right: 70px;
+      float: left;
+      text-align: center;
+      color: white;
+      background: #06b700;
+      font-size: 16px;
+      margin-bottom: 2px;
+      line-height: 22px;
+    }
+    .peo{
+      height: 24px;
+      width: 80px;
+      /*background: gray;*/
+      color: #a2a2a2;
+      float: left;
+      line-height: 24px;
+    }
+    .mony{
+      height: 30px;
+      width: 80px;
+      /*background: skyblue;*/
+      float: left;
+      font-size: 19px;
+      line-height: 24px;
+      text-align: center;
+      color: orange;
+      margin-left: 5px;
+    }
+
+    .knowbox{
+      height: 170px;
+      width: 450px;
+      /*background-color: pink;*/
+      padding: 10px;
+      padding-top: 18px;
+      box-sizing: border-box;
+      border: 2px solid #d4d4d4;
+    }
+    .knowbox:hover{
+      box-shadow: 0 0 10px #d4d4d4;
+    }
+    .konwimg{
+      height: 130px;
+      width: 130px;
+      padding: 3px;
+      /*background-color: ed;*/
+      float: left;
+      margin-right: 13px;
+    }
+
+    .title{
+      float: left;
+      height: 60px;
+      width: 280px;
+      font-size: 19px;
+      white-space:wrap;
+      color: #6f6f6f;
+    }
+
+    .saywhat{
+      float: left;
+      height: 60px;
+      width: 280px;
+      overflow: hidden;
+     text-overflow: ellipsis;
+      color: #737373;
+    }
+    .change{
+      margin-top: 25px;
+      margin-left: 0px;
+
+      display: inline-block;
+      /*padding-bottom: 25px;*/
+      padding: 10px 10px;
+      font-size: 17px;
+      cursor: pointer;
+      color: #999;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .change:hover{
+      color: #00aa81;
+    }
+
+    .footer{
+      height: 80px;
+      width: 100%;
+      background-color: #e6e6e6;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .footer ul{
+      padding-top: 20px;
+    }
+    .footer li{
+      display: inline;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .footer li a{
+      text-decoration: none;
+      color: #9c9c9c;
+      font-size: 14px;
+    }
+    .footer li a:hover{
+      color: #000;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span ><a style="color:#2de6ba" href="">用户端</a></span>
+    <span><a>|</a></span>
+    <span style="margin-right:1000px;"><a href="comp/index.html">企业端</a></span>
+    <span><a href="">个人中心</a></span>
+    <span><a>|</a></span>
+    <span><a href="">我的简历</a></span>
+  </div>
+  <div class="nav">
+    <div style="width:1200px;display: inline-block;">
+      <div class="logo"></div>
+      <ul class="navul" style="width:700px;margin-left:330px;">
+        <li  class="navli"><a class="navlia"  href="index.html">首页</a></li>
+        <li class="navli"><a class="navlia" href="job.html">全职</a></li>
+        <li class="navli"><a class="navlia" href="jyjob.html">精英</a></li>
+        <li class="navli"><a class="navlia" href="teamjob.html">团聘</a></li>
+        <li class="navli"><a class="navlia" href="practice.html">实习</a></li>
+        <li class="navli"><a class="navlia"  href="fighting.html">战力</a></li>
+        <li class="navli"><a class="navlia" href="live.html">职播</a></li>
+        <li class="navli"><a class="navlia" style="color:#545454;border-bottom: 3px solid #00aa81;"  href="others.html">周边</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="search-wrapper">
+    <div style="height:140px;  overflow: hidden;  width:1200px;display: inline-block; ">
+      <div>
+        <input placeholder="请输入期望的工作地点、全职、兼职、实习岗位、公司名称" type="text" class="search-box" name="" value=""><div class="search-button">搜素</div>
+      </div>
+      <ul class="reul">
+        <a style="color: #757575; font-size:14px;">热门搜索：</a>
+        <li class="reli"> <a href="" class="relia">人力资源</a> </li>
+        <li class="reli"> <a href="" class="relia">物流管理</a> </li>
+        <li class="reli"> <a href="" class="relia">java</a> </li>
+        <li class="reli"> <a href="" class="relia">web前端</a> </li>
+        <li class="reli"> <a href="" class="relia">行政管理</a> </li>
+        <li class="reli"> <a href="" class="relia">高级会计师</a> </li>
+        <li class="reli"> <a href="" class="relia">数据分析师</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="contain">
+  <span onclick="JavaScript:ChangeDiv('0','JKDiv_',2)" class="change" id="change0" style="color:#696969;border-bottom:2px solid #68ccb3;">就业服务</span><span>  </span>
+  <span onclick="JavaScript:ChangeDiv('1','JKDiv_',2)" class="change" id="change1">校园部落</span>
+  <span onclick="JavaScript:ChangeDiv('2','JKDiv_',2)" class="change" id="change2">话题广场</span>
+  <hr style="margin-top:8px;">
+
+<!-- 毕业实习 -->
+<div id="JKDiv_0" style="" class="jobbox">
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv('0','smallbox_',2)" id="smallselect1_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span >形象包装</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('1','smallbox_',2)" id="smallselect1_1">
+      <span>就业办公</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('2','smallbox_',2)" id="smallselect1_2">
+      <span>公司调查</span>
+    </div>
+  </div>
+  <div class="selectright" id="smallbox_0">
+    <div class="knowbox">
+      <img src="./pic/fz1.jpg" alt="" class="konwimg">
+      <span class="title"><a >梦想演艺服装租赁</a></span>
+      <span class="saywhat">地址：江西省南昌市青山湖区庐山南大道2789号</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/fx2.jpg" alt="" class="konwimg">
+      <span class="title"><a>艺星服装租赁</a></span>
+      <span class="saywhat">地址：江西省南昌市青山湖区万达广场A2栋12楼</span>
+    </div>
+
+    <div class="knowbox">
+      <img src="./pic/zx1.jpg" alt="" class="konwimg">
+      <span class="title"><a >2406照相馆</a></span>
+      <span class="saywhat">地址：南昌市红谷中大道世茂广场C15栋16楼星巴克旁</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/zx2.jpg" alt="" class="konwimg">
+      <span class="title"><a >哈喽照相馆(万达广场店)</a></span>
+      <span class="saywhat">地址：南昌市其他会展路999号万达广场万达写字楼A6写字楼1317</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/l1.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.tiboo.cn/jineng/t3270128/">南昌礼仪培训</a></span>
+      <span class="saywhat">　中国知名礼仪学者，礼仪教育和培训专家，国务院特邀礼仪指导专家，北京大学总裁班特邀讲师，南昌大学客座教授 郑跃成先生为各单位提供《商务礼仪》培训服务。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/l2.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://edu.21cn.com/nanchang_kc323/186003_16280474.htm">职场礼仪班</a></span>
+      <span class="saywhat">提升个人内在修养和素质，提升自我价值，个人形象。更好的调整人际关系。</span>
+    </div>
+  </div>
+  <div class="selectright"  style="display:none;" id="smallbox_1">
+    <div class="knowbox">
+      <img src="./pic/hk1.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.tiboo.cn/xuelijiaoyu/t4032072/">南昌市高校户口迁移代办  </a></span>
+      <span class="saywhat"> 代理南昌市高校报到证代办,档案托管代办,户口迁移代办迈德隆服务，专业于南昌代办事宜服务。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/hk2.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://news.jxrcw.com/rsdl/ddxx.asp">南昌户口迁入指南 </a></span>
+      <span class="saywhat">查询由其他人才服务中心,以及单位、学校转来的档案到达情况 如果档案已到,填写《流动人员存档登记表》后,即可到我中心三楼柜台办理人 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/da1.png" alt="" class="konwimg">
+      <span class="title"><a href="http://www.xinli001.com/ceshi/99897397">到档查询-江西省人才市场档案网上查询</a></span>
+      <span class="saywhat">查询由其他人才服务中心,以及单位、学校转来的档案到达情况 如果档案已到,填写《流动人员存档登记表》</span>
+    </div>
+
+    <div class="knowbox">
+      <img src="./pic/da2.png" alt="" class="konwimg">
+      <span class="title"><a target='_blank'  href="https://www.d1xz.net/test/gexing/art204550.aspx">2016起年江西省全面取消档案管理费</a></span>
+      <span class="saywhat">按照中央政策，江西从2016年元旦起全面取消档案管理费。全国范围来看，一些省市比如江苏、青岛等地已经取消了档案管理费，而江西依旧在收取这笔费用。具体信息详见本文。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/zy2.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.xycareer.com/anchor/">南昌用惠档案代办公司</a></span>
+      <span class="saywhat">地址：江西省南昌市红谷中大道124号</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/zy1.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.xycareer.com/ability/">南昌逸安档案代办公司</a></span>
+      <span class="saywhat">　地址：江西省南昌市生米镇随唐路234号 </span>
+    </div>
+
+  </div>
+  <div class="selectright"  style="display:none;" id="smallbox_2">
+    <div class="knowbox">
+      <img src="./pic/315.jpg" alt="" class="konwimg">
+      <span class="title"><a>质右企业调查团队</a></span>
+      <span class="saywhat">专注调查企业薪资，为你的企业得到更高效的资料　</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/316.jpg" alt="" class="konwimg">
+      <span class="title"><a>南昌莲邦调查局</a></span>
+      <span class="saywhat">将你所需要的一起，都刨根问底，得出最准确，最有价值的信息</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/311.jpg" alt="" class="konwimg">
+      <span class="title"><a>远航评估质询公司</a></span>
+      <span class="saywhat">服务与上市公司，二十年质量保证，是你企业迈向成功的垫脚石！</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/312.jpg" alt="" class="konwimg">
+      <span class="title"><a href="http://www.uqude.com/quiz/13219/">辉腾人力资源咨询中心</a></span>
+      <span class="saywhat">专注与为小企业提供人力资源服务，提升企业运行效率！</span>
+    </div>
+
+    <div class="knowbox">
+      <img src="./pic/313.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank'  href="https://www.d1xz.net/test/gexing/art204550.aspx">秋叶咨询中心</a></span>
+      <span class="saywhat">专注解答一切企业管理，运行策略问题，便捷与高效。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/314.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.d1xz.net/test/gexing/art206721.aspx">南昌汇迈咨询中心</a></span>
+      <span class="saywhat">专注企业管理二十年，为企业提供全面准确一对一服务！　</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- 寒暑假实习 -->
+<div id="JKDiv_1" style="display:none;" class="jobbox">
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv1('0','smallbox1_',2)" id="smallselect2_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span>校园内推</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv1('1','smallbox1_',2)" id="smallselect2_1">
+      <span>宣讲信息</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv1('2','smallbox1_',2)" id="smallselect2_2">
+      <span>校友推荐</span>
+    </div>
+  </div>
+  <div class="selectright"  id="smallbox1_0">
+    <div class="knowbox">
+      <img src="./pic/jt1.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.tiboo.cn/xuelijiaoyu/t4032072/"> 江西省电子集团有限公司内推 </a></span>
+      <span class="saywhat">江西省电子集团有限公司创立于1996年。集团现拥十多家成员企业和单位,七大产业板块和四大园区,集团现有总资产48亿元,年销售收入超过40亿元。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/jt2.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://nc.bendibao.com/live/hukou/">江西钨业控股集团有限公司内推 </a></span>
+      <span class="saywhat">江西钨业控股集团有限公司(简称江钨集团)是江西省属国有大型工业企业,主要从事钨、钽铌、稀土等稀有金属开采、冶炼、加工、贸易,以及机械制造、科研等业务, </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/jt3.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://bbs.tianya.cn/post-no20-247192-1.shtml">江西中景集团有限公司内推</a></span>
+      <span class="saywhat"> 江西中景集团有限公司位于风景秀丽的江西省景德镇,隶属江西中景集团旗下主力子公司,是国家生产印刷机械、包装装潢机械骨干企业,江西省重点企业</span>
+    </div><div class="knowbox">
+      <img src="./pic/jt4.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.jianli-sky.com/school/29859.htm">江西奋发科技有限公司内推 </a></span>
+      <span class="saywhat">江西奋发科技有限公司是全国知名、江西最大的建筑硅酮密封胶、玻璃胶、密封胶条、门窗五金配套件、铝门窗配件研发生产中心。 </span>
+    </div><div class="knowbox">
+      <img src="./pic/jt5.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://news.ifeng.com/a/20170726/51505530_0.shtml">江西合力泰科技有限公司内推 </a></span>
+      <span class="saywhat">江西合力泰科技有限公司是一家专注研究医疗器械，与中国科学院联手研究出更有科技的医疗器械，注册资本1亿元。</span>
+    </div><div class="knowbox">
+      <img src="./pic/jt6.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.500d.me/?f=4754">江西省交通工程集团公司内推</a></span>
+      <span class="saywhat">江西省交通工程集团公司是江西省唯一同时具公路工程施工总承包特级和公路工程设计行业甲级双项资质的特级企业。公司成立于1997年,现有注册资本117543万元</span>
+    </div>
+  </div>
+
+  <div class="selectright" style="display:none;" id="smallbox1_1" >
+    <div class="knowbox">
+      <img src="./pic/jt6.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.tiboo.cn/xuelijiaoyu/t4032072/"> 江西省伟达集团有限公司校园宣讲会 </a></span>
+      <span class="saywhat">江西省伟达集团有限公司创立于1996年。集团现拥十多家成员企业和单位,七大产业板块和四大园区,集团现有总资产48亿元,年销售收入超过40亿元。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/jt5.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://nc.bendibao.com/live/hukou/">江西铜业控股集团有限公司校园宣讲会 </a></span>
+      <span class="saywhat">江西铜业控股集团有限公司(简称江钨集团)是江西省属国有大型工业企业,主要从事铜、钽铌、稀土等稀有金属开采、冶炼、加工、贸易,以及机械制造、科研等业务, </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/jt4.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://bbs.tianya.cn/post-no20-247192-1.shtml">江西远景集团有限公司校园宣讲会</a></span>
+      <span class="saywhat"> 江西远景集团有限公司位于风景秀丽的江西省景德镇,隶属江西中景集团旗下主力子公司,是国家生产印刷机械、包装装潢机械骨干企业,江西省重点企业</span>
+    </div><div class="knowbox">
+      <img src="./pic/jt3.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.jianli-sky.com/school/29859.htm">江西奋研科技有限公司校园宣讲会 </a></span>
+      <span class="saywhat">江西奋研科技有限公司是全国知名、江西最大的建筑硅酮密封胶、玻璃胶、密封胶条、门窗五金配套件、铝门窗配件研发生产中心。 </span>
+    </div><div class="knowbox">
+      <img src="./pic/jt2.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://news.ifeng.com/a/20170726/51505530_0.shtml">江西合泰科技有限公司校园宣讲会</a></span>
+      <span class="saywhat">江西合泰科技有限公司是一家专注研究医疗器械，与中国科学院联手研究出更有科技的医疗器械，注册资本1亿元。</span>
+    </div><div class="knowbox">
+      <img src="./pic/jt1.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.500d.me/?f=4754">江西省建筑工程集团公司校园宣讲会</a></span>
+      <span class="saywhat">江西省建筑工程集团公司是江西省唯一同时具公路工程施工总承包特级和公路工程设计行业甲级双项资质的特级企业。公司成立于1997年,现有注册资本117543万元</span>
+    </div>
+  </div>
+
+
+
+
+  <div class="selectright"  style="display:none;" id="smallbox1_2">
+    <div class="knowbox">
+      <img src="./pic/jt5.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.tiboo.cn/xuelijiaoyu/t4032072/">校友内推：江西省伟达集团有限公司 </a></span>
+      <span class="saywhat">江西省伟达集团有限公司创立于1996年。集团现拥十多家成员企业和单位,七大产业板块和四大园区,集团现有总资产48亿元,年销售收入超过40亿元。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/jt4.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://nc.bendibao.com/live/hukou/">校友内推：江西铜业控股集团有限公司 </a></span>
+      <span class="saywhat">江西铜业控股集团有限公司(简称江钨集团)是江西省属国有大型工业企业,主要从事铜、钽铌、稀土等稀有金属开采、冶炼、加工、贸易,以及机械制造、科研等业务, </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/jt6.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://bbs.tianya.cn/post-no20-247192-1.shtml">校友内推：江西远景集团有限公司</a></span>
+      <span class="saywhat"> 江西远景集团有限公司位于风景秀丽的江西省景德镇,隶属江西中景集团旗下主力子公司,是国家生产印刷机械、包装装潢机械骨干企业,江西省重点企业</span>
+    </div><div class="knowbox">
+      <img src="./pic/jt2.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.jianli-sky.com/school/29859.htm">校友内推：江西奋研科技有限公司 </a></span>
+      <span class="saywhat">江西奋研科技有限公司是全国知名、江西最大的建筑硅酮密封胶、玻璃胶、密封胶条、门窗五金配套件、铝门窗配件研发生产中心。 </span>
+    </div><div class="knowbox">
+      <img src="./pic/jt1.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://news.ifeng.com/a/20170726/51505530_0.shtml">校友内推：江西合泰科技有限公司</a></span>
+      <span class="saywhat">江西合泰科技有限公司是一家专注研究医疗器械，与中国科学院联手研究出更有科技的医疗器械，注册资本1亿元。</span>
+    </div><div class="knowbox">
+      <img src="./pic/jt3.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.500d.me/?f=4754">校友内推：江西省建筑工程集团公司</a></span>
+      <span class="saywhat">江西省建筑工程集团公司是江西省唯一同时具公路工程施工总承包特级和公路工程设计行业甲级双项资质的特级企业。公司成立于1997年,现有注册资本117543万元</span>
+    </div>
+  </div>
+  </div>
+
+<!-- 短期实习 -->
+<div id="JKDiv_2" style="display:none;" class="jobbox">
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv2('0','smallbox2_',2)" id="smallselect3_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span>名企问答</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv2('1','smallbox2_',2)" id="smallselect3_1">
+      <span>牛人问答</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv2('2','smallbox2_',2)" id="smallselect3_2">
+      <span>职友圈</span>
+    </div>
+  </div>
+  <div class="selectright1"  id="smallbox2_0">
+    <div class="quan">
+      <span class="livenow" style="height:20px;color:#999;font-size:17px; display:inline-block; margin-bottom:7px; width:90px; border-right: 4px solid red;">热门问答：</span>
+      <div class="askbox"style="box-shadow: 0 0 10px #00aa81;">
+        <img src="./pic/tx1.jpg" class="manimg" alt="">
+        <span class="ques">问：面试华为如何体现出自己的优势？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">626人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx2.jpg" class="manimg" alt="">
+        <span class="ques">问：面试阿里巴巴如何表现出自己的激情？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">236人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx3.jpg" class="manimg" alt="">
+        <span class="ques">问：腾讯最看好哪类面试者？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">166人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+      <span class="livenow" style="height:20px;color:#999;font-size:17px; display:inline-block; margin-bottom:7px; width:90px; border-right: 4px solid green;">最新问答：</span>
+      <div class="askbox">
+        <img src="./pic/tx4.jpg" class="manimg" alt="">
+        <span class="ques">问：面试OPPO时候一般会出哪些问题？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">236人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx5.jpg" class="manimg" alt="">
+        <span class="ques">问：网易需要具有什么品质的前端工程师？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">126人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx6.jpg" class="manimg" alt="">
+        <span class="ques">问：美团需要怎样的实习生？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">623人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+    </div>
+    <div class="and" >
+    <div style="height:550px;width:680px;position:absolute; background-color: rgba(123,123,123,0.6)">
+
+    </div>
+    <img style="display:block; height:360px;width:268px;position:absolute; z-index:3333; margin-top:80px;margin-left:200px;" src="./pic/fk.jpg" alt="">
+    <div style="margin-top:460px; margin-left:250px;position:absolute;">扫描二维码付款后查看内容</div>
+      <div class="askbox1">
+        <img src="./pic/tx1.jpg" class="manimg" alt="">
+        <span class="ques" style="width:600px; height:30px; font-size:22px; margin-top:12px;margin-left10px;">问：面试华为如何体现出自己的优势？</span>
+        <sapn class="peo" style="width:600px;">提问者：周惠敏</sapn>
+        <sapn class="peo" style="width:580px;font-size:16px; color:#4e4e4e;">问题详情：今年秋季招聘，目标定为华为广州总公司，我想问问公司HR们，在面试华为如何体现出自己的优势？</sapn>
+      </div>
+      <hr>
+      <span class="livenow" style="height:20px;color:#999;font-size:17px; display:inline-block; margin-bottom:7px; width:90px; border-right: 4px solid green;">企业问答：</span>
+
+      <div class="askbox1" style="opacity:0.1">
+        <img src="./pic/hw.jpg" class="manimg" alt="">
+        <sapn class="peo" style="width:600px;font-size:19px;margin-top:10px;margin-bottom:10px;">回答者：李彬（华为人力资源负责人）</sapn>
+        <sapn class="peo" style="width:580px;font-size:17px;height:400px; color:#4e4e4e; margin-left:13px;padding-right:6px;"> 答：华为公司更看重的是你的实际动手和解决问题的能力，以及你的工作态度很学习的欲望，也就是对技术的最求，社招我们并不是让你来学习一些东西，而是能迅速解决一些问题，并尽可能降低开发，运维，维护的成本。很多工作了的朋友，还是带着想去学习一些高大上的东西的态度，不愿意干一些自己觉得技术含量不高的东西，以及总是想在项目中用一些高大上的技术，其实老板根本不care这些的，最终是要看结果的。
+    所以对于工作的同学，工作和自己的兴趣有时候是要分开的，工作就是用最简单很低成本的方法解决实际问题，而兴趣你可以在你的业余实际去学习，并在不增加公司成本的情况应用到项目是最好，并能分享给大家。
+    工作要始终保持学习，尤其是互联网公司，技术日新月异，不学习肯定会被淘汰的，你的价值也会更加低的。其实工作中发现那些工作很多年的，职位，薪资却不高的，多半是那种很守旧，不远学习新技术的人。他们始终想用自己熟悉的套路去解决所有的问题，然而其实新的技术能更高效跟迅速的解决问题的。</sapn>
+      </div>
+    </div>
+  </div>
+  <div class="selectright1" style="display:none;"  id="smallbox2_1">
+    <div class="quan">
+      <span class="livenow" style="height:20px;color:#999;font-size:17px; display:inline-block; margin-bottom:7px; width:90px; border-right: 4px solid red;">热门问答：</span>
+      <div class="askbox" style="box-shadow: 0 0 10px #00aa81;box-shadow: 0 0 10px #00aa81; ">
+        <img src="./pic/tx4.jpg" class="manimg" alt="">
+        <span class="ques">问：在华为工作中收获最大的是什么？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">626人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx3.jpg" class="manimg" alt="">
+        <span class="ques">问：就职于阿里巴巴都有哪些晋升规则？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">236人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx2.jpg" class="manimg" alt="">
+        <span class="ques">问：腾讯对员工都有哪些福利？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">166人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+      <span class="livenow" style="height:20px;color:#999;font-size:17px; display:inline-block; margin-bottom:7px; width:90px; border-right: 4px solid green;">最新问答：</span>
+      <div class="askbox">
+        <img src="./pic/tx1.jpg" class="manimg" alt="">
+        <span class="ques">问：在OPPO工作真的能提升自己吗？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">236人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx6.jpg" class="manimg" alt="">
+        <span class="ques">问：在网易工作一般最难解决的问题是什么？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">126人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx5.jpg" class="manimg" alt="">
+        <span class="ques">问：美团对于工程师的重视程度有多高？</span>
+        <span class="ans">[已解答]</span>
+        <sapn class="peo">623人围观</sapn>
+        <span class="mony">¥6 围观</span>
+      </div>
+    </div>
+    <div class="and">
+      <div class="askbox1">
+        <div style="height:550px;width:680px;position:absolute; background-color: rgba(123,123,123,0.6)">
+
+        </div>
+        <img style="display:block; height:360px;width:268px;position:absolute; z-index:3333; margin-top:80px;margin-left:200px;" src="./pic/fk.jpg" alt="">
+        <div style="margin-top:460px; margin-left:250px;position:absolute;">扫描二维码付款后查看内容</div>
+        <img src="./pic/tx4.jpg" class="manimg" alt="">
+        <span class="ques" style="width:600px; height:30px; font-size:22px; margin-top:12px;margin-left10px;">问：在华为工作中收获最大的是什么？</span>
+        <sapn class="peo" style="width:600px;">提问者：周强</sapn>
+        <sapn class="peo" style="width:580px;font-size:16px; color:#4e4e4e;">问题详情：都说在华为工作压力大。但是想要了解真正的实际情况，请问华为工作中，高强度的工作能不能给自己的能力带来质的提升？</sapn>
+      </div>
+      <hr>
+      <span class="livenow" style="height:20px;color:#999;font-size:17px; display:inline-block; margin-bottom:7px; width:90px; border-right: 4px solid green;">牛人问答：</span>
+
+      <div class="askbox1" style="opacity:0.2">
+        <img src="./pic/hw.jpg" class="manimg" alt="">
+        <sapn class="peo" style="width:600px;font-size:19px;margin-top:10px;margin-bottom:10px;">回答者：杨坤（华为手机业务CTO）</sapn>
+        <sapn class="peo" style="width:580px;font-size:17px;height:400px; color:#4e4e4e; margin-left:13px;padding-right:6px;"> 第一肯定是累。天天加班，周末开会没有什么奇怪的，客户大过天，客户需求永远第一位，华为员工真是付出自己的青春和所有精力在这一行拼着。我老公在海外待了八年多，我待了六年，我老公曾经感叹地说，我们的青春都献给了非洲的通信事业。这一点不夸张。据我观察，一般校招度过前三年离职概率就低很多，社招的都需要很长的适应期，特别是从其他友商或者运营商来的，好多都熬不过头两年。就是这么累。  第二是单纯。华为的员工都很年轻，在这样一个环境待着还是很有活力的，没有太多勾心斗角尔虞我诈的事情，当然凡事没有绝对，有人就有江湖，但是我相信华为的环境还是相对很单纯，不需要给领导送礼，不需要溜须拍马，上升通道明了，就看自己本事吧。这个本事包含情商，智商，上进心等等。
+</sapn>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="selectright1"  style="display:none;" id="smallbox2_2">
+    <div class="quan">
+      <span class="livenow" style="height:20px;color:#999;font-size:17px; display:inline-block; margin-bottom:7px; width:90px; border-right: 4px solid red;">热门问答：</span>
+      <div class="askbox" style="box-shadow: 0 0 10px #00aa81;">
+        <img src="./pic/tx3.jpg" class="manimg" alt="">
+        <span class="ques">奇葩面试题：“用一两句话，解释一个伸手党。”</span>
+        <sapn class="peo">626人吐槽</sapn>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx2.jpg" class="manimg" alt="">
+        <span class="ques">奇葩面试题：“你早餐吃的什么?”</span>
+        <sapn class="peo">236人吐槽</sapn>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx1.jpg" class="manimg" alt="">
+        <span class="ques">奇葩面试题：蝙蝠侠和超人打架，你怎样介入?</span>
+        <sapn class="peo">166人吐槽</sapn>
+      </div>
+      <span class="livenow" style="height:20px;color:#999;font-size:17px; display:inline-block; margin-bottom:7px; width:90px; border-right: 4px solid green;">最新问答：</span>
+      <div class="askbox">
+        <img src="./pic/tx6.jpg" class="manimg" alt="">
+        <span class="ques">面试时间一般是多久呀，来问问小伙伴们</span>
+        <sapn class="peo">236人吐槽</sapn>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx4.jpg" class="manimg" alt="">
+        <span class="ques">如果对自己的薪资不满意怎么办，该如何提出来？</span>
+        <sapn class="peo">126人吐槽</sapn>
+      </div>
+      <div class="askbox">
+        <img src="./pic/tx5.jpg" class="manimg" alt="">
+        <span class="ques">来聊聊实习中，公司都会给你什么补贴？</span>
+        <sapn class="peo">623人吐槽</sapn>
+      </div>
+    </div>
+    <div class="and" style="overflow:scroll;">
+      <div class="askbox1">
+        <img src="./pic/tx3.jpg" class="manimg" alt="">
+        <span class="ques" style="width:600px; height:30px; font-size:22px; margin-top:12px;margin-left10px;">奇葩面试题：“用一两句话，解释一个伸手党。”</span>
+        <sapn class="peo" style="width:600px;">用户：李雷</sapn>
+        <sapn class="peo" style="width:580px;font-size:16px; color:#4e4e4e;">这个问题是要测试你的沟通能力，以及“敏感性、自发性和表达抽象概念的能力”，它“要求你思考黄色的特点，并用积极的方式进行解释(不要提及黄色的物品，例如香蕉。)”</sapn>
+      </div>
+      <hr>
+      <span class="livenow" style="height:20px;color:#999;font-size:17px; display:inline-block; margin-bottom:7px; width:90px; border-right: 4px solid green;">吐槽圈：</span>
+
+      <div class="askbox1">
+        <img src="./pic/tx5.jpg" class="manimg" alt="">
+        <sapn class="peo" style="width:600px;font-size:19px;margin-top:10px;margin-bottom:10px;">用户：李彬</sapn>
+        <sapn class="peo" style="width:580px;font-size:17px;height:100px; color:#4e4e4e; margin-left:13px;padding-right:6px;"> 这是在考察你的工作是否有条理，你如何安排工作的优先顺序。</sapn>
+      </div>
+      <div class="askbox1">
+        <img src="./pic/tx4.jpg" class="manimg" alt="">
+        <sapn class="peo" style="width:600px;font-size:19px;margin-top:10px;margin-bottom:10px;">用户：李彬</sapn>
+        <sapn class="peo" style="width:580px;font-size:17px;height:100px; color:#4e4e4e; margin-left:13px;padding-right:6px;">彭妮人才实践管理公司总经理彭妮·沃克说：“面试官借这个问题了解在压力下工作时你的创造力如何。如果你做出千纸鹤，那是最妙的。</sapn>
+      </div>
+      <div class="askbox1">
+        <img src="./pic/tx1.jpg" class="manimg" alt="">
+        <sapn class="peo" style="width:600px;font-size:19px;margin-top:10px;margin-bottom:10px;">用户：李彬</sapn>
+        <sapn class="peo" style="width:580px;font-size:17px;height:100px; color:#4e4e4e; margin-left:13px;padding-right:6px;"> 职场作家詹姆斯·里德为我们解读了这一题目。他著有《为什么是你?101个你将再不害怕的问题》一书。他说：“这个问题简直无解，</sapn>
+      </div>
+    </div>
+   </div>
+
+</div>
+</div>
+
+
+<div class="footer">
+  <ul>
+    <li><a href="">关于我们</a></li>
+    <li><a href="">加入我们</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">联盟合作</a></li>
+    <li><a href="">免责申明</a></li>
+    <li><a href="">投诉建议</a></li>
+
+  </ul>
+  <ul style="margin-top:-20px;">
+    <li style="color:#999">Copyright © 2017.青云校招 All rights reserved.</li>
+  </ul>
+</div>
+
+
+
+<script>
+  function ChangeDiv(divId,divName,zDivCount)
+  {
+    for(i=0;i<=zDivCount;i++)
+    {
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('change'+i).style.borderBottom= " 2px solid transparent";
+      document.getElementById('change'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('change'+divId).style.borderBottom= " 2px solid #68ccb3";
+    document.getElementById('change'+divId).style.color= "#696969";
+
+  //显示当前层
+  }
+
+  function Changesmalldiv(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect1_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect1_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect1_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect1_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv1(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect2_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect2_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect2_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect2_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv2(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect3_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect3_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect3_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect3_'+divId).style.color= "#00aa81";
+  }
+  </script>
+</body>
+</html>

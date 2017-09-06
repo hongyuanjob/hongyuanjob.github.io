@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>青云校招</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.bdootcss.com/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.bdootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    .contain{
+      height: 860px;
+      width: 1200px;
+      margin: 0 auto;
+      /*background-color: pink;*/
+      margin-top: 25px;
+    }
+    .top{
+      height: 25px;
+      background-color: #6d6d6d;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .top span{
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+    .top span a{
+      text-decoration: none;
+      color: #d8d8d8;
+    }
+    .top span a:hover{
+      color: white;
+    }
+    .top ul{
+      display: inline-block;
+    }
+    .top ul ul{
+      display: none;
+    }
+    .top ul li:hover >ul{
+      display: block;
+    }
+    .nav{
+      height: 60px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .logo{
+      height: 50px;
+      width: 170px;
+      background-image: url(./../pic/logo.png);
+      float: left;
+    }
+    .navul{
+      float: left;
+      width: 600px;
+      height: 50px;
+      margin-left: 400px;
+    }
+    .navli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+      margin: 0 10px;
+    }
+    .navlia{
+      display: inline-block;
+      height: 50px;
+      width: 75px;
+      text-align: center;
+      line-height: 50px;
+      color: #999;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .navlia:hover{
+      color: #545454;
+      border-bottom: 3px solid #00aa81;
+      text-decoration: none;
+    }
+    .search-wrapper{
+      height: 150px;
+      width: 100%;
+      background-color: #f2f5f4;
+      position: relative;
+      text-align: center;
+    }
+    .search-box{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 46px;
+      width: 720px;
+      border: 1px solid #E8E8E8;
+      padding: 5px;
+      font-size: 14px;
+      margin-left: -120px;
+      margin-top: 30px;
+      outline:none;
+      color: black;
+
+    }
+    .search-box:focus{
+
+      border: 1px solid #00aa81;
+
+    }
+
+    .search-button{
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 5px;
+      height: 46px;
+      width: 140px;
+      background-color: #00aa81;
+      margin-top: 30px;
+      line-height: 36px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover{
+        background-color: #5ce6c5  ;
+      color: #fff;
+    }
+    .reul{
+      float: left;
+      width: 1000px;
+      height: 30px;
+      margin-left: -62px;
+
+    }
+    .reli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+    }
+    .relia{
+      display: inline-block;
+      padding-right: 2px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #00aa81;
+    }
+    .relia:hover{
+      color: #757575;
+      text-decoration: none;
+
+    }
+
+
+    .jobbox{
+      height: 580px;
+      width: 1200px;
+      box-sizing: border-box;
+      border: 2px solid #eeeeee;
+      box-sizing: border-box;
+    }
+
+    .bigselect{
+      width: 180px;
+      height: 600px;
+      display: flex;
+      position: relative;
+      float: left;
+      flex-direction: column;
+      /*justify-content: flex-start;*/
+      box-sizing: border-box;
+
+      align-items: center;
+    }
+    .select{
+      height: 50px;
+      width: 180px;
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 1.6px solid #dedede;
+      color: #a2a2a2;
+      /*margin-top: 4px;*/
+      /*border-right: 1.6px solid #00aa81;*/
+      /*color: #00aa81;*/
+    }
+    .select span:hover{
+      color: #00aa81;
+    }
+    .select span{
+
+      font-size: 17px;
+      line-height: 50px;
+
+    }
+    .selectright{
+      float: left;
+      height:578px;
+      width: 550px;
+      padding: 14px;
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      overflow: scroll;
+    }
+    .jobone{
+      height: 120px;
+      width: 230px;
+      /*margin-left: 30px;*/
+      /*background-color: pink;*/
+      padding: 8px;
+      border: 1px solid #cecece;
+      box-sizing: border-box;
+      margin-top: 16px;
+    }
+    .jobone:hover{
+      box-shadow: 0 0 5px #cecece;
+    }
+    .jobone a{
+      color: #8a8989;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .jobone a:hover{
+      color: #68ccb3;
+    }
+    .spantime{
+
+      display: inline-block;
+      margin-top: -3px;
+      margin-right: 4px;
+      font-size: 16px;
+      color: #269c80;
+      float: right;
+    }
+    .spanmon{
+      margin-left: 40px;
+      color: #ff7373;
+      font-size: 18px;
+      float: right;
+    }
+    .spanlot{
+      margin-top: 5px;
+      margin-right: 3px;
+      background-color: #eaeaea;
+      display: inline-block;
+      /*padding: 0px 6px;*/
+      height: 16px;
+      color: #848484;
+      line-height: 16px;
+      font-size: 12px;
+      float: left;
+    }
+    .combox{
+      height: 80px;
+      width: 100%;
+      /*background-color: pink;*/
+      border-top: 1.4px dashed #d6d6d6;
+      /*border-style: dashed;*/
+      margin-top:35px;
+      /*padding: 5px;*/
+      padding-top: 10px;
+    }
+    .combox img{
+      height: 34px;
+      width: 34px;
+      /*padding: 5px;*/
+      background-size: contain;
+      margin-right:14px;
+      float: left;
+    }
+    .comname{
+      display: inline-block;
+      float: left;
+      width: 160px;
+      height: 16px;
+      line-height: 16px;
+      font-size: 11px;
+      color: #6f6f6f;
+    }
+    .comte{
+      font-size: 11px;
+      color: #888;
+    }
+
+    .rebiye{
+      float: left;
+      height: 570px;
+      width: 260px;;.
+      background-color: red;
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+
+    .change{
+      margin-top: 25px;
+      margin-left: 0px;
+
+      display: inline-block;
+      /*padding-bottom: 25px;*/
+      padding: 10px 10px;
+      font-size: 17px;
+      cursor: pointer;
+      color: #999;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .change:hover{
+      color: #00aa81;
+    }
+
+
+
+
+
+    .footer{
+      height: 80px;
+      width: 100%;
+      background-color: #e6e6e6;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .footer ul{
+      padding-top: 20px;
+    }
+    .footer li{
+      display: inline;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .footer li a{
+      text-decoration: none;
+      color: #9c9c9c;
+      font-size: 14px;
+    }
+    .footer li a:hover{
+      color: #000;
+    }
+
+
+    .findjob{
+      height: 48px;
+      width: 1200px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      border: 2px solid #eeeeee;
+      padding-left: 3px;
+      padding-top: 2px;
+    }
+    .findjob:hover{
+      box-shadow: 0 0 14px #eeeeee;
+    }
+
+    .findjob span{
+      /*position: absolute;*/
+      /*top: -3px;*/
+      color:#999;
+      font-size: 18px;
+      line-height: 40px;
+      padding-right: 10px;
+      padding-left: 0px;
+
+    }
+    .findjob input{
+      height: 34px;
+      width: 150px;
+    }
+    .buttonspan{
+      /*padding-right: 0px;*/
+      margin-top: 3px;
+      display: inline-block;
+      float: right;
+      margin-right: 3px;
+      width: 66px;
+      text-align: center;
+      line-height: 34px;
+      height: 34px;
+      background-color: #00aa81;
+      color: #f7ffff;
+      cursor: pointer;
+    }
+    .buttonspan:hover{
+      background-color: #53ccaf;
+    }
+    .rightpeo1{
+      /*background: pink;*/
+      height: 440px;
+      width: 460px;
+      float: left;
+    }
+    .peobox{
+      height: 150px;
+      width: 266px;
+      /*background: pink;*/
+      padding: 10px;
+    }
+    .peobox img{
+      width: 100px;
+      height: 100px;
+      border-radius: 120px;
+      float: left;
+      margin-top: 10px;
+
+    }
+    .nameright{
+      width: 120px;
+      height: 30px;
+      float: left;
+      font-size: 21px;
+      margin-left: 13px;
+      margin-top: 20px;
+      color: #848484;
+    }
+    .zhiwei{
+      margin-top: 24px;
+      width: 130px;
+      height: 30px;
+      float: left;
+      font-size: 18px;
+      margin-left: 13px;
+      color: #6d6d6d;
+    }
+    .xiangxi{
+      width: 266px;
+      height: 423px;
+      /*background: pink;*/
+      padding: 7px;
+      box-sizing: border-box;
+      margin-top: -12px;
+    }
+    .bottom{
+      white-space: normal;
+      width: 266px;
+      display: block;
+      margin-top: 6px;
+    }
+    .button{
+      margin-top: 12px;
+      padding: 0 10px;
+      height: 27px;
+      line-height: 27px;
+      display:inline-block;
+      border-radius: 16px;
+      background: #00aa81  ;
+      color: white;
+      cursor: pointer;
+    }
+    .button:hover{
+      background: #5dd0b4  ;
+    }
+    .fuwubox{
+      margin-top: 23px;
+      width: 320px;
+      height: 140px;
+      /*background-color: pink;*/
+      border: 2px solid #dedede;
+      cursor: pointer;
+    }
+    .fuwubox:hover{
+      box-shadow: 0 0 20px #b9adad;
+    }
+    .fuwubox img{
+      height: 72px;
+      width: 120px;
+      background-color: green;
+      float: left;
+      margin-top: 2px;
+      margin-left: 10px;
+    }
+    .fuwuname{
+      display: inline-block;
+      height: 30px;
+      width: 140px;
+      font-size: 19px;
+      line-height: 30px;
+      margin-left: 14px;
+      margin-top: 8px;
+      color: #777777;
+    }
+    .fuwumon{
+      display: inline-block;
+      height: 25px;
+      width: 140px;
+      font-size: 18px;
+      line-height: 25px;
+      margin-left: 16px;
+      color: #fb4747;
+      margin-top: 2px;
+    }
+    .fuwuxiang{
+      width: 300px;
+      height:56px;
+      /*background: orange;*/
+      color: #545151;
+      float: left;
+      margin-top: 5px;
+      margin-left: 10px;
+      font-size: 13px;
+    }
+    .xiangimg{
+      width: 230px;
+      height: 130px;
+      background: pink;
+      margin: 10px;
+    }
+    .hrbox{
+      height: 150px;
+      width: 520px;
+      margin: 10px;
+      cursor: pointer;
+      border: 2px solid #e2e2e2;
+    }
+    .hrbox:hover{
+      box-shadow: 0 0 20px #d6d4d4;
+    }
+    .hrimg{
+      height: 120px;
+      width: 190px;
+      background: green;
+      margin: 14px;
+      display: block;
+      float: left;
+    }
+    .hrname{
+      width: 260px;
+      height: 32px;
+      display: inline-block;
+      float: left;
+      margin-top: 14px;
+      font-size: 18px;
+      line-height: 32px;
+      color: #676565;
+    }
+    .hrtime{
+      width: 260px;
+      height: 26px;
+      display: inline-block;
+      float: left;
+      margin-top: 7px;
+      font-size: 15px;
+      line-height: 26px;
+      color: #25ad23;
+    }
+    .hrxiang{
+      width: 260px;
+      height: 22px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      font-size: 14px;
+      color: #484545;
+    }
+    .huatiquan{
+      width: 510px;
+      height: 123px;
+      /*background: green;*/
+      margin: 10px;
+      border-bottom: 2px solid #dedede;
+      cursor: pointer;
+    }
+    .huatiquan:hover{
+      box-shadow: 0 0 20px #b9adad;
+    }
+    .hrpic{
+      height: 100px;
+      width: 100px;
+      border-radius: 50px;
+      background: pink;
+      display: block;
+      float: left;
+      margin: 10px;
+    }
+    .hrwhat{
+      width: 370px;
+      height: 50px;
+      display: inline-block;
+      /*background: pink;*/
+      margin-top: 14px;
+      color: #6d6d6d;
+      font-size: 16px;
+
+    }
+    .hrfatime{
+      width: 370px;
+      height: 20px;
+      display: inline-block;
+      /*background: yellow;*/
+      color: #39ad39;
+      margin-bottom: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span ><a  href="./../index.html">用户端</a></span>
+    <span><a>|</a></span>
+    <span style="margin-right:1000px;"><a href="" style="color:#2de6ba">企业端</a></span>
+    <span><a href="qiye.html">企业中心</a></span>
+    <span><a>|</a></span>
+    <span><a href="rencaiku.html">我的人才库</a></span>
+  </div>
+  <div class="nav">
+    <div style="width:1200px;display: inline-block;">
+      <div class="logo"></div>
+      <ul class="navul" style="width:700px;margin-left:330px;">
+        <li  class="navli"><a class="navlia"  href="index.html">首页</a></li>
+        <li class="navli"><a class="navlia"  href="xiaobai.html">小白</a></li>
+        <li class="navli"><a class="navlia" href="xinxiu.html">新秀</a></li>
+        <li class="navli"><a class="navlia" href="baigujing.html">白骨精</a></li>
+        <li class="navli"><a class="navlia"  href="daka.html">大咖</a></li>
+        <li class="navli"style="width:75px;"><a class="navlia" style="color:#545454;border-bottom: 3px solid #00aa81;" href="guzhu.html">雇主品牌</a></li>
+        <li class="navli"><a class="navlia"  href="fuwu.html">周边服务</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="search-wrapper">
+    <div style="height:140px;  overflow: hidden;  width:1200px;display: inline-block; ">
+      <div>
+        <input placeholder="请输入期望的学历、专业、工作经验、意向工作地点、期望工资" type="text" class="search-box" name="" value=""><div class="search-button">搜素</div>
+      </div>
+      <ul class="reul">
+        <a style="color: #757575; font-size:14px;">热门搜索：</a>
+        <li class="reli"> <a href="" class="relia">人力资源</a> </li>
+        <li class="reli"> <a href="" class="relia">物流管理</a> </li>
+        <li class="reli"> <a href="" class="relia">java</a> </li>
+        <li class="reli"> <a href="" class="relia">web前端</a> </li>
+        <li class="reli"> <a href="" class="relia">行政管理</a> </li>
+        <li class="reli"> <a href="" class="relia">高级会计师</a> </li>
+        <li class="reli"> <a href="" class="relia">数据分析师</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="contain">
+  <span onclick="JavaScript:ChangeDiv('0','JKDiv_',3)" class="change" id="change0" style="color:#696969;border-bottom:2px solid #68ccb3;">企业宣传</span><span>  </span>
+  <span onclick="JavaScript:ChangeDiv('1','JKDiv_',3)" class="change" id="change1">招聘攻略</span>
+  <span onclick="JavaScript:ChangeDiv('2','JKDiv_',3)" class="change" id="change2">HR素养提升</span>
+  <span onclick="JavaScript:ChangeDiv('3','JKDiv_',3)" class="change" id="change3">牛人问答</span>
+  <hr style="margin-top:8px;">
+
+
+<div id="JKDiv_0"  class="jobbox">
+  <div class="selectright" style="width:730px;justify-content: space-around;"  >
+    <div class="fuwubox" style="box-shadow: 0 0 20px #b9adad;">
+      <img src="./../pic2/gu1.jpg" alt="">
+      <span class="fuwuname">广告服务</span>
+      <span class="fuwumon">按需求计费</span>
+      <span class="fuwuxiang">简介：企业可以向青云校招官方申请将自己的公司招聘宣传页面放置在青云校招用户端首页，将会大幅度提升企业曝光度。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu2.jpg" alt="">
+      <span class="fuwuname">企业圈子秀</span>
+      <span class="fuwumon">2000／企业</span>
+      <span class="fuwuxiang">简介：企业建议向青云校招官方申请单独制作一个页面放在特定的链接当中，以详细介绍公司的招聘信息和企业文化。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu3.jpg" alt="">
+      <span class="fuwuname" style="width:160px;">直播秀、空中宣讲</span>
+      <span class="fuwumon">4000／单位</span>
+      <span class="fuwuxiang">简介：当企业因某些因素无法到校园实地进行招聘宣讲时，可以向青云校招申请进行空中宣讲服务，在网上进行直播校招宣讲。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu4.jpg" alt="">
+      <span class="fuwuname">直通名企服务</span>
+      <span class="fuwumon">1000／位</span>
+      <span class="fuwuxiang">简介：青云校招将会进行预先的人才筛选，挑选出一部分实力强大，综合能力素质高的优秀毕业生，直接进入企业工作，并且为企业担保毕业生质量。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu5.jpg" alt="">
+      <span class="fuwuname">招聘信息推广</span>
+      <span class="fuwumon">费用面议</span>
+      <span class="fuwuxiang">简介：青云校招将会进行线上线下制定有效宣传方案，为企业宣传招聘作出宣传方案，并且将企业在校招网站上增加曝光量。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu6.jpg" alt="">
+      <span class="fuwuname">线下人事宣传</span>
+      <span class="fuwumon">费用面议</span>
+      <span class="fuwuxiang">简介：青云校招在全国各地都有根据地，若企业无法进行实地进入校园招聘宣讲，青云校招将会派遣人力替企业进行实地宣传招聘。</span>
+    </div>
+  </div>
+  <div class="rightpeo1" >
+    <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+
+    <div style="font-size:20px; display:'block'; margin: 12px; ">服务详情：</div>
+    <img class="xiangimg" src="./../pic2/gu1.jpg" alt="">
+    <span class="fuwuname" style="position:absolute; ">官网广告服务</span>
+
+    <span class="fuwumon" style="position:absolute; top:480px; ">费用：按需求计费</span>
+    </div>
+    <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+      <a>内容包括：</a><br>
+      ①官网首页滚动屏，展示公司信息 <br>
+      ②招聘公司排名靠前<br>
+      ③优先向用户提供公司的招聘信息<br>
+      ④提前向用户展示公司招聘信息，实时刷新<br>
+    </div>
+    <div style="width:450px; height:130px; font-size:16px; line-height:25px;  float:right">
+    <a>服务优势：</a> <br>
+      ①用人单位可提高招聘进度<br>
+      ②用人单位可量身定制企业招聘规则<br>
+      ③用人单位可优先招聘优质职员<br>
+      ④灵活机动，满足弹性用人需求<br>
+    </div>
+    <div style="padding-left:60px; width:450px; height:50px; font-size:16px; line-height:25px;  float:right">
+
+    <span class="button">☆ 收藏</span>
+    <span class="button">X 不感兴趣</span>
+    <span class="button"> ✆ 联系预约</span>
+    </div>
+  </div>
+
+</div>
+
+<div id="JKDiv_1" style="display:none"  class="jobbox">
+  <div class="selectright" style="width:730px;justify-content: space-around;"  >
+    <div class="fuwubox" style="box-shadow: 0 0 20px #b9adad;">
+      <img src="./../pic2/gu11.jpg" alt="">
+      <span class="fuwuname">招聘策划指导</span>
+      <span class="fuwumon">7000／套</span>
+      <span class="fuwuxiang">简介：青云校招有着专业的策划团队，有着十余年的校招经验，对于校招的有着全方面的策划服务，将会为企业提出一份几乎完美的策划方案。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu22.jpg" alt="">
+      <span class="fuwuname">人才评价指导</span>
+      <span class="fuwumon">800／位</span>
+      <span class="fuwuxiang">简介：人才评价是“通过一系列科学的手段和方法对人的基本素质及其绩效进行测量和评定的活动”，并将其应用在组织发展与人才管理等企业管理领域。。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu33.jpg" alt="">
+      <span class="fuwuname">优质招聘案例</span>
+      <span class="fuwumon">1000／套</span>
+      <span class="fuwuxiang">简介：青云校招近十年的招聘经验，有着数百套的各场景招聘案例，专门为你量身定制招聘案例，满意为止。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu44.jpg" alt="">
+      <span class="fuwuname">在线招聘指导课</span>
+      <span class="fuwumon">2000／期</span>
+      <span class="fuwuxiang">简介：青云校招名师授课，无论是对公司招聘还是对自身发展都有着质的提升，不满意退款！</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu55.jpg" alt="">
+      <span class="fuwuname">简历筛选服务</span>
+      <span class="fuwumon">80／条</span>
+      <span class="fuwuxiang">简介：青云校招首席面试官亲身筛选简历，取其精华取其糟粕，是你的招聘好帮手！。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu66.jpg" alt="">
+      <span class="fuwuname">笔试试题题库</span>
+      <span class="fuwumon">2000／套</span>
+      <span class="fuwuxiang">简介：青云校招近十年的招聘经验，有着海量的精选面试题，对每个职业都有着对应试题，保证招聘质量！</span>
+    </div>
+  </div>
+  <div class="rightpeo1" >
+    <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+
+    <div style="font-size:20px; display:'block'; margin: 12px; ">服务详情：</div>
+    <img class="xiangimg" src="./../pic2/gu11.jpg" alt="">
+    <span class="fuwuname" style="position:absolute; ">招聘策划指导</span>
+
+    <span class="fuwumon" style="position:absolute; top:480px; ">费用：7000/套</span>
+    </div>
+    <div style="width:450px; height:140px; font-size:16px; line-height:25px;  float:right">
+      <a>内容包括：</a><br>
+      招聘策划内容：三组招聘策划选最优 <br>
+      专业指导：青云校招专业指导专家一对一服务<br>
+      进度安排：专业公关为您安排进度与宣讲地点<br>
+      优质资源：策划资源来自各大名企，质量有保障<br>
+    </div>
+    <div style="width:450px; height:170px; font-size:16px; line-height:25px;  float:right">
+    <a>服务优势：</a> <br>
+        青云校招有着专业的策划团队，有着十余年的校招经验，对于校招的有着全方面的策划服务，将会为企业提出一份几乎完美的策划方案，全方位一对一服务，满足基本招聘宣讲服务要求，质量可靠有保障，不满意七天无条件退款！
+    </div>
+    <div style="padding-left:60px; width:450px; height:50px; font-size:16px; line-height:25px;  float:right">
+
+    <span class="button">☆ 收藏</span>
+    <span class="button">X 不感兴趣</span>
+    <span class="button"> ✆ 联系预约</span>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div id="JKDiv_2" style="display:none"  class="jobbox">
+  <div class="selectright" style="width:730px;justify-content: space-around;"  >
+    <div class="fuwubox" style="box-shadow: 0 0 20px #b9adad;">
+      <img src="./../pic2/gu111.jpg" alt="">
+      <span class="fuwuname">HR素养课程</span>
+      <span class="fuwumon">2100／位</span>
+      <span class="fuwuxiang">简介：HR仿佛是一个公司血源，对公司有着非常重要的作用，可以说一个公司的生死与HR有着重要的关联，因此公司对提升HR素养非常有必要。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu222.jpg" alt="">
+      <span class="fuwuname">网易校招讲攻略</span>
+      <span class="fuwumon">800／课时</span>
+      <span class="fuwuxiang">简介：网易8年工作经验校招负责人，踏遍全中国甚至海外高校，寻找了一批最优秀的毕业生，快来听听他的校招攻略吧！</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu333.jpg" alt="">
+      <span class="fuwuname">腾讯社招讲解</span>
+      <span class="fuwumon">900／课时</span>
+      <span class="fuwuxiang">简介：腾讯已经成为中国互联网公司的巨头，当然少不了腾讯中的一大批优质人才，来看看腾讯是怎样招聘到如此一批优秀人才吧！。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/gu444.jpg" alt="">
+      <span class="fuwuname">HR社招培训课</span>
+      <span class="fuwumon">2000／位</span>
+      <span class="fuwuxiang">简介：青云校招专门HR提供社招课程，近十年的经验对与HR有着非常大的帮助，不满意退款！</span>
+    </div>
+
+
+  </div>
+  <div class="rightpeo1" >
+    <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+
+    <div style="font-size:20px; display:'block'; margin: 12px; ">服务详情：</div>
+    <img class="xiangimg" src="./../pic2/gu111.jpg" alt="">
+    <span class="fuwuname" style="position:absolute; ">HR素养课程</span>
+
+    <span class="fuwumon" style="position:absolute; top:480px; ">2100／位</span>
+    </div>
+    <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+      <a>您可能面临的困惑：</a><br>
+      ①企业HR素养不够，无法招到合适的职员位公司作出贡献。 <br>
+      ②在人才稀缺的市场背景下无法提高公司招聘竞争力，无法招到满意的职员。<br>
+      ③企业刚处于起步阶段，无法用高额的佣金吸引人才，却又想招聘优质职员。<br>
+    </div>
+    <div style="width:450px; height:130px; font-size:16px; line-height:25px;  float:right">
+    <a>帮助您实现的价值：</a> <br>
+      ①清晰企业招聘的发展方向，明确企业使命、愿景及核心价值观，形成具体的招聘战略。<br>
+      ②各部门统一认识公司的招聘目标，及时作出招聘规划。<br>
+      ③清晰的招聘规划推动战略的落地实施，提升HR素养。<br>
+
+    </div>
+    <div style="padding-left:60px; width:450px; height:50px; font-size:16px; line-height:25px;  float:right">
+
+    <span class="button">☆ 收藏</span>
+    <span class="button">X 不感兴趣</span>
+    <span class="button"> ✆ 联系预约</span>
+    </div>
+  </div>
+
+</div>
+<div id="JKDiv_3" style="display:none"  class="jobbox">
+
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv('0','smallbox_',1)" id="smallselect1_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span>提出问题</span>
+    </div>
+
+    <div class="select" onclick="Changesmalldiv('1','smallbox_',1)" id="smallselect1_1">
+      <span>查看牛人解答</span>
+    </div>
+  </div>
+    <div  id="smallbox_0">
+      <div class="selectright" style="width:1017px; display:block;">
+      <span style="margin-left:40px; font-size:18px; color:black;">请输入标题：</span>  <input style="width:700px; height:40px;" type="text" name="" value=""> <br>
+      <span style="margin-left:40px; display:inline-block; margin-top:40px; font-size:18px; color:black;">请输入标题：</span>  <input style="width:700px;margin-top:40px; height:300px;" type="text" name="" value=""> <br>
+      <span style="margin-left:40px; font-size:18px; color:black;">悬赏金额(元)  ：</span>  <input style="width:140px;margin-top:40px; height:30px;" type="text" name="" value=""> <br>
+      <div style="height:40px; width:120px; background-color:#00aa81;color:white;margin-left:400px; cursor:pointer; margin-top:40px; border-radius:6px; font-size:20px; line-height:40px; text-align:center;">提交问题</div>
+      </div>
+
+
+    </div>
+
+  <div style="display:none;" id="smallbox_1">
+    <div class="selectright" style="width:480px;" >
+      <div class="huatiquan" style="box-shadow: 0 0 14px #b7aeae; width:420px; ">
+        <img src="./../pic/tx9.jpg" class="hrpic" alt="">
+        <span class="hrwhat" style="width:300px;" >蓝鸟科技周悦提问：公司不愿意加薪资，但是又想HR们招到高质量员工怎么办？</span>
+        <span class="hrfatime"style="width:300px;">发布时间：14:29</span>
+        <span style="color:#9c9c9c;"> [已解答]</span> <span style="margin-left:13px; color:red;">6元围观</span>
+      </div>
+      <div class="huatiquan" style="width:420px;">
+        <img src="./../pic2/1.jpg" class="hrpic" alt="">
+        <span class="hrwhat"style="width:300px;">用友黄磊：大伙们来说说自己在招聘的时候都遇到哪些有趣的事情～</span>
+        <span class="hrfatime"style="width:300px;">发布时间：11:29</span>
+          <span style="color:#9c9c9c;"> [已解答]</span> <span style="margin-left:13px; color:red;">18元围观</span>
+      </div>
+      <div class="huatiquan" style="width:420px;">
+        <img src="./../pic2/2.jpg" class="hrpic" alt="">
+        <span class="hrwhat"style="width:300px;">北京科蓝冯言：如何挽留申请离职的员工,是否应该依照离职员工的加薪要求？</span>
+        <span class="hrfatime"style="width:300px;">发布时间：10:29</span>
+        <span style="color:#9c9c9c;"> [已解答]</span> <span style="margin-left:13px; color:red;">13元围观</span>
+      </div>
+      <div class="huatiquan" style="width:420px;">
+        <img src="./../pic2/3.jpg" class="hrpic" alt="">
+        <span class="hrwhat"style="width:300px;">科瑞刘嶂：如何辨别面试者是否真正愿意为公司付出激情？</span>
+        <span class="hrfatime"style="width:300px;">发布时间：8:25</span>
+        <span style="color:#9c9c9c;"> [已解答]</span> <span style="margin-left:13px; color:red;">23元围观</span>
+      </div>
+      <div class="huatiquan" style="width:420px;">
+        <img src="./../pic2/4.jpg" class="hrpic" alt="">
+        <span class="hrwhat"style="width:300px;">奥龙邱勇：如何面对面试者对于给定薪资不满意现象，该不该加薪呢？</span>
+        <span class="hrfatime"style="width:300px;">发布时间：9:15</span>
+        <span style="color:#9c9c9c;"> [已解答]</span> <span style="margin-left:13px; color:red;">18元围观</span>
+      </div>
+
+
+    </div>
+    <div class="rightpeo" style="overflow:scroll;width:530px;">
+      <img src="./../pic/fk.jpg" alt="" style="position:absolute; top:550px; margin-left:180px;width:200px;height:300px;">
+      <div class="huatiquan" style="width:430px;">
+        <img src="./../pic/tx9.jpg" class="hrpic" alt="">
+        <span class="hrwhat" style="width:300px;">蓝鸟科技周悦提问：公司不愿意加薪资，但是又想HR们招到高质量员工怎么办？</span>
+        <span class="hrfatime"style="width:300px;">发布时间：14:29</span>
+        <span style="color:#9c9c9c;">已解答</span>
+      </div>
+      <span style="font-size:16px; color:#8c8c8c; margin-left:10px;">阿里巴巴校招负责人回复：</span>
+
+      <div  style="width:530px;  height:420px; margin-left:13px;margin-top:10px; hmargin-left:15px; margin-right:12px; opacity: 0.1; background-color:black;">
+
+        <img src="./../pic2/14.jpg" style="width:80px; height:80px; border-radius:40px; float:left; " alt="">
+        <span class="hrwhat" style="font-size:15px; margin-top:6px; margin-left10px; width:300px;">当当何川：我公司主要考究面试者对于自己专研的领域是否研究够深，是否基础知识厚实。</span>
+        <span class="hrfatime"style="width:230px;">发布时间：11:22</span>
+        <span style="color:#9c9c9c;">6人赞同</span>
+      </div>
+      <hr>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+<div class="footer">
+  <ul>
+    <li><a href="">关于我们</a></li>
+    <li><a href="">加入我们</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">联盟合作</a></li>
+    <li><a href="">免责申明</a></li>
+    <li><a href="">投诉建议</a></li>
+
+  </ul>
+  <ul style="margin-top:-20px;">
+    <li style="color:#999">Copyright © 2017.青云校招 All rights reserved.</li>
+  </ul>
+</div>
+
+
+
+<script>
+  function ChangeDiv(divId,divName,zDivCount)
+  {
+    for(i=0;i<=zDivCount;i++)
+    {
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('change'+i).style.borderBottom= " 2px solid transparent";
+      document.getElementById('change'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('change'+divId).style.borderBottom= " 2px solid #68ccb3";
+    document.getElementById('change'+divId).style.color= "#696969";
+
+  //显示当前层
+  }
+
+  function Changesmalldiv(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect1_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect1_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect1_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect1_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv1(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect2_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect2_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect2_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect2_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv2(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect3_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect3_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect3_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect3_'+divId).style.color= "#00aa81";
+  }
+  </script>
+</body>
+</html>

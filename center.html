@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>青云校招</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.bdootcss.com/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.bdootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <style media="screen">
+    /**{
+      margin: 0px;
+      padding: 0px;
+    }*/
+    .contain{
+      height: 1400px;
+      width: 1200px;
+      margin: 0 auto;
+      margin-top: 25px;
+    }
+    .top{
+      height: 25px;
+      background-color: #6d6d6d;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .top span{
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+    .top span a{
+      text-decoration: none;
+      color: #d8d8d8;
+    }
+    .top span a:hover{
+      color: white;
+    }
+    .top ul{
+      display: inline-block;
+    }
+    .top ul ul{
+      display: none;
+    }
+    .top ul li:hover >ul{
+      display: block;
+    }
+    .nav{
+      height: 60px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .logo{
+      height: 50px;
+      width: 170px;
+      background-image: url(./pic/logo.png);
+      float: left;
+    }
+    .navul{
+      float: left;
+      width: 600px;
+      height: 50px;
+      margin-left: 400px;
+    }
+    .navli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+      margin: 0 10px;
+    }
+    .navlia{
+      display: inline-block;
+      height: 50px;
+      width: 60px;
+      text-align: center;
+      line-height: 50px;
+      color: #999;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .navlia:hover{
+      color: #545454;
+      border-bottom: 3px solid #00aa81;
+      text-decoration: none;
+    }
+    .search-wrapper{
+      height: 150px;
+      width: 100%;
+      background-color: #f2f5f4;
+      position: relative;
+      text-align: center;
+    }
+    .search-box{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 46px;
+      width: 720px;
+      border: 1px solid #E8E8E8;
+      padding: 5px;
+      font-size: 14px;
+      margin-left: -120px;
+      margin-top: 30px;
+      outline:none;
+      color: black;
+
+    }
+    .search-box:focus{
+
+      border: 1px solid #00aa81;
+
+    }
+
+    .search-button{
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 5px;
+      height: 46px;
+      width: 140px;
+      background-color: #00aa81;
+      margin-top: 30px;
+      line-height: 36px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover{
+        background-color: #5ce6c5  ;
+      color: #fff;
+    }
+    .reul{
+      float: left;
+      width: 1000px;
+      height: 30px;
+      margin-left: -62px;
+
+    }
+    .reli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+    }
+    .relia{
+      display: inline-block;
+      padding-right: 2px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #00aa81;
+    }
+    .relia:hover{
+      color: #757575;
+      text-decoration: none;
+
+    }
+
+
+    .jobbox{
+      height: 600px;
+      width: 1200px;
+      box-sizing: border-box;
+      border: 2px solid #eeeeee;
+      box-sizing: border-box;
+    }
+    .peo{
+      height: 240px;
+      width: 1158px;
+      margin: 20px;
+      /*background-color: pink;*/
+      border: 2px solid #eaeaea;
+      box-sizing: border-box;
+      position: relative;
+      display: block;
+    }
+    .peopic{
+      height: 200px;
+      width: 200px;
+      margin: 18px;
+      border-radius: 200px;
+      background-image: url(pic/tx9.jpg);
+      background-size: contain;
+      float: left;
+      margin-right: 60px;
+    }
+    .namespan{
+      height: 40px;
+      width: 600px;
+      display: inline-block;
+      /*background-color: pink;*/
+      color: #3c3c3c;
+
+      font-size: 25px;
+      margin-top: 30px;
+    }
+    .sayspan{
+      height: 120px;
+      width: 800px;
+      display: inline-block;
+      /*background-color: green;*/
+      color: #737373;
+      font-size: 19px;
+      word-break: break-all;
+      margin-top:34px;
+
+    }
+    .otherpan{
+      height: 270px;
+      width: 1158px;
+      margin: 20px;
+      /*background-color: pink;*/
+      /*border: 2px solid #eaeaea;*/
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding-top: 30px;
+    }
+    .inputdiv{
+      height: 45px;
+      width: 430px;
+      /*background-color: pink;*/
+      line-height: 30px;
+      font-size: 19px;
+      padding-top: 5px;
+      color: #7b7b7b;
+    }
+    .inputdiv input{
+      float: right;
+    }
+    .bigselect{
+      width: 280px;
+      height: 600px;
+      position: relative;
+      float: left;
+      box-sizing: border-box;
+    }
+    .livenow{
+      display: inline-block;
+      margin: 7px 0 4px 5px;
+      height: 23px;
+      width: 104px;
+      font-size: 20px;
+      line-height: 24px;
+      color: #7d7d7d;
+      border-right: 4px solid red;
+    }
+
+    .livebox{
+      margin-top: 14px;
+      height: 94px;
+      width: 254px;
+      margin: 4px;
+      /*background-color: green;*/
+      border: 2px solid #ececec;
+      box-sizing: border-box;
+      cursor: pointer;
+      margin-left: 11px;
+      margin-bottom: 10px;
+    }
+    .livebox:hover{
+      box-shadow: 0 0 14px #ececec;
+    }
+    .liveimg{
+      height: 80px;
+      width: 80px;
+      display: inline-block;
+      float: left;
+      margin: 5px;
+      background-size: contain;
+    }
+    .livetitle{
+      height: 26px;
+      display: inline-block;
+      float: left;
+      margin-top: 5px;
+      line-height: 26px;
+      width: 160px;
+      font-size: 16px;
+
+    }
+    .livewtime{
+      display: inline-block;
+      height: 20px;
+      width: 110px;
+      float: left;
+      color: red;
+    }
+    .livewhat{
+      height: 36px;
+      width: 155px;
+      word-wrap:break-word;
+      float: left;
+      color: #7b7b7b;
+      font-size: 11px;
+      margin-top: 3px;
+    }
+    .selectright{
+      float: left;
+      height:598px;
+      width: 916px;
+      /*padding: 12px 40px;*/
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      border-right: 0px solid #eee;
+
+    }
+    .selectright1{
+      float: left;
+      height:598px;
+      width: 1200px;
+      /*padding: 12px 40px;*/
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      border-right: 0px solid #eee;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding-top: 20px;
+    }
+    .knowbox{
+      height: 170px;
+      width: 450px;
+      /*background-color: pink;*/
+      padding: 10px;
+      padding-top: 18px;
+      box-sizing: border-box;
+      border: 2px solid #d4d4d4;
+    }
+    .knowbox:hover{
+      box-shadow: 0 0 10px #d4d4d4;
+    }
+    .konwimg{
+      height: 130px;
+      width: 130px;
+      padding: 3px;
+      /*background-color: ed;*/
+      float: left;
+      margin-right: 13px;
+    }
+
+    .title{
+      float: left;
+      height: 60px;
+      width: 280px;
+      font-size: 19px;
+      white-space:wrap;
+      color: #6f6f6f;
+    }
+
+    .saywhat{
+      float: left;
+      height: 60px;
+      width: 280px;
+      overflow: hidden;
+     text-overflow: ellipsis;
+      color: #737373;
+      font-size: 13px;
+
+    }
+    .change{
+      margin-top: 25px;
+      margin-left: 0px;
+
+      display: inline-block;
+      /*padding-bottom: 25px;*/
+      padding: 10px 10px;
+      font-size: 17px;
+      cursor: pointer;
+      color: #999;
+      /*overflow: scroll;*/
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .change:hover{
+      color: #00aa81;
+    }
+
+    .footer{
+      height: 80px;
+      width: 100%;
+      background-color: #e6e6e6;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .footer ul{
+      padding-top: 20px;
+    }
+    .footer li{
+      display: inline;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .footer li a{
+      text-decoration: none;
+      color: #9c9c9c;
+      font-size: 14px;
+    }
+    .footer li a:hover{
+      color: #000;
+    }
+    .save:hover{
+      background: black;
+    }
+    .jobone{
+      height: 120px;
+      width: 230px;
+      /*margin-left: 30px;*/
+      /*background-color: pink;*/
+      padding: 8px;
+      border: 1px solid #cecece;
+      box-sizing: border-box;
+      margin-top: 13px;
+      margin-left: 9px;
+      margin-bottom: 13px;
+    }
+    .jobone:hover{
+      box-shadow: 0 0 5px #cecece;
+    }
+    .jobone a{
+      color: #8a8989;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .jobone a:hover{
+      color: #68ccb3;
+    }
+    .spantime{
+      display: inline-block;
+      margin-top: -2px;
+      margin-left: 6px;
+      font-size: 13px;
+      color: #cecece;
+    }
+    .spanmon{
+      margin-left: 40px;
+      color: #ff7373;
+      font-size: 18px;
+      float: right;
+    }
+    .combox{
+      height: 80px;
+      width: 100%;
+      /*background-color: pink;*/
+      border-top: 1.4px dashed #d6d6d6;
+      /*border-style: dashed;*/
+      margin-top:15px;
+      /*padding: 5px;*/
+      padding-top: 10px;
+    }
+    .combox img{
+      height: 34px;
+      width: 34px;
+      /*padding: 5px;*/
+      background-size: contain;
+      margin-right:14px;
+      float: left;
+    }
+    .comname{
+      display: inline-block;
+      float: left;
+      width: 160px;
+      height: 16px;
+      line-height: 16px;
+      font-size: 11px;
+      color: #6f6f6f;
+    }
+    .comte{
+      font-size: 11px;
+      color: #888;
+    }
+    .spanlot{
+      margin-top: 5px;
+      margin-right: 8px;
+      background-color: #eaeaea;
+      display: inline-block;
+      padding: 0px 6px;
+      height: 16px;
+      color: #848484;
+      line-height: 16px;
+      font-size: 12px;
+    }
+    .askbox{
+      margin-bottom: 15px;
+      height:112px;
+      width: 286px;
+      box-sizing: border-box;
+      /*background: yellow;*/
+      border: 2px solid #dedede;
+      cursor: pointer;
+      margin-left: 18px;
+      margin-top: 20px;
+    }
+    .askbox:hover{
+      box-shadow: 0 0 5px gray;
+    }
+
+    .manimg{
+      height: 90px;
+      width: 90px;
+      float: left;
+      background: orange;
+      border-radius: 90px;
+      margin-right: 6px;
+      margin-left: 5px;
+      margin-top: 8px;
+    }
+    .ques{
+      margin-top: 3px;
+      height: 50px;
+      width: 180px;
+      /*background: red;*/
+      float: left;
+      font-size: 16px;
+      color: #848484;
+      line-height: 24px;
+    }
+    .ans{
+      height: 22px;
+      width: 66px;
+      margin-right: 70px;
+      float: left;
+      text-align: center;
+      color: white;
+      background: #06b700;
+      font-size: 16px;
+      margin-bottom: 2px;
+      line-height: 22px;
+    }
+    .peo1{
+      height: 24px;
+      width: 80px;
+      /*background: gray;*/
+      color: #a2a2a2;
+      float: left;
+      line-height: 24px;
+    }
+    .mony{
+      height: 30px;
+      width: 80px;
+      /*background: skyblue;*/
+      float: left;
+      font-size: 19px;
+      line-height: 24px;
+      text-align: center;
+      color: orange;
+      margin-left: 5px;
+    }
+    .scroll{
+      width: 300px;
+      height: 595px;
+      /*background: pink;*/
+      box-sizing: border-box;
+      border-right: 2px solid #eaeaea;
+      overflow: scroll;
+      float: left;
+      padding: 23px;
+    }
+    .scroll2{
+      width: 370px;
+      height: 595px;
+      /*background: pink;*/
+      box-sizing: border-box;
+      border-right: 2px solid #eaeaea;
+      overflow: scroll;
+      padding: 23px;
+      float: left;
+    }
+    .scroll3{
+      width: 320px;
+      height: 595px;
+      /*background: pink;*/
+      box-sizing: border-box;
+      border-right: 2px solid #eaeaea;
+      overflow: scroll;
+      padding: 23px;
+      float: left;
+
+    }
+    .scroll4{
+      width: 600px;
+      height: 598px;
+      box-sizing: border-box;
+      border-right: 2px solid #eaeaea;
+      overflow: scroll;
+      padding: 23px;
+      float: left;
+
+    }
+    .tell{
+      height: 50px;
+      width: 570px;
+      /*background-color: pink;*/
+      border: 2px solid #e4e4e4;
+      position: relative;
+      margin-top: 10px;
+      padding: 4px;
+    }
+    .whattell{
+      display: inline-block;
+      height: 38px;
+      width: 430px;
+      /*background-color: green;*/
+      float: left;
+      line-height: 38px;
+      font-size: 16px;
+      color: #7b7b7b;
+    }
+    .timetell{
+      display: inline-block;
+      height: 38px;
+      width: 80px;
+      /*background-color: yellow;*/
+      float: right;
+      line-height: 38px;
+      font-size: 15px;
+      color: #49c553;
+    }
+    .cagspan{
+      display: inline-block;
+      font-size: 18px;
+      margin-left: -14px;
+      margin-top: -20px;
+      color: #797979;
+      width: 90px;
+      border-right: 4px solid #09e409;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span ><a style="color:#2de6ba" href="">用户端</a></span>
+    <span><a>|</a></span>
+    <span style="margin-right:1000px;"><a href="comp/index.html">企业端</a></span>
+    <span><a style="color:#2de6ba" href="">个人中心</a></span>
+    <span><a>|</a></span>
+    <span><a target="_Blank" href="the/jianli.html">我的简历</a></span>
+  </div>
+  <div class="nav">
+    <div style="width:1200px;display: inline-block;">
+      <div class="logo"></div>
+      <ul class="navul" style="width:700px;margin-left:330px;">
+        <li  class="navli"><a class="navlia"href="index.html">首页</a></li>
+        <li class="navli"><a class="navlia" href="job.html">全职</a></li>
+        <li class="navli"><a class="navlia" href="jyjob.html">精英</a></li>
+        <li class="navli"><a class="navlia" href="teamjob.html">团聘</a></li>
+        <li class="navli"><a class="navlia" href="practice.html">实习</a></li>
+        <li class="navli"><a class="navlia" href="fighting.html">战力</a></li>
+        <li class="navli"><a class="navlia" href="live.html">职播</a></li>
+        <li class="navli"><a class="navlia" href="others.html">周边</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="search-wrapper">
+    <div style="height:140px;  overflow: hidden;  width:1200px;display: inline-block; ">
+      <div>
+        <input placeholder="请输入期望的工作地点、全职、兼职、实习岗位、公司名称" type="text" class="search-box" name="" value=""><div class="search-button">搜素</div>
+      </div>
+      <ul class="reul">
+        <a style="color: #757575; font-size:14px;">热门搜索：</a>
+        <li class="reli"> <a href="" class="relia">人力资源</a> </li>
+        <li class="reli"> <a href="" class="relia">物流管理</a> </li>
+        <li class="reli"> <a href="" class="relia">java</a> </li>
+        <li class="reli"> <a href="" class="relia">web前端</a> </li>
+        <li class="reli"> <a href="" class="relia">行政管理</a> </li>
+        <li class="reli"> <a href="" class="relia">高级会计师</a> </li>
+        <li class="reli"> <a href="" class="relia">数据分析师</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="contain">
+  <span onclick="JavaScript:ChangeDiv('0','JKDiv_',2)" class="change" id="change0" style="color:#696969;border-bottom:2px solid #68ccb3;">个人账号</span><span>  </span>
+  <span onclick="JavaScript:ChangeDiv('1','JKDiv_',2)" class="change" id="change1">我的收藏</span>
+  <span onclick="JavaScript:ChangeDiv('2','JKDiv_',2)" class="change" id="change2">消息提醒</span>
+  <hr style="margin-top:8px;">
+
+<div id="JKDiv_0" class="jobbox" style="float:none; display:block;">
+  <div class="peo">
+    <div class="peopic"></div>
+    <span class="namespan">用户名：孙杰</span>
+    <p class="sayspan">求职语录：学历代表你的过去，财力代表现在的努力，学习能力代表将来的成就。大多数人都想要改造这个世界，但却罕有人想改造自己。无论你在好单位还是一时不得志，都请你保持学习，这是你未来立足之本。</p>
+  </div>
+  <div class="otherpan">
+    <div class="inputdiv">毕业院校：<input value='江西财经大学' style="width:320px;" type="text"></div>
+    <div class="inputdiv">联系电话：<input value='189444444' style="width:320px;" type="text"></div>
+    <div class="inputdiv">E-mail：<input value='16728347@qq.com' style="width:320px;" type="text"></div>
+    <div class="inputdiv">居住地址：<input value='江西省南昌市恒茂国际A栋1304' style="width:320px;" type="text"></div>
+    <div class="inputdiv">腾讯QQ：<input value='783647634' style="width:320px;" type="text"></div>
+    <div class="inputdiv">微信：<input value='sl18942536544' style="width:320px;" type="text"></div>
+
+  </div>
+    <div style="margin-left:530px; margin-top:-30px; width:120px; height:50px; background-color:#00aa81; cursor:pointer; font-size:23px;color:white; line-height:50px;text-align:center;" class="save" >保存</div>
+</div>
+
+
+<div id="JKDiv_1" style="display:none; width:994px;" class="jobbox">
+  <div class="scroll">
+    <span class="cagspan">收藏职位</span>
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">数据分析师 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">9k-13k</sapn>
+      <span class="spanlot">五险一金</span>
+      <div class="combox">
+        <img src="./pic/1.png" alt="">
+        <span class="comname">阿里巴巴北京分部</span>
+        <span class="comte">互联网公司</span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级渠道销售 </a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">5k-8k</sapn>
+      <span class="spanlot">氛围</span>
+      <div class="combox">
+        <img src="./pic/2.png" alt="">
+        <span class="comname">一周CP</span>
+        <span class="comte">移动互联网,社交网络</span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+      </div>
+  </div>
+  <div class="scroll2">
+    <span class="cagspan">收藏话题</span>
+    <div class="askbox" >
+      <img src="./pic/tx3.jpg" class="manimg" alt="">
+      <span class="ques">奇葩面试题：“用一两句话，解释一个伸手党。”</span>
+      <sapn class="peo1">626人吐槽</sapn>
+    </div>
+    <div class="askbox">
+      <img src="./pic/tx6.jpg" class="manimg" alt="">
+      <span class="ques">面试时间一般是多久呀，来问问小伙伴们</span>
+      <sapn class="peo1">236人吐槽</sapn>
+    </div>
+    <div class="askbox">
+      <img src="./pic/tx4.jpg" class="manimg" alt="">
+      <span class="ques">如果对自己的薪资不满意怎么办，该如何提出来？</span>
+      <sapn class="peo1">126人吐槽</sapn>
+    </div>
+    <div class="askbox">
+      <img src="./pic/tx5.jpg" class="manimg" alt="">
+      <span class="ques">来聊聊实习中，公司都会给你什么补贴？</span>
+      <sapn class="peo1">623人吐槽</sapn>
+    </div>
+    <div class="askbox">
+      <img src="./pic/tx2.jpg" class="manimg" alt="">
+      <span class="ques">奇葩面试题：“你早餐吃的什么?”</span>
+      <sapn class="peo1">236人吐槽</sapn>
+    </div>
+  </div>
+  <div class="scroll3">
+    <span class="cagspan" style="margin-top:-16px;">收藏职播</span>
+
+
+    <div class="livebox">
+      <img src="./pic/op.jpg" alt="" class="liveimg">
+      <span class="livetitle">OPPO高管谈“读大学”</span>
+      <span class="livewtime" style="color:green">[9月10 8:00 AM]</span>
+      <span class="livewhat">OPPO联合创始人告诉你大学该怎么读</span>
+    </div>
+    <div class="livebox" >
+      <img src="./pic/wy.jpg" alt="" class="liveimg">
+      <span class="livetitle">网易高管谈高校就业</span>
+      <span class="livewtime">[ 查看直播 ]</span>
+      <span class="livewhat">网易人力资源高管告诉你:如何面对当代就业问题</span>
+    </div>
+    <div class="livebox">
+      <img src="./pic/hw.jpg" alt="" class="liveimg">
+      <span class="livetitle">华为高管谈毕业生面试</span>
+      <span class="livewtime">[ 查看直播 ]</span>
+      <span class="livewhat">华为技术高管传授面试:你需要具备哪些能力</span>
+    </div>
+    <div class="livebox">
+      <img src="./pic/op.jpg" alt="" class="liveimg">
+      <span class="livetitle">OPPO高管谈“读大学”</span>
+      <span class="livewtime" style="color:green">[9月10 8:00 AM]</span>
+      <span class="livewhat">OPPO联合创始人告诉你大学该怎么读</span>
+    </div>
+    <div class="livebox">
+      <img src="./pic/ali.jpg" alt="" class="liveimg">
+      <span class="livetitle">阿里巴巴校招空中宣讲</span>
+      <span class="livewtime" style="color:green">[9月15 10:00 AM]</span>
+      <span class="livewhat">阿里巴巴秋季校招启动，快来活得第一手消息吧</span>
+    </div>
+    <div class="livebox">
+      <img src="./pic/tx.jpg" alt="" class="liveimg">
+      <span class="livetitle">腾讯校招空中宣讲</span>
+      <span class="livewtime" style="color:green">[9月16 4:00 PM ]</span>
+      <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div id="JKDiv_2" style="display:none;" class="jobbox">
+  <div class="scroll4">
+    <span class="cagspan">进度提醒</span>
+    <div class="tell">
+      <span class="whattell">[新进度]：江西新银科技有限公司HR已经公布面试时间</span>
+      <span class="timetell">[24分钟前]</span>
+    </div>
+    <div class="tell">
+      <span class="whattell">[恭喜您]：您投至江西新银科技有限公司的简历已通过</span>
+      <span class="timetell">[2小时前]</span>
+    </div>
+    <div class="tell">
+      <span class="whattell">[新进度]：您投至江西元恒生物科技公司的简历HR已经收到</span>
+      <span class="timetell">[一天前前]</span>
+    </div>
+    <div class="tell">
+      <span class="whattell">[新进度]：您投至江西银行南昌分行的简历已被审核</span>
+      <span class="timetell">[两天前]</span>
+    </div>
+    <div class="tell">
+      <span class="whattell">[新进度]：您投至江西新银科技有限公司的简历已被审核</span>
+      <span class="timetell">[两天前]</span>
+    </div>
+  </div>
+  <div class="scroll4" style="width:596px;">
+    <span class="cagspan" s>圈子消息</span>
+    <div class="tell">
+      <span class="whattell">[新职友]：湖南大学人力资源管理系李恒关注了你</span>
+      <span class="timetell">[4分钟前]</span>
+    </div>
+    <div class="tell">
+      <span class="whattell">[新职友]：江西财经大学人力资源管理系张驰关注了你</span>
+      <span class="timetell">[2小时前]</span>
+    </div>
+    <div class="tell">
+      <span class="whattell">[新伯乐]：江西元恒生物科技公司HR已关注了你</span>
+      <span class="timetell">[一天前前]</span>
+    </div>
+    <div class="tell">
+      <span class="whattell">[新伯乐]：江西银连有限公司HR已关注了你</span>
+      <span class="timetell">[一天前前]</span>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+<div class="footer">
+  <ul>
+    <li><a href="">关于我们</a></li>
+    <li><a href="">加入我们</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">联盟合作</a></li>
+    <li><a href="">免责申明</a></li>
+    <li><a href="">投诉建议</a></li>
+
+  </ul>
+  <ul style="margin-top:-20px;">
+    <li style="color:#999">Copyright © 2017.青云校招 All rights reserved.</li>
+  </ul>
+</div>
+
+
+
+<script>
+  function ChangeDiv(divId,divName,zDivCount)
+  {
+    for(i=0;i<=zDivCount;i++)
+    {
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('change'+i).style.borderBottom= " 2px solid transparent";
+      document.getElementById('change'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="block";
+    document.getElementById('change'+divId).style.borderBottom= " 2px solid #68ccb3";
+    document.getElementById('change'+divId).style.color= "#696969";
+
+  //显示当前层
+  }
+
+
+  </script>
+</body>
+</html>

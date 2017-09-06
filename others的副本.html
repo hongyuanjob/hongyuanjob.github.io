@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>青云校招</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.bdootcss.com/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.bdootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <style media="screen">
+    /**{
+      margin: 0px;
+      padding: 0px;
+    }*/
+    .contain{
+      height: 1400px;
+      width: 1200px;
+      margin: 0 auto;
+      /*background-color: pink;*/
+      margin-top: 25px;
+    }
+    .top{
+      height: 25px;
+      background-color: #6d6d6d;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .top span{
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+    .top span a{
+      text-decoration: none;
+      color: #d8d8d8;
+    }
+    .top span a:hover{
+      color: white;
+    }
+    .top ul{
+      display: inline-block;
+    }
+    .top ul ul{
+      display: none;
+    }
+    .top ul li:hover >ul{
+      display: block;
+    }
+    .nav{
+      height: 60px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .logo{
+      height: 50px;
+      width: 170px;
+      background-image: url(./pic/logo.png);
+      float: left;
+    }
+    .navul{
+      float: left;
+      width: 600px;
+      height: 50px;
+      margin-left: 400px;
+    }
+    .navli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+      margin: 0 10px;
+    }
+    .navlia{
+      display: inline-block;
+      height: 50px;
+      width: 60px;
+      text-align: center;
+      line-height: 50px;
+      color: #999;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .navlia:hover{
+      color: #545454;
+      border-bottom: 3px solid #00aa81;
+      text-decoration: none;
+    }
+    .search-wrapper{
+      height: 150px;
+      width: 100%;
+      background-color: #f2f5f4;
+      position: relative;
+      text-align: center;
+    }
+    .search-box{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 46px;
+      width: 720px;
+      border: 1px solid #E8E8E8;
+      padding: 5px;
+      font-size: 14px;
+      margin-left: -120px;
+      margin-top: 30px;
+      outline:none;
+      color: black;
+
+    }
+    .search-box:focus{
+
+      border: 1px solid #00aa81;
+
+    }
+
+    .search-button{
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 5px;
+      height: 46px;
+      width: 140px;
+      background-color: #00aa81;
+      margin-top: 30px;
+      line-height: 36px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover{
+        background-color: #5ce6c5  ;
+      color: #fff;
+    }
+    .reul{
+      float: left;
+      width: 1000px;
+      height: 30px;
+      margin-left: -62px;
+
+    }
+    .reli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+    }
+    .relia{
+      display: inline-block;
+      padding-right: 2px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #00aa81;
+    }
+    .relia:hover{
+      color: #757575;
+      text-decoration: none;
+
+    }
+
+
+    .jobbox{
+      height: 600px;
+      width: 1200px;
+      box-sizing: border-box;
+      border: 2px solid #eeeeee;
+      box-sizing: border-box;
+    }
+
+    .bigselect{
+      width: 280px;
+      height: 600px;
+      position: relative;
+      float: left;
+      box-sizing: border-box;
+    }
+    .livenow{
+      display: inline-block;
+      margin: 7px 0 4px 5px;
+      height: 23px;
+      width: 104px;
+      font-size: 20px;
+      line-height: 24px;
+      color: #7d7d7d;
+      border-right: 4px solid red;
+    }
+
+    .livebox{
+      height: 94px;
+      width: 254px;
+      margin: 4px;
+      /*background-color: green;*/
+      border: 2px solid #ececec;
+      box-sizing: border-box;
+      cursor: pointer;
+      margin-left: 11px;
+      margin-bottom: 10px;
+    }
+    .livebox:hover{
+      box-shadow: 0 0 14px #ececec;
+    }
+    .liveimg{
+      height: 80px;
+      width: 80px;
+      display: inline-block;
+      float: left;
+      margin: 5px;
+      background-size: contain;
+    }
+    .livetitle{
+      height: 26px;
+      display: inline-block;
+      float: left;
+      margin-top: 5px;
+      line-height: 26px;
+      width: 160px;
+      font-size: 16px;
+
+    }
+    .livewtime{
+      display: inline-block;
+      height: 20px;
+      width: 110px;
+      float: left;
+      color: red;
+    }
+    .livewhat{
+      height: 36px;
+      width: 155px;
+      word-wrap:break-word;
+      float: left;
+      color: #7b7b7b;
+      font-size: 11px;
+      margin-top: 3px;
+    }
+    .selectright{
+      float: left;
+      height:598px;
+      width: 916px;
+      /*padding: 12px 40px;*/
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      border-right: 0px solid #eee;
+
+    }
+    .selectright1{
+      float: left;
+      height:598px;
+      width: 1200px;
+      /*padding: 12px 40px;*/
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      border-right: 0px solid #eee;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding-top: 20px;
+    }
+    .knowbox{
+      height: 170px;
+      width: 450px;
+      /*background-color: pink;*/
+      padding: 10px;
+      padding-top: 18px;
+      box-sizing: border-box;
+      border: 2px solid #d4d4d4;
+    }
+    .knowbox:hover{
+      box-shadow: 0 0 10px #d4d4d4;
+    }
+    .konwimg{
+      height: 130px;
+      width: 130px;
+      padding: 3px;
+      /*background-color: ed;*/
+      float: left;
+      margin-right: 13px;
+    }
+
+    .title{
+      float: left;
+      height: 60px;
+      width: 280px;
+      font-size: 19px;
+      white-space:wrap;
+      color: #6f6f6f;
+    }
+
+    .saywhat{
+      float: left;
+      height: 60px;
+      width: 280px;
+      overflow: hidden;
+     text-overflow: ellipsis;
+      color: #737373;
+      font-size: 13px;
+    }
+    .change{
+      margin-top: 25px;
+      margin-left: 0px;
+
+      display: inline-block;
+      /*padding-bottom: 25px;*/
+      padding: 10px 10px;
+      font-size: 17px;
+      cursor: pointer;
+      color: #999;
+      /*overflow: scroll;*/
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .change:hover{
+      color: #00aa81;
+    }
+
+    .footer{
+      height: 80px;
+      width: 100%;
+      background-color: #e6e6e6;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .footer ul{
+      padding-top: 20px;
+    }
+    .footer li{
+      display: inline;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .footer li a{
+      text-decoration: none;
+      color: #9c9c9c;
+      font-size: 14px;
+    }
+    .footer li a:hover{
+      color: #000;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span ><a style="color:#2de6ba" href="">用户端</a></span>
+    <span><a>|</a></span>
+    <span style="margin-right:1040px;"><a href="comp/index.html">企业端</a></span>
+    <span><a href="">个人中心</a></span>
+  </div>
+  <div class="nav">
+    <div style="width:1200px;display: inline-block;">
+      <div class="logo"></div>
+      <ul class="navul">
+        <li  class="navli"><a class="navlia" href="">首页</a></li>
+        <li class="navli"><a class="navlia" href="">全职</a></li>
+        <li class="navli"><a class="navlia"style="color:#545454;border-bottom: 3px solid #00aa81;"  href="">实习</a></li>
+        <li class="navli"><a class="navlia" href="">团聘</a></li>
+        <li class="navli"><a class="navlia" href="">战力</a></li>
+        <li class="navli"><a class="navlia" href="">职播</a></li>
+        <li class="navli"><a class="navlia" href="">话题</a></li>
+        <li class="navli"><a class="navlia" href="">周边</a></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="search-wrapper">
+    <div style="height:140px;  overflow: hidden;  width:1200px;display: inline-block; ">
+      <div>
+        <input placeholder="请输入期望的工作地点、全职、兼职、实习岗位、公司名称" type="text" class="search-box" name="" value=""><div class="search-button">搜素</div>
+      </div>
+      <ul class="reul">
+        <a style="color: #757575; font-size:14px;">热门搜索：</a>
+        <li class="reli"> <a href="" class="relia">人力资源</a> </li>
+        <li class="reli"> <a href="" class="relia">物流管理</a> </li>
+        <li class="reli"> <a href="" class="relia">java</a> </li>
+        <li class="reli"> <a href="" class="relia">web前端</a> </li>
+        <li class="reli"> <a href="" class="relia">行政管理</a> </li>
+        <li class="reli"> <a href="" class="relia">高级会计师</a> </li>
+        <li class="reli"> <a href="" class="relia">数据分析师</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="contain">
+  <span onclick="JavaScript:ChangeDiv('0','JKDiv_',2)" class="change" id="change0" style="color:#696969;border-bottom:2px solid #68ccb3;">我的简历</span><span>  </span>
+  <span onclick="JavaScript:ChangeDiv('1','JKDiv_',2)" class="change" id="change1">我的收藏</span>
+  <span onclick="JavaScript:ChangeDiv('2','JKDiv_',2)" class="change" id="change2">消息提醒</span>
+  <hr style="margin-top:8px;">
+
+<div id="JKDiv_0" class="jobbox">
+
+</div>
+
+
+<div id="JKDiv_1" style="display:none;" class="jobbox">222</div>
+
+
+<div id="JKDiv_2" style="display:none;" class="jobbox">333</div>
+
+
+</div>
+
+<div class="footer">
+  <ul>
+    <li><a href="">关于我们</a></li>
+    <li><a href="">加入我们</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">联盟合作</a></li>
+    <li><a href="">免责申明</a></li>
+    <li><a href="">投诉建议</a></li>
+
+  </ul>
+  <ul style="margin-top:-20px;">
+    <li style="color:#999">Copyright © 2017.青云校招 All rights reserved.</li>
+  </ul>
+</div>
+
+
+
+<script>
+  function ChangeDiv(divId,divName,zDivCount)
+  {
+    for(i=0;i<=zDivCount;i++)
+    {
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('change'+i).style.borderBottom= " 2px solid transparent";
+      document.getElementById('change'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('change'+divId).style.borderBottom= " 2px solid #68ccb3";
+    document.getElementById('change'+divId).style.color= "#696969";
+
+  //显示当前层
+  }
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>青云校招</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    .contain{
+      height: 1460px;
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav{
+      height: 60px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .logo{
+      height: 50px;
+      width: 170px;
+      background-image: url(./../pic/logo.png);
+      float: left;
+    }
+    .navul{
+      float: left;
+      width: 600px;
+      height: 50px;
+      margin-left: 400px;
+    }
+    .navli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+      margin: 0 10px;
+    }
+    .navlia{
+      display: inline-block;
+      height: 50px;
+      width: 75px;
+      text-align: center;
+      line-height: 50px;
+      color: #999;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .navlia:hover{
+      color: #545454;
+      border-bottom: 3px solid #00aa81;
+      text-decoration: none;
+    }
+    .search-wrapper{
+      height: 150px;
+      width: 100%;
+      background-color: #f2f5f4;
+      position: relative;
+      text-align: center;
+    }
+    .search-box{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 46px;
+      width: 720px;
+      border: 1px solid #E8E8E8;
+      padding: 5px;
+      font-size: 14px;
+      margin-left: -120px;
+      margin-top: 30px;
+      outline:none;
+      color: black;
+
+    }
+    .search-box:focus{
+
+      border: 1px solid #00aa81;
+
+    }
+
+    .search-button{
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 5px;
+      height: 46px;
+      width: 140px;
+      background-color: #00aa81;
+      margin-top: 30px;
+      line-height: 36px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover{
+        background-color: #5ce6c5  ;
+      color: #fff;
+    }
+    .reul{
+      float: left;
+      width: 1000px;
+      height: 30px;
+      margin-left: -62px;
+
+    }
+    .reli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+    }
+    .relia{
+      display: inline-block;
+      padding-right: 2px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #00aa81;
+    }
+    .relia:hover{
+      color: #757575;
+      text-decoration: none;
+
+    }
+
+
+    .table{
+      width: 1200px;
+      display: table;
+      border-collapse: collapse;
+    }
+    .table .row{
+      display: table-row;
+    }
+    .table .cell{
+      display: table-cell;
+      height: 200px;
+      width: 400px;
+      border: 1px solid #ececec;
+    }
+    .table .caption{
+      display: table-caption;
+      height: 35px;
+    }
+    .cellname{
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      font-size: 25px;
+      color: #00aa81;
+      width: 399px;
+      border-bottom: 1px solid #ececec;
+    }
+    .cellbox{
+      box-sizing: border-box;
+      height:180px;width:400px;
+      padding: 10px 50px;
+    }
+    .cellboxul{
+
+    }
+    .cellbox li{
+      list-style: none;
+      height: 30px;
+      line-height: 30px;
+      margin-bottom: 5px;
+      font-size: 16px;
+      color:#6f6f6f;
+    }
+    .cellbox li a{
+      text-decoration: none;
+      color:#6f6f6f;
+    }
+    .cellbox li a:hover{
+
+      color:#00aa81;
+    }
+    .cellboxa{
+      list-style: none;
+    }
+    .thing{
+
+    }
+    .data{
+      float: right;
+    }
+
+
+    .change{
+      margin-top: 5px;
+      margin-left: 0px;
+      mar
+      display: inline-block;
+      /*padding-bottom: 25px;*/
+      padding: 10px 10px;
+      font-size: 17px;
+      cursor: pointer;
+      color: #999;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .change:hover{
+      color: #00aa81;
+    }
+
+
+
+
+
+    .footer{
+      height: 80px;
+      width: 100%;
+      background-color: #e6e6e6;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .footer ul{
+      padding-top: 20px;
+    }
+    .footer li{
+      display: inline;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .footer li a{
+      text-decoration: none;
+      color: #9c9c9c;
+      font-size: 14px;
+    }
+    .footer li a:hover{
+      color: #000;
+    }
+    .jobbox{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .jobone{
+      height: 200px;
+      width: 380px;
+      margin-bottom: 30px;
+      /*background-color: pink;*/
+      padding: 25px;
+      border: 1px solid #cecece;
+      box-sizing: border-box;
+    }
+    .jobone:hover{
+      box-shadow: 0 0 5px #cecece;
+    }
+    .jobone a{
+      color: #8a8989;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .jobone a:hover{
+      color: #68ccb3;
+    }
+    .spantime{
+      display: inline-block;
+      margin-top: -5px;
+      margin-left: 20px;
+      font-size: 16px;
+      color: #cecece;
+    }
+    .spanmon{
+      margin-left: 40px;
+      color: #ff7373;
+      font-size: 20px;
+      float: right;
+    }
+    .spanlot{
+      margin-top: 5px;
+      margin-right: 8px;
+      background-color: #eaeaea;
+      display: inline-block;
+      padding: 0px 6px;
+      height: 22px;
+      color: #848484;
+      line-height: 22px;
+    }
+    .combox{
+      height: 60px;
+      width: 100%;
+      /*background-color: pink;*/
+      border-top: 1.4px dashed #d6d6d6;
+      /*border-style: dashed;*/
+      margin-top: 25px;
+      padding: 5px;
+      padding-top: 10px;
+    }
+    .combox img{
+      height: 50px;
+      width: 50px;
+      padding: 5px;
+      background-size: contain;
+      margin-right:14px;
+      float: left;
+    }
+    .comname{
+      display: inline-block;
+      float: left;
+      width: 250px;
+      height: 26px;
+      line-height: 26px;
+      font-size: 15px;
+      color: #6f6f6f;
+    }
+    .comte{
+      font-size: 13px;
+      color: #888;
+    }
+
+    .top{
+      height: 25px;
+      background-color: #6d6d6d;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .top span{
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+    .top span a{
+      text-decoration: none;
+      color: #d8d8d8;
+    }
+    .top span a:hover{
+      color: white;
+    }
+    .top ul{
+      display: inline-block;
+    }
+    .top ul ul{
+      display: none;
+    }
+    .top ul li:hover >ul{
+      display: block;
+    }
+    ol{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span ><a  href="./../index.html">用户端</a></span>
+    <span><a>|</a></span>
+    <span style="margin-right:1000px;"><a href="" style="color:#2de6ba">企业端</a></span>
+    <span><a href="qiye.html">企业中心</a></span>
+    <span><a>|</a></span>
+    <span><a href="rencaiku.html">我的人才库</a></span>
+  </div>
+  <div class="nav">
+    <div style="width:1200px;display: inline-block;">
+      <div class="logo"></div>
+      <ul class="navul" style="width:700px;margin-left:330px;">
+        <li  class="navli"><a class="navlia" style="color:#545454;border-bottom: 3px solid #00aa81;" href="index.html">首页</a></li>
+        <li class="navli"><a class="navlia" href="xiaobai.html">小白</a></li>
+        <li class="navli"><a class="navlia" href="xinxiu.html">新秀</a></li>
+        <li class="navli"><a class="navlia" href="baigujing.html">白骨精</a></li>
+        <li class="navli"><a class="navlia" href="daka.html">大咖</a></li>
+        <li class="navli"style="width:75px;"><a class="navlia" href="guzhu.html">雇主品牌</a></li>
+        <li class="navli"><a class="navlia" href="fuwu.html">周边服务</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="search-wrapper">
+    <div style="height:140px;  overflow: hidden;  width:1200px;display: inline-block; ">
+      <div>
+        <input placeholder="请输入期望的学历、专业、工作经验、意向工作地点、期望工资" type="text" class="search-box" name="" value=""><div class="search-button">搜素</div>
+      </div>
+      <ul class="reul">
+        <a style="color: #757575; font-size:14px;">热门搜索：</a>
+        <li class="reli"> <a href="" class="relia">人力资源</a> </li>
+        <li class="reli"> <a href="" class="relia">物流管理</a> </li>
+        <li class="reli"> <a href="" class="relia">java</a> </li>
+        <li class="reli"> <a href="" class="relia">web前端</a> </li>
+        <li class="reli"> <a href="" class="relia">行政管理</a> </li>
+        <li class="reli"> <a href="" class="relia">高级会计师</a> </li>
+        <li class="reli"> <a href="" class="relia">数据分析师</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="contain">
+  <div class="table">
+    <!-- <div class="caption">this is a table</div> -->
+    <div class="row">
+      <div class="cell">
+        <div class="cellname">职场小白</div>
+        <div id="myCarousel1" class="carousel slide"style="height:180px;width:400px;">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators"  style="margin-bottom:-14px">
+            <li data-target="#myCarousel" data-slide-to="0" class="active" style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="1"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="2"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+          </ol>
+
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+            <div class="cellbox">
+              <ul>
+                <li><a href="xiaobai.html"><span class="thing">杭州 · web前端开员</span><span class="data">[8/25]</span></a></li>
+                <li><a href="xiaobai.html"><span class="thing">南昌 · 金融分析实习生</span><span class="data">[8/25]</span></a></li>
+                <li><a href="xiaobai.html"><span class="thing">义乌 · 产品团队</span><span class="data">[8/24]</span></a></li>
+                <li><a href="xiaobai.html"><span class="thing">抚州 · 项目助理</span><span class="data">[8/24]</span></a></li>
+              </ul>
+            </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="xiaobai.html"><span class="thing">义乌 · 新媒体运营</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="xiaobai.html"><span class="thing">北京 · 市场推广员</span><span class="data">[8/24]</span></a></li>
+                  <li><a href="xiaobai.html"><span class="thing">深圳 · 行政管理团队</span><span class="data">[8/23]</span></a></li>
+                  <li><a href="xiaobai.html"><span class="thing">广州 · HR助理</span><span class="data">[8/22]</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="xiaobai.html"><span class="thing">南昌 · 交互设计师</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="xiaobai.html"><span class="thing">北京 · UI设计师</span><span class="data">[8/23]</span></a></li>
+                  <li><a href="xiaobai.html"><span class="thing">杭州 · C++实习生</span><span class="data">[8/22]</span></a></li>
+                  <li><a href="xiaobai.html"><span class="thing">广州 · 数据运营团队</span><span class="data">[8/22]</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="cell">
+        <div class="cellname">职场新秀</div>
+        <div id="myCarousel2" class="carousel slide"style="height:180px;width:400px;">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators"  style="margin-bottom:-14px">
+            <li data-target="#myCarousel" data-slide-to="0" class="active" style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="1"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="2"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+          </ol>
+
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+            <div class="cellbox">
+              <ul>
+                <li><a href="xinxiu.html"><span class="thing">杭州 · web前端团队</span><span class="data">[8/25]</span></a></li>
+                <li><a href="xinxiu.html"><span class="thing">南昌 · 金融实习</span><span class="data">[8/25]</span></a></li>
+                <li><a href="xinxiu.html"><span class="thing">义乌 · 产品总监实习生</span><span class="data">[8/24]</span></a></li>
+                <li><a href="xinxiu.html"><span class="thing">抚州 · 产品经理</span><span class="data">[8/24]</span></a></li>
+              </ul>
+            </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="xinxiu.html"><span class="thing">义乌 · 新媒体运营实习</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="xinxiu.html"><span class="thing">北京 · 市场推广团队</span><span class="data">[8/24]</span></a></li>
+                  <li><a href="xinxiu.html"><span class="thing">深圳 · 行政实习</span><span class="data">[8/23]</span></a></li>
+                  <li><a href="xinxiu.html"><span class="thing">广州 · HR实习</span><span class="data">[8/22]</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="xinxiu.html"><span class="thing">南昌 · 交互设计</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="xinxiu.html"><span class="thing">北京 · 五年UI设计师</span><span class="data">[8/23]</span></a></li>
+                  <li><a href="xinxiu.html"><span class="thing">杭州 · C++团队</span><span class="data">[8/22]</span></a></li>
+                  <li><a href="xinxiu.html"><span class="thing">广州 · 数据运营实习生</span><span class="data">[8/22]</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="cell">
+        <div class="cellname">职场白骨精</div>
+        <div id="myCarousel3" class="carousel slide"style="height:180px;width:400px;">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators"  style="margin-bottom:-14px">
+            <li data-target="#myCarousel" data-slide-to="0" class="active" style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="1"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="2"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+          </ol>
+
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+            <div class="cellbox">
+              <ul>
+                <li><a href="baigujing.html"><span class="thing">杭州 · 十年web前端工程师</span><span class="data">[8/25]</span></a></li>
+                <li><a href="baigujing.html"><span class="thing">南昌 · 金融分析专家</span><span class="data">[8/25]</span></a></li>
+                <li><a href="baigujing.html"><span class="thing">义乌 · 产品总监专家</span><span class="data">[8/24]</span></a></li>
+                <li><a href="baigujing.html"><span class="thing">抚州 · 产品经理专家</span><span class="data">[8/24]</span></a></li>
+              </ul>
+            </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="baigujing.html"><span class="thing">义乌 · 新媒体运营专家</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="baigujing.html"><span class="thing">北京 · 五年市场推广团队</span><span class="data">[8/24]</span></a></li>
+                  <li><a href="baigujing.html"><span class="thing">深圳 · 十年行政专家</span><span class="data">[8/23]</span></a></li>
+                  <li><a href="baigujing.html"><span class="thing">广州 · 五年人力资源团队</span><span class="data">[8/22]</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="baigujing.html"><span class="thing">南昌 · 财务分析总监</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="baigujing.html"><span class="thing">北京 · 二十年法务律师</span><span class="data">[8/23]</span></a></li>
+                  <li><a href="baigujing.html"><span class="thing">杭州 · 五年投资总监</span><span class="data">[8/22]</span></a></li>
+                  <li><a href="baigujing.html"><span class="thing">广州 · 副总裁</span><span class="data">[8/22]</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="row">
+      <div class="cell">
+        <div class="cellname">职场大咖</div>
+        <div id="myCarousel4" class="carousel slide"style="height:180px;width:400px;">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators"  style="margin-bottom:-14px">
+            <li data-target="#myCarousel" data-slide-to="0" class="active" style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="1"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="2"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+          </ol>
+
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+            <div class="cellbox">
+              <ul>
+                <li><a href="daka.html"><span class="thing">抚州 · web前端开发精英</span><span class="data">[8/25]</span></a></li>
+                <li><a href="daka.html"><span class="thing">南昌 · 金融精英团队</span><span class="data">[8/25]</span></a></li>
+                <li><a href="daka.html"><span class="thing">厦门 · 广告创业团队</span><span class="data">[8/24]</span></a></li>
+                <li><a href="daka.html"><span class="thing">抚州 · 产品团队</span><span class="data">[8/24]</span></a></li>
+              </ul>
+            </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="daka.html"><span class="thing">深圳 · 新媒体运营精英团队</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="daka.html"><span class="thing">北京 · 市场推广团队</span><span class="data">[8/24]</span></a></li>
+                  <li><a href="daka.html"><span class="thing">深圳 · 海外销售精英</span><span class="data">[8/23]</span></a></li>
+                  <li><a href="daka.html"><span class="thing">广州 · 媒介精英团队</span><span class="data">[8/22]</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="daka.html"><span class="thing">抚州 · 医疗器械创业合伙人</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="daka.html"><span class="thing">成都 · 市场营销精英</span><span class="data">[8/23]</span></a></li>
+                  <li><a href="daka.html"><span class="thing">九江 · 政府关系团队</span><span class="data">[8/22]</span></a></li>
+                  <li><a href="daka.html"><span class="thing">南京 · SEO运营经验团队</span><span class="data">[8/22]</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="cell" >
+        <div class="cellname">向你推荐</div>
+        <div id="myCarousel5" class="carousel slide"style="height:180px;width:400px;">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators"  style="margin-bottom:-14px">
+            <li data-target="#myCarousel" data-slide-to="0" class="active" style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="1"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="2"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+          </ol>
+
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+            <div class="cellbox">
+              <ul>
+                <li><a ><span class="thing">抚州 · 医疗器械创业合伙人</span><span class="data">[8/25]</span></a></li>
+                <li><a ><span class="thing">成都 · 市场营销精英</span><span class="data">[8/23]</span></a></li>
+                <li><a ><span class="thing">名气高层授课：HR能力培训</span><span class="data">[正在直播]</span></a></li>
+                <li><a ><span class="thing">网易HR：我是怎么筛选人才的</span><span class="data">[查看录播]</span></a></li>
+              </ul>
+            </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a><span class="thing">企业劳务派遣服务</span><span class="data">[80元/小时]</span></a></li>
+                  <li><a ><span class="thing">企业人事代理服务</span><span class="data">[90元/小时]</span></a></li>
+                  <li><a ><span class="thing">义乌 · 产品总监专家</span><span class="data">[8/24]</span></a></li>
+                  <li><a ><span class="thing">抚州 · 产品经理专家</span><span class="data">[8/24]</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a ><span class="thing">江西财经大学精英直聘服务</span><span class="data">[2500元/位]</span></a></li>
+                  <li><a><span class="thing">武汉理工大学精英直聘服务</span><span class="data">[2000元/位]</span></a></li>
+                  <li><a ><span class="thing">简历批量筛选服务</span><span class="data">[30元/1份]</span></a></li>
+                  <li><a ><span class="thing">企业招聘策划服务</span><span class="data">[1200元/次]</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="cell">
+        <div class="cellname">雇主品牌</div>
+        <div id="myCarousel6" class="carousel slide"style="height:180px;width:400px;">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators"  style="margin-bottom:-14px">
+            <li data-target="#myCarousel" data-slide-to="0" class="active" style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="1"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="2"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+          </ol>
+
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+            <div class="cellbox">
+              <ul>
+                <li><a href="guzhu.html"><span class="thing">首页广告位9折出租</span><span class="data">[898元/天]</span></a></li>
+                <li><a href="guzhu.html"><span class="thing">空中宣讲</span><span class="data">[999元/小时]</span></a></li>
+                <li><a href="guzhu.html"><span class="thing">首页公司推荐滚屏</span><span class="data">[9999元/周]</span></a></li>
+                <li><a href="guzhu.html"><span class="thing">代理招聘企业人才</span><span class="data">[888元/位]</span></a></li>
+              </ul>
+            </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="guzhu.html"><span class="thing">企业招聘指导培训服务</span><span class="data">[109元/课]</span></a></li>
+                  <li><a href="guzhu.html"><span class="thing">新服务 · 人才评价指导</span><span class="data">[188元/位]</span></a></li>
+                  <li><a href="guzhu.html"><span class="thing">100项优质招聘案例</span><span class="data">[668元/套]</span></a></li>
+                  <li><a href="guzhu.html"><span class="thing">企业人力资源管理培训服务</span><span class="data">[99元/课]</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="guzhu.html"><span class="thing">名气高层授课：HR能力培训</span><span class="data">[正在直播]</span></a></li>
+                  <li><a href="guzhu.html"><span class="thing">网易HR：我是怎么筛选人才的</span><span class="data">[查看录播]</span></a></li>
+                  <li><a href="guzhu.html"><span class="thing">牛人问答：应聘者那种品质最需要HR衡量</span><span class="data">[查看录播</span></a></li>
+                  <li><a href="guzhu.html"><span class="thing">腾讯面试现场直播视频</span><span class="data">[正在直播]</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="row">
+      <div class="cell">
+        <div class="cellname">我的人才库</div>
+        <div id="myCarousel7" class="carousel slide"style="height:180px;width:400px;">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators"  style="margin-bottom:-14px">
+            <li data-target="#myCarousel" data-slide-to="0" class="active" style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="1"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="2"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+          </ol>
+
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+            <div class="cellbox">
+              <ul>
+                <li><a href="rencaiku.html"><span class="thing">新通知·收到来自李雷的简历</span><span class="data">[8/25]</span></a></li>
+                <li><a href="rencaiku.html"><span class="thing">武汉大学张涛已接受您的面试邀请</span><span class="data">[8/25]</span></a></li>
+                <li><a href="rencaiku.html"><span class="thing">南昌大学刘泽已经接受您的面试邀请</span><span class="data">[8/24]</span></a></li>
+                <li><a href="rencaiku.html"><span class="thing">武汉理工大学张云已婉拒您的邀请</span><span class="data">[8/24]</span></a></li>
+              </ul>
+            </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="rencaiku.html"><span class="thing">新通知·张蕾蕾已经通过您的面试邀请</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="rencaiku.html"><span class="thing">新粉丝·邹磊关注了您的公司</span><span class="data">[8/24]</span></a></li>
+                  <li><a href="rencaiku.html"><span class="thing">面试通知·张艳已经接受您的面试通知</span><span class="data">[8/23]</span></a></li>
+                  <li><a href="rencaiku.html"><span class="thing">笔试排序·您公司新一轮的笔试结果已出</span><span class="data">[8/22]</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="rencaiku.html"><span class="thing">新通知·收到来自李雷的简历</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="rencaiku.html"><span class="thing">武汉大学张涛已接受您的面试邀请</span><span class="data">[8/25]</span></a></li>
+                  <li><a href="rencaiku.html"><span class="thing">南昌大学刘泽已经接受您的面试邀请</span><span class="data">[8/24]</span></a></li>
+                  <li><a href="rencaiku.html"><span class="thing">武汉理工大学张云已婉拒您的邀请</span><span class="data">[8/24]</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="cell">
+        <div class="cellname">人事外包</div>
+        <div id="myCarousel8" class="carousel slide"style="height:180px;width:400px;">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators"  style="margin-bottom:-14px">
+            <li data-target="#myCarousel" data-slide-to="0" class="active" style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="1"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="2"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+          </ol>
+
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+            <div class="cellbox">
+              <ul>
+                <li><a href="fuwu.html"><span class="thing">企业劳务派遣服务</span><span class="data">[80元/小时]</span></a></li>
+                <li><a href="fuwu.html"><span class="thing">企业人事代理服务</span><span class="data">[90元/小时]</span></a></li>
+                <li><a href="fuwu.html"><span class="thing">企业薪资调查服务</span><span class="data">[800元/单位]</span></a></li>
+                <li><a href="fuwu.html"><span class="thing">面试人才背景调查服务</span><span class="data">[900元/位]</span></a></li>
+              </ul>
+            </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="fuwu.html"><span class="thing">企业销售员工培训服务</span><span class="data">[688元/位]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">企业人力资源管理团队培训</span><span class="data">[5888元/单位]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">IT软件工程师整体素质培训</span><span class="data">[4999元/单位]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">企业高层管理人员培训服务</span><span class="data">[2000元/位]</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="fuwu.html"><span class="thing">项目规划代理服务</span><span class="data">[700元/次]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">公司资源相互共赢服务</span><span class="data">[4000元/单位]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">寻求融资财团服务</span><span class="data">[999元/单位]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">企业劳务派遣服务</span><span class="data">[800元/单位]</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="cell">
+        <div class="cellname">周边服务</div>
+        <div id="myCarousel9" class="carousel slide"style="height:180px;width:400px;">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators"  style="margin-bottom:-14px">
+            <li data-target="#myCarousel" data-slide-to="0" class="active" style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="1"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+            <li data-target="#myCarousel" data-slide-to="2"style="cursor: default;border: 1px solid #ffffff;background-color:#68ccb3; "></li>
+          </ol>
+
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+            <div class="cellbox">
+              <ul>
+                <li><a href="fuwu.html"><span class="thing">江西财经大学精英直聘服务</span><span class="data">[2500元/位]</span></a></li>
+                <li><a href="fuwu.html"><span class="thing">武汉理工大学精英直聘服务</span><span class="data">[2000元/位]</span></a></li>
+                <li><a href="fuwu.html"><span class="thing">北京理工大学精英直聘服务 </span><span class="data">[2300元/位]</span></a></li>
+                <li><a href="fuwu.html"><span class="thing">华中科技大学精英直聘服务 </span><span class="data">[4000元/位]</span></a></li>
+              </ul>
+            </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="fuwu.html"><span class="thing">人事资源管理咨询服务</span><span class="data">[2000元/次]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">100项优秀校招策划方案</span><span class="data">[500元/套]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">企业在岗各专业定向培训班</span><span class="data">[1000元/人]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">企业职位发布管理服务</span><span class="data">[1000元/次]</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cellbox">
+                <ul>
+                  <li><a href="fuwu.html"><span class="thing">企业笔试管理服务</span><span class="data">[1000元/次]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">笔试题库定制化服务</span><span class="data">[899元/次]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">简历批量筛选服务</span><span class="data">[30元/1份]</span></a></li>
+                  <li><a href="fuwu.html"><span class="thing">企业招聘策划服务</span><span class="data">[1200元/次]</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span onclick="JavaScript:ChangeDiv('0','JKDiv_',1)" class="change" id="change0" style="color:#696969;border-bottom:2px solid #68ccb3;">最新人才</span><span>  </span>
+  <span onclick="JavaScript:ChangeDiv('1','JKDiv_',1)" class="change" id="change1">热门人才</span>
+  <hr style="margin-top:8px;">
+  <div id="JKDiv_0" style="" class="jobbox">
+    <div class="jobone">
+      <a href="">高级数据分析师</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">9k-13k</sapn>
+      <span class="spanlot">五年经验</span>
+      <span class="spanlot">精力足</span>
+      <span class="spanlot">带领团队</span>
+      <div class="combox">
+        <img src="./../pic2/1.jpg" alt="">
+        <span class="comname">武汉大学</span>
+        <span class="comte">计算机学院 /  大数据方向 / 硕士 / 武汉</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">投资经理</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">12k-16k</sapn>
+      <span class="spanlot">上市公司经验</span>
+      <span class="spanlot">领导级别</span>
+      <div class="combox">
+        <img src="./../pic2/2.jpg" alt="">
+        <span class="comname">中山大学</span>
+        <span class="comte">金融学院 / 金融投资方向 / 硕士 / 广州</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">投资助理</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">6k-9k</sapn>
+      <span class="spanlot">一年经验</span>
+      <span class="spanlot">精力足</span>
+      <span class="spanlot">沟通能力</span>
+      <div class="combox">
+        <img src="./../pic2/3.jpg" alt="">
+        <span class="comname">江西财经大学</span>
+        <span class="comte">金融学院 /  数据分析方向 / 本科 / 南昌</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">投资总监</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">19k-40k</sapn>
+      <span class="spanlot">十年经验</span>
+      <span class="spanlot">行业大咖</span>
+      <div class="combox">
+        <img src="./../pic2/4.jpg" alt="">
+        <span class="comname">中国人民大学</span>
+        <span class="comte">金融学院 / 金融方向 / 博士 / 北京</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">风控总监</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">22k-43k</sapn>
+      <span class="spanlot">八年经验</span>
+      <span class="spanlot">精力</span>
+      <span class="spanlot">团队领导</span>
+      <div class="combox">
+        <img src="./../pic2/5.jpg" alt="">
+        <span class="comname">华中科技大学</span>
+        <span class="comte">会计学院 /  大数据会计方向 / 硕士 / 武汉</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级会计</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">一年经验</span>
+      <span class="spanlot">名校毕业</span>
+      <span class="spanlot">上进心</span>
+      <div class="combox">
+        <img src="./../pic2/6.jpg" alt="">
+        <span class="comname">江西财经大学</span>
+        <span class="comte">会计学院 /  CPA方向 / 本科 / 南昌</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">公司法务</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">一年经验</span>
+      <span class="spanlot">辩论赛奖</span>
+      <span class="spanlot">容易沟通</span>
+      <div class="combox">
+        <img src="./../pic2/7.jpg" alt="">
+        <span class="comname">江西师范大学</span>
+        <span class="comte">法学院 / 公司法务方向 / 本科 / 南昌</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端工程师</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">10k-30k</sapn>
+      <span class="spanlot">三年经验</span>
+      <span class="spanlot">精力旺盛</span>
+      <span class="spanlot">作品</span>
+      <div class="combox">
+        <img src="./../pic2/8.jpg" alt="">
+        <span class="comname">南昌大学</span>
+        <span class="comte">计算机学院 / 前端方向 / 本科 / 南昌</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">java工程师</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">23k-35k</sapn>
+      <span class="spanlot">五年经验</span>
+      <span class="spanlot">能力高</span>
+      <span class="spanlot">团队</span>
+      <div class="combox">
+        <img src="./../pic2/9.jpg" alt="">
+        <span class="comname">武汉大学</span>
+        <span class="comte">计算机学院 /  java方向 / 硕士 / 武汉</span>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="JKDiv_1" style="display:none;" class="jobbox">
+    <div class="jobone">
+      <a href="">java工程师</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">23k-35k</sapn>
+      <span class="spanlot">五年经验</span>
+      <span class="spanlot">能力高</span>
+      <span class="spanlot">团队</span>
+      <div class="combox">
+        <img src="./../pic2/9.jpg" alt="">
+        <span class="comname">武汉大学</span>
+        <span class="comte">计算机学院 /  java方向 / 硕士 / 武汉</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级数据分析师</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">9k-13k</sapn>
+      <span class="spanlot">五年经验</span>
+      <span class="spanlot">精力足</span>
+      <span class="spanlot">带领团队</span>
+      <div class="combox">
+        <img src="./../pic2/1.jpg" alt="">
+        <span class="comname">武汉大学</span>
+        <span class="comte">计算机学院 /  大数据方向 / 硕士 / 武汉</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">投资经理</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">12k-16k</sapn>
+      <span class="spanlot">上市公司经验</span>
+      <span class="spanlot">领导级别</span>
+      <div class="combox">
+        <img src="./../pic2/2.jpg" alt="">
+        <span class="comname">中山大学</span>
+        <span class="comte">金融学院 / 金融投资方向 / 硕士 / 广州</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">投资助理</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">6k-9k</sapn>
+      <span class="spanlot">一年经验</span>
+      <span class="spanlot">精力足</span>
+      <span class="spanlot">沟通能力</span>
+      <div class="combox">
+        <img src="./../pic2/3.jpg" alt="">
+        <span class="comname">江西财经大学</span>
+        <span class="comte">金融学院 /  数据分析方向 / 本科 / 南昌</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">投资总监</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">19k-40k</sapn>
+      <span class="spanlot">十年经验</span>
+      <span class="spanlot">行业大咖</span>
+      <div class="combox">
+        <img src="./../pic2/4.jpg" alt="">
+        <span class="comname">中国人民大学</span>
+        <span class="comte">金融学院 / 金融方向 / 博士 / 北京</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">风控总监</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">22k-43k</sapn>
+      <span class="spanlot">八年经验</span>
+      <span class="spanlot">精力</span>
+      <span class="spanlot">团队领导</span>
+      <div class="combox">
+        <img src="./../pic2/5.jpg" alt="">
+        <span class="comname">华中科技大学</span>
+        <span class="comte">会计学院 /  大数据会计方向 / 硕士 / 武汉</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级会计</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">一年经验</span>
+      <span class="spanlot">名校毕业</span>
+      <span class="spanlot">上进心</span>
+      <div class="combox">
+        <img src="./../pic2/6.jpg" alt="">
+        <span class="comname">江西财经大学</span>
+        <span class="comte">会计学院 /  CPA方向 / 本科 / 南昌</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">公司法务</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">一年经验</span>
+      <span class="spanlot">辩论赛奖</span>
+      <span class="spanlot">容易沟通</span>
+      <div class="combox">
+        <img src="./../pic2/7.jpg" alt="">
+        <span class="comname">江西师范大学</span>
+        <span class="comte">法学院 / 公司法务方向 / 本科 / 南昌</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端工程师</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">10k-30k</sapn>
+      <span class="spanlot">三年经验</span>
+      <span class="spanlot">精力旺盛</span>
+      <span class="spanlot">作品</span>
+      <div class="combox">
+        <img src="./../pic2/8.jpg" alt="">
+        <span class="comname">南昌大学</span>
+        <span class="comte">计算机学院 / 前端方向 / 本科 / 南昌</span>
+      </div>
+    </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<div class="footer">
+  <ul>
+    <li><a href="">关于我们</a></li>
+    <li><a href="">加入我们</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">联盟合作</a></li>
+    <li><a href="">免责申明</a></li>
+    <li><a href="">投诉建议</a></li>
+
+  </ul>
+  <ul style="margin-top:-20px;">
+    <li style="color:#999">Copyright © 2017.青云校招 All rights reserved.</li>
+  </ul>
+</div>
+
+
+
+<script>
+  $(function(){
+    $("#myCarousel1").carousel('cycle');
+    $("#myCarousel2").carousel('cycle');
+    $("#myCarousel3").carousel('cycle');
+    $("#myCarousel4").carousel('cycle');
+    $("#myCarousel5").carousel('cycle');
+    $("#myCarousel6").carousel('cycle');
+    $("#myCarousel7").carousel('cycle');
+    $("#myCarousel8").carousel('cycle');
+    $("#myCarousel9").carousel('cycle');
+  });
+
+  function ChangeDiv(divId,divName,zDivCount)
+  {
+    for(i=0;i<=zDivCount;i++)
+    {
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('change'+i).style.borderBottom= " 2px solid transparent";
+      document.getElementById('change'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('change'+divId).style.borderBottom= " 2px solid #68ccb3";
+    document.getElementById('change'+divId).style.color= "#696969";
+
+  //显示当前层
+  }
+  </script>
+</body>
+</html>

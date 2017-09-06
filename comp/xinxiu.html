@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>青云校招</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.bdootcss.com/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.bdootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    .contain{
+      height: 860px;
+      width: 1200px;
+      margin: 0 auto;
+      /*background-color: pink;*/
+      margin-top: 25px;
+    }
+    .top{
+      height: 25px;
+      background-color: #6d6d6d;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .top span{
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+    .top span a{
+      text-decoration: none;
+      color: #d8d8d8;
+    }
+    .top span a:hover{
+      color: white;
+    }
+    .top ul{
+      display: inline-block;
+    }
+    .top ul ul{
+      display: none;
+    }
+    .top ul li:hover >ul{
+      display: block;
+    }
+    .nav{
+      height: 60px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .logo{
+      height: 50px;
+      width: 170px;
+      background-image: url(./../pic/logo.png);
+      float: left;
+    }
+    .navul{
+      float: left;
+      width: 600px;
+      height: 50px;
+      margin-left: 400px;
+    }
+    .navli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+      margin: 0 10px;
+    }
+    .navlia{
+      display: inline-block;
+      height: 50px;
+      width: 75px;
+      text-align: center;
+      line-height: 50px;
+      color: #999;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .navlia:hover{
+      color: #545454;
+      border-bottom: 3px solid #00aa81;
+      text-decoration: none;
+    }
+    .search-wrapper{
+      height: 150px;
+      width: 100%;
+      background-color: #f2f5f4;
+      position: relative;
+      text-align: center;
+    }
+    .search-box{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 46px;
+      width: 720px;
+      border: 1px solid #E8E8E8;
+      padding: 5px;
+      font-size: 14px;
+      margin-left: -120px;
+      margin-top: 30px;
+      outline:none;
+      color: black;
+
+    }
+    .search-box:focus{
+
+      border: 1px solid #00aa81;
+
+    }
+
+    .search-button{
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 5px;
+      height: 46px;
+      width: 140px;
+      background-color: #00aa81;
+      margin-top: 30px;
+      line-height: 36px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover{
+        background-color: #5ce6c5  ;
+      color: #fff;
+    }
+    .reul{
+      float: left;
+      width: 1000px;
+      height: 30px;
+      margin-left: -62px;
+
+    }
+    .reli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+    }
+    .relia{
+      display: inline-block;
+      padding-right: 2px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #00aa81;
+    }
+    .relia:hover{
+      color: #757575;
+      text-decoration: none;
+
+    }
+
+
+    .jobbox{
+      height: 580px;
+      width: 1200px;
+      box-sizing: border-box;
+      border: 2px solid #eeeeee;
+      box-sizing: border-box;
+    }
+
+    .bigselect{
+      width: 180px;
+      height: 600px;
+      display: flex;
+      position: relative;
+      float: left;
+      flex-direction: column;
+      /*justify-content: flex-start;*/
+      box-sizing: border-box;
+
+      align-items: center;
+    }
+    .select{
+      height: 50px;
+      width: 180px;
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 1.6px solid #dedede;
+      color: #a2a2a2;
+      /*margin-top: 4px;*/
+      /*border-right: 1.6px solid #00aa81;*/
+      /*color: #00aa81;*/
+    }
+    .select span:hover{
+      color: #00aa81;
+    }
+    .select span{
+
+      font-size: 17px;
+      line-height: 50px;
+
+    }
+    .selectright{
+      float: left;
+      height:578px;
+      width: 750px;
+      padding: 14px;
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      overflow: scroll;
+    }
+    .jobone{
+      height: 120px;
+      width: 230px;
+      /*margin-left: 30px;*/
+      /*background-color: pink;*/
+      padding: 8px;
+      border: 1px solid #cecece;
+      box-sizing: border-box;
+      margin-top: 16px;
+    }
+    .jobone:hover{
+      box-shadow: 0 0 5px #cecece;
+    }
+    .jobone a{
+      color: #8a8989;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .jobone a:hover{
+      color: #68ccb3;
+    }
+    .spantime{
+
+      display: inline-block;
+      margin-top: -3px;
+      margin-right: 4px;
+      font-size: 16px;
+      color: #269c80;
+      float: right;
+    }
+    .spanmon{
+      margin-left: 40px;
+      color: #ff7373;
+      font-size: 18px;
+      float: right;
+    }
+    .spanlot{
+      margin-top: 5px;
+      margin-right: 3px;
+      background-color: #eaeaea;
+      display: inline-block;
+      /*padding: 0px 6px;*/
+      height: 16px;
+      color: #848484;
+      line-height: 16px;
+      font-size: 12px;
+      float: left;
+    }
+    .combox{
+      height: 80px;
+      width: 100%;
+      /*background-color: pink;*/
+      border-top: 1.4px dashed #d6d6d6;
+      /*border-style: dashed;*/
+      margin-top:35px;
+      /*padding: 5px;*/
+      padding-top: 10px;
+    }
+    .combox img{
+      height: 34px;
+      width: 34px;
+      /*padding: 5px;*/
+      background-size: contain;
+      margin-right:14px;
+      float: left;
+    }
+    .comname{
+      display: inline-block;
+      float: left;
+      width: 160px;
+      height: 16px;
+      line-height: 16px;
+      font-size: 11px;
+      color: #6f6f6f;
+    }
+    .comte{
+      font-size: 11px;
+      color: #888;
+    }
+
+    .rebiye{
+      float: left;
+      height: 570px;
+      width: 260px;;.
+      background-color: red;
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+
+    .change{
+      margin-top: 25px;
+      margin-left: 0px;
+
+      display: inline-block;
+      /*padding-bottom: 25px;*/
+      padding: 10px 10px;
+      font-size: 17px;
+      cursor: pointer;
+      color: #999;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .change:hover{
+      color: #00aa81;
+    }
+
+
+
+
+
+    .footer{
+      height: 80px;
+      width: 100%;
+      background-color: #e6e6e6;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .footer ul{
+      padding-top: 20px;
+    }
+    .footer li{
+      display: inline;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .footer li a{
+      text-decoration: none;
+      color: #9c9c9c;
+      font-size: 14px;
+    }
+    .footer li a:hover{
+      color: #000;
+    }
+
+
+    .findjob{
+      height: 48px;
+      width: 1200px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      border: 2px solid #eeeeee;
+      padding-left: 3px;
+      padding-top: 2px;
+    }
+    .findjob:hover{
+      box-shadow: 0 0 14px #eeeeee;
+    }
+
+    .findjob span{
+      /*position: absolute;*/
+      /*top: -3px;*/
+      color:#999;
+      font-size: 18px;
+      line-height: 40px;
+      padding-right: 10px;
+      padding-left: 0px;
+
+    }
+    .findjob input{
+      height: 34px;
+      width: 150px;
+    }
+    .buttonspan{
+      /*padding-right: 0px;*/
+      margin-top: 3px;
+      display: inline-block;
+      float: right;
+      margin-right: 3px;
+      width: 66px;
+      text-align: center;
+      line-height: 34px;
+      height: 34px;
+      background-color: #00aa81;
+      color: #f7ffff;
+      cursor: pointer;
+    }
+    .buttonspan:hover{
+      background-color: #53ccaf;
+    }
+    .rightpeo1{
+      /*background: pink;*/
+      height: 240px;
+      float: right;
+    }
+    .peobox{
+      height: 150px;
+      width: 266px;
+      /*background: pink;*/
+      padding: 10px;
+    }
+    .peobox img{
+      width: 100px;
+      height: 100px;
+      border-radius: 120px;
+      float: left;
+      margin-top: 10px;
+
+    }
+    .nameright{
+      width: 120px;
+      height: 30px;
+      float: left;
+      font-size: 21px;
+      margin-left: 13px;
+      margin-top: 20px;
+      color: #848484;
+    }
+    .zhiwei{
+      margin-top: 24px;
+      width: 130px;
+      height: 30px;
+      float: left;
+      font-size: 18px;
+      margin-left: 13px;
+      color: #6d6d6d;
+    }
+    .xiangxi{
+      width: 266px;
+      height: 423px;
+      /*background: pink;*/
+      padding: 7px;
+      box-sizing: border-box;
+      margin-top: -12px;
+    }
+    .bottom{
+      white-space: normal;
+      width: 266px;
+      display: block;
+      margin-top: 6px;
+    }
+    .button{
+      margin-top: 12px;
+      padding: 0 10px;
+      height: 27px;
+      line-height: 27px;
+      display:inline-block;
+      border-radius: 16px;
+      background: #00aa81  ;
+      color: white;
+      cursor: pointer;
+    }
+    .button:hover{
+      background: #5dd0b4  ;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span ><a  href="./../index.html">用户端</a></span>
+    <span><a>|</a></span>
+    <span style="margin-right:1000px;"><a href="" style="color:#2de6ba">企业端</a></span>
+    <span><a href="qiye.html">企业中心</a></span>
+    <span><a>|</a></span>
+    <span><a href="rencaiku.html">我的人才库</a></span>
+  </div>
+  <div class="nav">
+    <div style="width:1200px;display: inline-block;">
+      <div class="logo"></div>
+      <ul class="navul" style="width:700px;margin-left:330px;">
+        <li  class="navli"><a class="navlia"  href="index.html">首页</a></li>
+        <li class="navli"><a class="navlia"  href="xiaobai.html">小白</a></li>
+        <li class="navli"><a class="navlia"style="color:#545454;border-bottom: 3px solid #00aa81;" href="xinxiu.html">新秀</a></li>
+        <li class="navli"><a class="navlia" href="baigujing.html">白骨精</a></li>
+        <li class="navli"><a class="navlia" href="daka.html">大咖</a></li>
+        <li class="navli"style="width:75px;"><a class="navlia" href="guzhu.html">雇主品牌</a></li>
+        <li class="navli"><a class="navlia" href="fuwu.html">周边服务</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="search-wrapper">
+    <div style="height:140px;  overflow: hidden;  width:1200px;display: inline-block; ">
+      <div>
+        <input placeholder="请输入期望的学历、专业、工作经验、意向工作地点、期望工资" type="text" class="search-box" name="" value=""><div class="search-button">搜素</div>
+      </div>
+      <ul class="reul">
+        <a style="color: #757575; font-size:14px;">热门搜索：</a>
+        <li class="reli"> <a href="" class="relia">人力资源</a> </li>
+        <li class="reli"> <a href="" class="relia">物流管理</a> </li>
+        <li class="reli"> <a href="" class="relia">java</a> </li>
+        <li class="reli"> <a href="" class="relia">web前端</a> </li>
+        <li class="reli"> <a href="" class="relia">行政管理</a> </li>
+        <li class="reli"> <a href="" class="relia">高级会计师</a> </li>
+        <li class="reli"> <a href="" class="relia">数据分析师</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="contain">
+  <span onclick="JavaScript:ChangeDiv('0','JKDiv_',2)" class="change" id="change0" style="color:#696969;border-bottom:2px solid #68ccb3;">合伙人</span><span>  </span>
+  <span onclick="JavaScript:ChangeDiv('1','JKDiv_',2)" class="change" id="change1">全职</span>
+  <span onclick="JavaScript:ChangeDiv('2','JKDiv_',2)" class="change" id="change2">团聘</span>
+  <hr style="margin-top:8px;">
+
+<!-- 毕业实习 -->
+<div class="findjob">
+  <span style="color:#00aa81">人才搜索></span>
+  <span>岗位:</span><input type="text">
+  <span>行业:</span><input type="text">
+  <span>大学:</span><input type="text">
+  <span>薪资:</span><input type="text">
+  <span>经验:</span><input type="text">
+  <span class="buttonspan" style="padding:0px;line-height: 34px;color: #f7ffff;">搜索</span>
+</div>
+<div id="JKDiv_0" style="" class="jobbox">
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv('0','smallbox_',2)" id="smallselect1_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span >资金入伙</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('1','smallbox_',2)" id="smallselect1_1">
+      <span>技术入伙</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('2','smallbox_',2)" id="smallselect1_2">
+      <span>知识入伙</span>
+    </div>
+  </div>
+    <div  id="smallbox_0">
+      <div class="selectright" style="">
+
+        <div class="jobone" style="box-shadow: 0 0 10px #00aa81">
+          <a href="" >车间工业工程师</a>
+          <span class="spantime">李阳</span>
+          <sapn class="spanmon">6k-12k</sapn>
+          <span class="spanlot">十年经验</span>
+          <div class="combox">
+            <img src="./../pic2/2.jpg" alt="">
+            <span class="comname">江西财经大学</span>
+            <span class="comte">电器工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">供应商管理工程师</a>
+          <span class="spantime">李磊</span>
+          <sapn class="spanmon">7k-13k</sapn>
+          <span class="spanlot">三年经验</span>
+          <div class="combox">
+            <img src="./../pic2/3.jpg" alt="">
+            <span class="comname">江西财经大学</span>
+            <span class="comte">人力资源专业/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">产品设备工程师</a>
+          <span class="spantime">刘明</span>
+          <sapn class="spanmon">5k-15k</sapn>
+          <span class="spanlot">二年经验</span>
+          <div class="combox">
+            <img src="./../pic2/4.jpg" alt="">
+            <span class="comname">江西财经大学</span>
+            <span class="comte">人力资源专业/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">高级高级技术主管</a>
+          <span class="spantime">刘金河</span>
+          <sapn class="spanmon">5k-13k</sapn>
+          <span class="spanlot">二年经验</span>
+          <div class="combox">
+            <img src="./../pic2/5.jpg" alt="">
+            <span class="comname">西安交通大学</span>
+            <span class="comte">电子信息工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">技术支持经理</a>
+          <span class="spantime">李思德</span>
+          <sapn class="spanmon">6k-12k</sapn>
+          <span class="spanlot">三年经验</span>
+          <div class="combox">
+            <img src="./../pic2/6.jpg" alt="">
+            <span class="comname">中南大学</span>
+            <span class="comte">软件工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">高级研发主管</a>
+          <span class="spantime">李维福</span>
+          <sapn class="spanmon">8k-13k</sapn>
+          <span class="spanlot">二年经验</span>
+          <div class="combox">
+            <img src="./../pic2/7.jpg" alt="">
+            <span class="comname">南京理工大学</span>
+            <span class="comte">生物科技/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">产品规划主管</a>
+          <span class="spantime">杨连祥</span>
+          <sapn class="spanmon">9k-15k</sapn>
+          <span class="spanlot">二年经验</span>
+          <div class="combox">
+            <img src="./../pic2/8.jpg" alt="">
+            <span class="comname">	哈尔滨工程大学</span>
+            <span class="comte">信息技术工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">产品开发工程师</a>
+          <span class="spantime">周冬成</span>
+          <sapn class="spanmon">8k-11k</sapn>
+          <span class="spanlot">三年经验</span>
+          <div class="combox">
+            <img src="./../pic2/9.jpg" alt="">
+            <span class="comname">东华大学</span>
+            <span class="comte">软件工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">质量工程师</a>
+          <span class="spantime">谢新水</span>
+          <sapn class="spanmon">7k-12k</sapn>
+          <span class="spanlot">二年经验</span>
+          <div class="combox">
+            <img src="./../pic2/10.jpg" alt="">
+            <span class="comname">	陕西师范大学</span>
+            <span class="comte">土木工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">高级技术主管</a>
+          <span class="spantime">任晓姮</span>
+          <sapn class="spanmon">6k-14k</sapn>
+          <span class="spanlot">五年经验</span>
+          <div class="combox">
+            <img src="./../pic2/17.jpg" alt="">
+            <span class="comname">	北京邮电大学</span>
+            <span class="comte">电信工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">技术支持经理</a>
+          <span class="spantime">吴英策</span>
+          <sapn class="spanmon">8k-13k</sapn>
+          <span class="spanlot">三年经验</span>
+          <div class="combox">
+            <img src="./../pic2/12.jpg" alt="">
+            <span class="comname">郑州大学</span>
+            <span class="comte">软件工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">电气工程师</a>
+          <span class="spantime">张 平</span>
+          <sapn class="spanmon">7k-12k</sapn>
+          <span class="spanlot">五年经验</span>
+          <div class="combox">
+            <img src="./../pic2/13.jpg" alt="">
+            <span class="comname">	西南交通大学</span>
+            <span class="comte">电器工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">电气工程师</a>
+          <span class="spantime">荣远红</span>
+          <sapn class="spanmon">7k-12k</sapn>
+          <span class="spanlot">五年经验</span>
+          <div class="combox">
+            <img src="./../pic2/14.jpg" alt="">
+            <span class="comname">西北工业大学</span>
+            <span class="comte">电器工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">电气工程师</a>
+          <span class="spantime">王 飞</span>
+          <sapn class="spanmon">7k-13k</sapn>
+          <span class="spanlot">三年经验</span>
+          <div class="combox">
+            <img src="./../pic2/15.jpg" alt="">
+            <span class="comname">重庆大学</span>
+            <span class="comte">电器工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone" >
+          <a href="">信息技术主管</a>
+          <span class="spantime">李旭</span>
+          <sapn class="spanmon">5k-12k</sapn>
+          <span class="spanlot">五年经验</span>
+          <div class="combox">
+            <img src="./../pic2/1.jpg" alt="">
+            <span class="comname">江西财经大学</span>
+            <span class="comte">计算机信息管理/本科</span>
+          </div>
+        </div>
+      </div>
+      <div class="rightpeo1">
+        <div class="peobox">
+          <img src="./../pic2/2.jpg" alt="">
+          <span class="nameright">李阳</span>
+          <span class="zhiwei">车间工业工程师</span>
+        </div>
+        <div class="xiangxi">
+          <span class="bottom" style="font-size: 17px;">个人信息：</span>
+          <span class="bottom">十年年以上工作经验|</span>
+            <span class="bottom">男|37岁（1980年3月7日）</span>
+            <span class="bottom">居住地：南昌</span>
+            <span class="bottom">电　话：13713425467（手机）</span>
+            <span class="bottom">E-mail：liyang@qq.com</span>
+              <span class="bottom"style="font-size: 17px;">最近工作[1年]</span>
+              <span class="bottom">公　司：江西瑞博科技有限公司</span>
+              <span class="bottom">行　业：计算机信息管理</span>
+              <span class="bottom">职　位：电器项目主管</span>
+
+              <span class="bottom"style="font-size: 17px;">最高学历</span>
+              <span class="bottom">学　历：本科</span>
+              <span class="bottom">专　业：电器工程</span>
+              <span class="bottom">学　校：江西财经大学</span>
+              <span class="button">☆ 收藏</span>
+              <span class="button">X 不感兴趣</span>
+              <span class="button">↓ 下载简历</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="display:none;" id="smallbox_1">
+      <div class="selectright" >
+        <div class="jobone" style="box-shadow: 0 0 10px #00aa81">
+          <a href="">信息技术主管</a>
+          <span class="spantime">李旭</span>
+          <sapn class="spanmon">5k-12k</sapn>
+          <span class="spanlot">五年经验</span>
+          <div class="combox">
+            <img src="./../pic2/1.jpg" alt="">
+            <span class="comname">江西财经大学</span>
+            <span class="comte">计算机信息管理/本科</span>
+          </div>
+        </div>
+        <div class="jobone" >
+          <a href="" >车间工业工程师</a>
+          <span class="spantime">李阳</span>
+          <sapn class="spanmon">6k-12k</sapn>
+          <span class="spanlot">十年经验</span>
+          <div class="combox">
+            <img src="./../pic2/2.jpg" alt="">
+            <span class="comname">江西财经大学</span>
+            <span class="comte">人力资源专业/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">供应商管理工程师</a>
+          <span class="spantime">李磊</span>
+          <sapn class="spanmon">7k-13k</sapn>
+          <span class="spanlot">三年经验</span>
+          <div class="combox">
+            <img src="./../pic2/3.jpg" alt="">
+            <span class="comname">江西财经大学</span>
+            <span class="comte">人力资源专业/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">产品设备工程师</a>
+          <span class="spantime">刘明</span>
+          <sapn class="spanmon">5k-15k</sapn>
+          <span class="spanlot">二年经验</span>
+          <div class="combox">
+            <img src="./../pic2/4.jpg" alt="">
+            <span class="comname">江西财经大学</span>
+            <span class="comte">人力资源专业/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">高级高级技术主管</a>
+          <span class="spantime">刘金河</span>
+          <sapn class="spanmon">5k-13k</sapn>
+          <span class="spanlot">二年经验</span>
+          <div class="combox">
+            <img src="./../pic2/5.jpg" alt="">
+            <span class="comname">西安交通大学</span>
+            <span class="comte">电子信息工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">技术支持经理</a>
+          <span class="spantime">李思德</span>
+          <sapn class="spanmon">6k-12k</sapn>
+          <span class="spanlot">三年经验</span>
+          <div class="combox">
+            <img src="./../pic2/6.jpg" alt="">
+            <span class="comname">中南大学</span>
+            <span class="comte">软件工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">高级研发主管</a>
+          <span class="spantime">李维福</span>
+          <sapn class="spanmon">8k-13k</sapn>
+          <span class="spanlot">二年经验</span>
+          <div class="combox">
+            <img src="./../pic2/7.jpg" alt="">
+            <span class="comname">南京理工大学</span>
+            <span class="comte">生物科技/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">产品规划主管</a>
+          <span class="spantime">杨连祥</span>
+          <sapn class="spanmon">9k-15k</sapn>
+          <span class="spanlot">二年经验</span>
+          <div class="combox">
+            <img src="./../pic2/8.jpg" alt="">
+            <span class="comname">	哈尔滨工程大学</span>
+            <span class="comte">信息技术工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">产品开发工程师</a>
+          <span class="spantime">周冬成</span>
+          <sapn class="spanmon">8k-11k</sapn>
+          <span class="spanlot">三年经验</span>
+          <div class="combox">
+            <img src="./../pic2/9.jpg" alt="">
+            <span class="comname">东华大学</span>
+            <span class="comte">软件工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">质量工程师</a>
+          <span class="spantime">谢新水</span>
+          <sapn class="spanmon">7k-12k</sapn>
+          <span class="spanlot">二年经验</span>
+          <div class="combox">
+            <img src="./../pic2/10.jpg" alt="">
+            <span class="comname">	陕西师范大学</span>
+            <span class="comte">土木工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">高级技术主管</a>
+          <span class="spantime">任晓姮</span>
+          <sapn class="spanmon">6k-14k</sapn>
+          <span class="spanlot">五年经验</span>
+          <div class="combox">
+            <img src="./../pic2/17.jpg" alt="">
+            <span class="comname">	北京邮电大学</span>
+            <span class="comte">电信工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">技术支持经理</a>
+          <span class="spantime">吴英策</span>
+          <sapn class="spanmon">8k-13k</sapn>
+          <span class="spanlot">三年经验</span>
+          <div class="combox">
+            <img src="./../pic2/12.jpg" alt="">
+            <span class="comname">郑州大学</span>
+            <span class="comte">软件工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">电气工程师</a>
+          <span class="spantime">张 平</span>
+          <sapn class="spanmon">7k-12k</sapn>
+          <span class="spanlot">五年经验</span>
+          <div class="combox">
+            <img src="./../pic2/13.jpg" alt="">
+            <span class="comname">	西南交通大学</span>
+            <span class="comte">电器工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">电气工程师</a>
+          <span class="spantime">荣远红</span>
+          <sapn class="spanmon">7k-12k</sapn>
+          <span class="spanlot">五年经验</span>
+          <div class="combox">
+            <img src="./../pic2/14.jpg" alt="">
+            <span class="comname">西北工业大学</span>
+            <span class="comte">电器工程/本科</span>
+          </div>
+        </div>
+        <div class="jobone">
+          <a href="">电气工程师</a>
+          <span class="spantime">王 飞</span>
+          <sapn class="spanmon">7k-13k</sapn>
+          <span class="spanlot">三年经验</span>
+          <div class="combox">
+            <img src="./../pic2/15.jpg" alt="">
+            <span class="comname">重庆大学</span>
+            <span class="comte">电器工程/本科</span>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="rightpeo">
+        <div class="peobox">
+          <img src="./../pic2/1.jpg" alt="">
+          <span class="nameright">李旭</span>
+          <span class="zhiwei">信息技术主管</span>
+        </div>
+        <div class="xiangxi">
+          <span class="bottom" style="font-size: 17px;">个人信息：</span>
+          <span class="bottom">二年以上工作经验|</span>
+            <span class="bottom">女|27岁（1990年3月7日）</span>
+            <span class="bottom">居住地：上海</span>
+            <span class="bottom">电　话：13712345467（手机）</span>
+            <span class="bottom">E-mail：huangxu@qq.com</span>
+              <span class="bottom"style="font-size: 17px;">最近工作[1年]</span>
+              <span class="bottom">公　司：江西生物科技有限公司</span>
+              <span class="bottom">行　业：计算机信息管理</span>
+              <span class="bottom">职　位：信息技术项目主管</span>
+
+              <span class="bottom"style="font-size: 17px;">最高学历</span>
+              <span class="bottom">学　历：本科</span>
+              <span class="bottom">专　业：计算机信息管理</span>
+              <span class="bottom">学　校：江西财经大学</span>
+              <span class="button">☆ 收藏</span>
+              <span class="button">X 不感兴趣</span>
+              <span class="button">↓ 下载简历</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:none;" id="smallbox_2">
+    <div class="selectright"  >
+      <div class="jobone" style="box-shadow: 0 0 10px #00aa81">
+        <a href="">产品设备工程师</a>
+        <span class="spantime">刘明</span>
+        <sapn class="spanmon">5k-15k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/4.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">电子信息工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone" >
+        <a href="">信息技术主管</a>
+        <span class="spantime">李旭</span>
+        <sapn class="spanmon">5k-12k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/1.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">计算机信息管理/本科</span>
+        </div>
+      </div>
+      <div class="jobone" >
+        <a href="" >车间工业工程师</a>
+        <span class="spantime">李阳</span>
+        <sapn class="spanmon">6k-12k</sapn>
+        <span class="spanlot">十年经验</span>
+        <div class="combox">
+          <img src="./../pic2/2.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">人力资源专业/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">供应商管理工程师</a>
+        <span class="spantime">李磊</span>
+        <sapn class="spanmon">7k-13k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/3.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">人力资源专业/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">电气工程师</a>
+        <span class="spantime">王 飞</span>
+        <sapn class="spanmon">7k-13k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/15.jpg" alt="">
+          <span class="comname">重庆大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">高级高级技术主管</a>
+        <span class="spantime">刘金河</span>
+        <sapn class="spanmon">5k-13k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/5.jpg" alt="">
+          <span class="comname">西安交通大学</span>
+          <span class="comte">电子信息工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">技术支持经理</a>
+        <span class="spantime">李思德</span>
+        <sapn class="spanmon">6k-12k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/6.jpg" alt="">
+          <span class="comname">中南大学</span>
+          <span class="comte">软件工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">高级研发主管</a>
+        <span class="spantime">李维福</span>
+        <sapn class="spanmon">8k-13k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/7.jpg" alt="">
+          <span class="comname">南京理工大学</span>
+          <span class="comte">生物科技/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">产品规划主管</a>
+        <span class="spantime">杨连祥</span>
+        <sapn class="spanmon">9k-15k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/8.jpg" alt="">
+          <span class="comname">	哈尔滨工程大学</span>
+          <span class="comte">信息技术工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">产品开发工程师</a>
+        <span class="spantime">周冬成</span>
+        <sapn class="spanmon">8k-11k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/9.jpg" alt="">
+          <span class="comname">东华大学</span>
+          <span class="comte">软件工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">质量工程师</a>
+        <span class="spantime">谢新水</span>
+        <sapn class="spanmon">7k-12k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/10.jpg" alt="">
+          <span class="comname">	陕西师范大学</span>
+          <span class="comte">土木工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">高级技术主管</a>
+        <span class="spantime">任晓姮</span>
+        <sapn class="spanmon">6k-14k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/17.jpg" alt="">
+          <span class="comname">	北京邮电大学</span>
+          <span class="comte">电信工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">技术支持经理</a>
+        <span class="spantime">吴英策</span>
+        <sapn class="spanmon">8k-13k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/12.jpg" alt="">
+          <span class="comname">郑州大学</span>
+          <span class="comte">软件工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">电气工程师</a>
+        <span class="spantime">张 平</span>
+        <sapn class="spanmon">7k-12k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/13.jpg" alt="">
+          <span class="comname">	西南交通大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">电气工程师</a>
+        <span class="spantime">荣远红</span>
+        <sapn class="spanmon">7k-12k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/14.jpg" alt="">
+          <span class="comname">西北工业大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="rightpeo">
+      <div class="peobox">
+        <img src="./../pic2/4.jpg" alt="">
+        <span class="nameright">刘明</span>
+        <span class="zhiwei">产品设备工程师</span>
+      </div>
+      <div class="xiangxi">
+        <span class="bottom" style="font-size: 17px;">个人信息：</span>
+        <span class="bottom">二年以上工作经验|</span>
+          <span class="bottom">男|27岁（1990年3月7日）</span>
+          <span class="bottom">居住地：南昌</span>
+          <span class="bottom">电　话：13712123467（手机）</span>
+          <span class="bottom">E-mail：liuming@qq.com</span>
+            <span class="bottom"style="font-size: 17px;">最近工作[1年]</span>
+            <span class="bottom">公　司：江西东言科技有限公司</span>
+            <span class="bottom">行　业：计算机信息管理</span>
+            <span class="bottom">职　位：信息技术项目主管</span>
+
+            <span class="bottom"style="font-size: 17px;">最高学历</span>
+            <span class="bottom">学　历：本科</span>
+            <span class="bottom">专　业：电子信息工程</span>
+            <span class="bottom">学　校：江西财经大学</span>
+            <span class="button">☆ 收藏</span>
+            <span class="button">X 不感兴趣</span>
+            <span class="button">↓ 下载简历</span>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+<div id="JKDiv_1" style="display:none;" class="jobbox">
+  <span style="position:absolute; margin-bottom:13px; margin-left:8px; font-size:16px;">  向你推荐:</span>
+  <div class="selectright" style="width:950px;justify-content: space-around;"  >
+    <div class="jobone" style="box-shadow: 0 0 10px #00aa81">
+      <a href="">产品设备工程师</a>
+      <span class="spantime">刘明</span>
+      <sapn class="spanmon">5k-15k</sapn>
+      <span class="spanlot">二年经验</span>
+      <div class="combox">
+        <img src="./../pic2/4.jpg" alt="">
+        <span class="comname">江西财经大学</span>
+        <span class="comte">电子信息工程/本科</span>
+      </div>
+    </div>
+    <div class="jobone" >
+      <a href="">信息技术主管</a>
+      <span class="spantime">李旭</span>
+      <sapn class="spanmon">5k-12k</sapn>
+      <span class="spanlot">五年经验</span>
+      <div class="combox">
+        <img src="./../pic2/1.jpg" alt="">
+        <span class="comname">江西财经大学</span>
+        <span class="comte">计算机信息管理/本科</span>
+      </div>
+    </div>
+    <div class="jobone" >
+      <a href="" >车间工业工程师</a>
+      <span class="spantime">李阳</span>
+      <sapn class="spanmon">6k-12k</sapn>
+      <span class="spanlot">十年经验</span>
+      <div class="combox">
+        <img src="./../pic2/2.jpg" alt="">
+        <span class="comname">江西财经大学</span>
+        <span class="comte">人力资源专业/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">供应商管理工程师</a>
+      <span class="spantime">李磊</span>
+      <sapn class="spanmon">7k-13k</sapn>
+      <span class="spanlot">三年经验</span>
+      <div class="combox">
+        <img src="./../pic2/3.jpg" alt="">
+        <span class="comname">江西财经大学</span>
+        <span class="comte">人力资源专业/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">电气工程师</a>
+      <span class="spantime">王 飞</span>
+      <sapn class="spanmon">7k-13k</sapn>
+      <span class="spanlot">三年经验</span>
+      <div class="combox">
+        <img src="./../pic2/15.jpg" alt="">
+        <span class="comname">重庆大学</span>
+        <span class="comte">电器工程/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级高级技术主管</a>
+      <span class="spantime">刘金河</span>
+      <sapn class="spanmon">5k-13k</sapn>
+      <span class="spanlot">二年经验</span>
+      <div class="combox">
+        <img src="./../pic2/5.jpg" alt="">
+        <span class="comname">西安交通大学</span>
+        <span class="comte">电子信息工程/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">技术支持经理</a>
+      <span class="spantime">李思德</span>
+      <sapn class="spanmon">6k-12k</sapn>
+      <span class="spanlot">三年经验</span>
+      <div class="combox">
+        <img src="./../pic2/6.jpg" alt="">
+        <span class="comname">中南大学</span>
+        <span class="comte">软件工程/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级研发主管</a>
+      <span class="spantime">李维福</span>
+      <sapn class="spanmon">8k-13k</sapn>
+      <span class="spanlot">二年经验</span>
+      <div class="combox">
+        <img src="./../pic2/7.jpg" alt="">
+        <span class="comname">南京理工大学</span>
+        <span class="comte">生物科技/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">产品规划主管</a>
+      <span class="spantime">杨连祥</span>
+      <sapn class="spanmon">9k-15k</sapn>
+      <span class="spanlot">二年经验</span>
+      <div class="combox">
+        <img src="./../pic2/8.jpg" alt="">
+        <span class="comname">	哈尔滨工程大学</span>
+        <span class="comte">信息技术工程/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">产品开发工程师</a>
+      <span class="spantime">周冬成</span>
+      <sapn class="spanmon">8k-11k</sapn>
+      <span class="spanlot">三年经验</span>
+      <div class="combox">
+        <img src="./../pic2/9.jpg" alt="">
+        <span class="comname">东华大学</span>
+        <span class="comte">软件工程/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">质量工程师</a>
+      <span class="spantime">谢新水</span>
+      <sapn class="spanmon">7k-12k</sapn>
+      <span class="spanlot">二年经验</span>
+      <div class="combox">
+        <img src="./../pic2/10.jpg" alt="">
+        <span class="comname">	陕西师范大学</span>
+        <span class="comte">土木工程/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级技术主管</a>
+      <span class="spantime">任晓姮</span>
+      <sapn class="spanmon">6k-14k</sapn>
+      <span class="spanlot">五年经验</span>
+      <div class="combox">
+        <img src="./../pic2/17.jpg" alt="">
+        <span class="comname">	北京邮电大学</span>
+        <span class="comte">电信工程/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">技术支持经理</a>
+      <span class="spantime">吴英策</span>
+      <sapn class="spanmon">8k-13k</sapn>
+      <span class="spanlot">三年经验</span>
+      <div class="combox">
+        <img src="./../pic2/12.jpg" alt="">
+        <span class="comname">郑州大学</span>
+        <span class="comte">软件工程/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">电气工程师</a>
+      <span class="spantime">张 平</span>
+      <sapn class="spanmon">7k-12k</sapn>
+      <span class="spanlot">五年经验</span>
+      <div class="combox">
+        <img src="./../pic2/13.jpg" alt="">
+        <span class="comname">	西南交通大学</span>
+        <span class="comte">电器工程/本科</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">电气工程师</a>
+      <span class="spantime">荣远红</span>
+      <sapn class="spanmon">7k-12k</sapn>
+      <span class="spanlot">五年经验</span>
+      <div class="combox">
+        <img src="./../pic2/14.jpg" alt="">
+        <span class="comname">西北工业大学</span>
+        <span class="comte">电器工程/本科</span>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="rightpeo">
+    <div class="peobox">
+      <img src="./../pic2/4.jpg" alt="">
+      <span class="nameright">刘明</span>
+      <span class="zhiwei">产品设备工程师</span>
+    </div>
+    <div class="xiangxi">
+      <span class="bottom" style="font-size: 17px;">个人信息：</span>
+      <span class="bottom">二年以上工作经验|</span>
+        <span class="bottom">男|27岁（1990年3月7日）</span>
+        <span class="bottom">居住地：南昌</span>
+        <span class="bottom">电　话：13712123467（手机）</span>
+        <span class="bottom">E-mail：liuming@qq.com</span>
+          <span class="bottom"style="font-size: 17px;">最近工作[1年]</span>
+          <span class="bottom">公　司：江西东言科技有限公司</span>
+          <span class="bottom">行　业：计算机信息管理</span>
+          <span class="bottom">职　位：信息技术项目主管</span>
+
+          <span class="bottom"style="font-size: 17px;">最高学历</span>
+          <span class="bottom">学　历：本科</span>
+          <span class="bottom">专　业：电子信息工程</span>
+          <span class="bottom">学　校：江西财经大学</span>
+          <span class="button">☆ 收藏</span>
+          <span class="button">X 不感兴趣</span>
+          <span class="button">↓ 下载简历</span>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="JKDiv_2" style="display:none;" class="jobbox">
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv2('0','smallbox2_',1)" id="smallselect3_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span >规模入职</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv2('1','smallbox2_',1)" id="smallselect3_1">
+      <span>团队入职</span>
+    </div>
+
+  </div>
+  <div  id="smallbox2_0">
+    <div class="selectright" >
+      <div class="jobone"style="box-shadow: 0 0 10px #00aa81">
+        <a href="">电气工程师 (4人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">7k-13k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/11.jpg" alt="">
+          <span class="comname">重庆大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone" >
+        <a href="" >车间工业工程师 (4人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">6k-12k</sapn>
+        <span class="spanlot">十年经验</span>
+        <div class="combox">
+          <img src="./../pic2/22.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">供应商管理工程师 (4人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">7k-13k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/33.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">人力资源专业/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">产品设备工程师 (4人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">5k-15k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/44.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">人力资源专业/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">HR人力资源管理 (3人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">5k-13k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/w4.jpg" alt="">
+          <span class="comname">西安交通大学</span>
+          <span class="comte">电子信息工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">技术支持 (3人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">6k-12k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/w3.jpg" alt="">
+          <span class="comname">中南大学</span>
+          <span class="comte">软件工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">高级研发工程师 (5人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">8k-13k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/7.jpg" alt="">
+          <span class="comname">南京理工大学</span>
+          <span class="comte">生物科技/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">产品规划 (5人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">9k-15k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/e1.jpg" alt="">
+          <span class="comname">	哈尔滨工程大学</span>
+          <span class="comte">信息技术工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">产品开发工程师 (2人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">8k-11k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/q4.jpg" alt="">
+          <span class="comname">东华大学</span>
+          <span class="comte">软件工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">质量工程师 (3人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">7k-12k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/w2.jpg" alt="">
+          <span class="comname">	陕西师范大学</span>
+          <span class="comte">土木工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">高级技术主管 (2人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">6k-14k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/q3.jpg" alt="">
+          <span class="comname">	北京邮电大学</span>
+          <span class="comte">电信工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">技术支持经理 (2人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">8k-13k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/q2.jpg" alt="">
+          <span class="comname">郑州大学</span>
+          <span class="comte">软件工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">电气工程师 (5人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">7k-12k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/e2.jpg" alt="">
+          <span class="comname">	西南交通大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">电气工程师 (2人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">7k-12k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/q1.jpg" alt="">
+          <span class="comname">西北工业大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+
+      <div class="jobone" >
+        <a href="">信息技术主管 (3人)</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">5k-12k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/w1.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">计算机信息管理/本科</span>
+        </div>
+      </div>
+    </div>
+    <div class="rightpeo1">
+      <div class="peobox">
+        <img src="./../pic2/11.jpg" alt="">
+        <span class="nameright">4人团</span>
+        <span class="zhiwei">车间工业工程师</span>
+      </div>
+      <div class="xiangxi">
+        <span class="bottom" style="font-size: 17px;">信息：</span>
+        <span class="bottom">三年年以上工作经验|</span>
+          <span class="bottom">男|平均年龄25岁</span>
+          <span class="bottom">居住地：南昌</span>
+          <span class="bottom">负责人电话：13714255467（手机）</span>
+          <span class="bottom">E-mail：dianiqd@qq.com</span>
+            <span class="bottom"style="font-size: 17px;">最近工作[1年]</span>
+            <span class="bottom">公　司：江西瑞博科技有限公司</span>
+            <span class="bottom">行　业：计算机信息管理</span>
+            <span class="bottom">职　位：电气工程师</span>
+
+            <span class="bottom"style="font-size: 17px;">最高学历</span>
+            <span class="bottom">学　历：本科</span>
+            <span class="bottom">专　业：电器工程</span>
+            <span class="bottom">学　校：重庆大学</span>
+            <span class="button">☆ 收藏</span>
+            <span class="button">X 不感兴趣</span>
+            <span class="button">↓ 下载简历</span>
+      </div>
+    </div>
+
+  </div>
+  <div style="display:none;" id="smallbox2_1">
+    <div class="selectright" >
+      <div class="jobone" style="box-shadow: 0 0 10px #00aa81">
+        <a href="">信息技术主管团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">5k-12k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/w1.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">计算机信息管理/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">电气工程师团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">7k-13k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/11.jpg" alt="">
+          <span class="comname">重庆大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone" >
+        <a href="" >车间工业工程师团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">6k-12k</sapn>
+        <span class="spanlot">十年经验</span>
+        <div class="combox">
+          <img src="./../pic2/22.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">供应商管理工程师团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">7k-13k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/33.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">人力资源专业/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">产品设备工程师团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">5k-15k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/44.jpg" alt="">
+          <span class="comname">江西财经大学</span>
+          <span class="comte">人力资源专业/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">HR人力资源管理团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">5k-13k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/w4.jpg" alt="">
+          <span class="comname">西安交通大学</span>
+          <span class="comte">电子信息工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">技术支持团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">6k-12k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/w3.jpg" alt="">
+          <span class="comname">中南大学</span>
+          <span class="comte">软件工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">高级研发工程师团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">8k-13k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/7.jpg" alt="">
+          <span class="comname">南京理工大学</span>
+          <span class="comte">生物科技/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">产品规划团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">9k-15k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/e1.jpg" alt="">
+          <span class="comname">	哈尔滨工程大学</span>
+          <span class="comte">信息技术工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">产品开发工程师团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">8k-11k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/q4.jpg" alt="">
+          <span class="comname">东华大学</span>
+          <span class="comte">软件工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">质量工程师团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">7k-12k</sapn>
+        <span class="spanlot">二年经验</span>
+        <div class="combox">
+          <img src="./../pic2/w2.jpg" alt="">
+          <span class="comname">	陕西师范大学</span>
+          <span class="comte">土木工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">高级技术主管团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">6k-14k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/q3.jpg" alt="">
+          <span class="comname">	北京邮电大学</span>
+          <span class="comte">电信工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">技术支持经理团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">8k-13k</sapn>
+        <span class="spanlot">三年经验</span>
+        <div class="combox">
+          <img src="./../pic2/q2.jpg" alt="">
+          <span class="comname">郑州大学</span>
+          <span class="comte">软件工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">电气工程师团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">7k-12k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/e2.jpg" alt="">
+          <span class="comname">	西南交通大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+      <div class="jobone">
+        <a href="">电气工程师团队</a>
+        <span class="spantime"></span>
+        <sapn class="spanmon">7k-12k</sapn>
+        <span class="spanlot">五年经验</span>
+        <div class="combox">
+          <img src="./../pic2/q1.jpg" alt="">
+          <span class="comname">西北工业大学</span>
+          <span class="comte">电器工程/本科</span>
+        </div>
+      </div>
+
+
+
+
+    </div>
+    <div class="rightpeo">
+      <div class="peobox">
+        <img src="./../pic2/w1.jpg" alt="">
+        <span class="nameright">团队</span>
+        <span class="zhiwei">信息技术主管</span>
+      </div>
+      <div class="xiangxi">
+        <span class="bottom" style="font-size: 17px;">个人信息：</span>
+        <span class="bottom">二年以上工作经验|</span>
+          <span class="bottom">男|平均年龄27岁</span>
+          <span class="bottom">居住地：南昌</span>
+          <span class="bottom">电　话：13712325467（手机）</span>
+          <span class="bottom">E-mail：huangxu@qq.com</span>
+            <span class="bottom"style="font-size: 17px;">最近工作[1年]</span>
+            <span class="bottom">公　司：江西华晨科技有限公司</span>
+            <span class="bottom">行　业：计算机信息管理</span>
+            <span class="bottom">职　位：信息技术项目主管</span>
+
+            <span class="bottom"style="font-size: 17px;">最高学历</span>
+            <span class="bottom">学　历：本科</span>
+            <span class="bottom">专　业：计算机信息管理</span>
+            <span class="bottom">学　校：江西财经大学</span>
+            <span class="button">☆ 收藏</span>
+            <span class="button">X 不感兴趣</span>
+            <span class="button">↓ 下载简历</span>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+  <ul>
+    <li><a href="">关于我们</a></li>
+    <li><a href="">加入我们</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">联盟合作</a></li>
+    <li><a href="">免责申明</a></li>
+    <li><a href="">投诉建议</a></li>
+
+  </ul>
+  <ul style="margin-top:-20px;">
+    <li style="color:#999">Copyright © 2017.青云校招 All rights reserved.</li>
+  </ul>
+</div>
+
+
+
+<script>
+  function ChangeDiv(divId,divName,zDivCount)
+  {
+    for(i=0;i<=zDivCount;i++)
+    {
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('change'+i).style.borderBottom= " 2px solid transparent";
+      document.getElementById('change'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('change'+divId).style.borderBottom= " 2px solid #68ccb3";
+    document.getElementById('change'+divId).style.color= "#696969";
+
+  //显示当前层
+  }
+
+  function Changesmalldiv(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect1_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect1_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect1_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect1_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv1(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect2_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect2_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect2_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect2_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv2(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect3_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect3_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect3_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect3_'+divId).style.color= "#00aa81";
+  }
+  </script>
+</body>
+</html>

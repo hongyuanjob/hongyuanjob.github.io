@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>青云校招</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.bdootcss.com/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.bdootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    .contain{
+      height: 760px;
+      width: 1200px;
+      margin: 0 auto;
+      /*background-color: pink;*/
+      margin-top: 25px;
+    }
+    .top{
+      height: 25px;
+      background-color: #6d6d6d;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .top span{
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+    .top span a{
+      text-decoration: none;
+      color: #d8d8d8;
+    }
+    .top span a:hover{
+      color: white;
+    }
+    .top ul{
+      display: inline-block;
+    }
+    .top ul ul{
+      display: none;
+    }
+    .top ul li:hover >ul{
+      display: block;
+    }
+    .nav{
+      height: 60px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .logo{
+      height: 50px;
+      width: 170px;
+      background-image: url(./pic/logo.png);
+      float: left;
+    }
+    .navul{
+      float: left;
+      width: 600px;
+      height: 50px;
+      margin-left: 400px;
+    }
+    .navli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+      margin: 0 10px;
+    }
+    .navlia{
+      display: inline-block;
+      height: 50px;
+      width: 60px;
+      text-align: center;
+      line-height: 50px;
+      color: #999;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .navlia:hover{
+      color: #545454;
+      border-bottom: 3px solid #00aa81;
+      text-decoration: none;
+    }
+    .search-wrapper{
+      height: 150px;
+      width: 100%;
+      background-color: #f2f5f4;
+      position: relative;
+      text-align: center;
+    }
+    .search-box{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 46px;
+      width: 720px;
+      border: 1px solid #E8E8E8;
+      padding: 5px;
+      font-size: 14px;
+      margin-left: -120px;
+      margin-top: 30px;
+      outline:none;
+      color: black;
+
+    }
+    .search-box:focus{
+
+      border: 1px solid #00aa81;
+
+    }
+
+    .search-button{
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 5px;
+      height: 46px;
+      width: 140px;
+      background-color: #00aa81;
+      margin-top: 30px;
+      line-height: 36px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover{
+        background-color: #5ce6c5  ;
+      color: #fff;
+    }
+    .reul{
+      float: left;
+      width: 1000px;
+      height: 30px;
+      margin-left: -62px;
+
+    }
+    .reli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+    }
+    .relia{
+      display: inline-block;
+      padding-right: 2px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #00aa81;
+    }
+    .relia:hover{
+      color: #757575;
+      text-decoration: none;
+
+    }
+
+
+    .jobbox{
+      height: 600px;
+      width: 1200px;
+      box-sizing: border-box;
+      border: 2px solid #eeeeee;
+      box-sizing: border-box;
+    }
+
+    .bigselect{
+      width: 280px;
+      height: 600px;
+      position: relative;
+      float: left;
+      box-sizing: border-box;
+    }
+    .livenow{
+      display: inline-block;
+      margin: 7px 0 4px 5px;
+      height: 23px;
+      width: 104px;
+      font-size: 20px;
+      line-height: 24px;
+      color: #7d7d7d;
+      border-right: 4px solid red;
+    }
+
+    .livebox{
+      height: 94px;
+      width: 254px;
+      margin: 4px;
+      /*background-color: green;*/
+      border: 2px solid #ececec;
+      box-sizing: border-box;
+      cursor: pointer;
+      margin-left: 11px;
+      margin-bottom: 10px;
+    }
+    .livebox:hover{
+      box-shadow: 0 0 14px #ececec;
+    }
+    .liveimg{
+      height: 80px;
+      width: 80px;
+      display: inline-block;
+      float: left;
+      margin: 5px;
+      background-size: contain;
+    }
+    .livetitle{
+      height: 26px;
+      display: inline-block;
+      float: left;
+      margin-top: 5px;
+      line-height: 26px;
+      width: 160px;
+      font-size: 16px;
+
+    }
+    .livewtime{
+      display: inline-block;
+      height: 20px;
+      width: 110px;
+      float: left;
+      color: red;
+    }
+    .livewhat{
+      height: 36px;
+      width: 155px;
+      word-wrap:break-word;
+      float: left;
+      color: #7b7b7b;
+      font-size: 11px;
+      margin-top: 3px;
+    }
+    .selectright{
+      float: left;
+      height:598px;
+      width: 916px;
+      /*padding: 12px 40px;*/
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      border-right: 0px solid #eee;
+
+    }
+    .selectright1{
+      float: left;
+      height:598px;
+      width: 1200px;
+      /*padding: 12px 40px;*/
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      border-right: 0px solid #eee;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding-top: 20px;
+    }
+    .knowbox{
+      height: 170px;
+      width: 450px;
+      /*background-color: pink;*/
+      padding: 10px;
+      padding-top: 18px;
+      box-sizing: border-box;
+      border: 2px solid #d4d4d4;
+    }
+    .knowbox:hover{
+      box-shadow: 0 0 10px #d4d4d4;
+    }
+    .konwimg{
+      height: 130px;
+      width: 130px;
+      padding: 3px;
+      /*background-color: ed;*/
+      float: left;
+      margin-right: 13px;
+    }
+
+    .title{
+      float: left;
+      height: 60px;
+      width: 280px;
+      font-size: 19px;
+      white-space:wrap;
+      color: #6f6f6f;
+    }
+
+    .saywhat{
+      float: left;
+      height: 60px;
+      width: 280px;
+      overflow: hidden;
+     text-overflow: ellipsis;
+      color: #737373;
+      font-size: 13px;
+    }
+    .change{
+      margin-top: 25px;
+      margin-left: 0px;
+
+      display: inline-block;
+      /*padding-bottom: 25px;*/
+      padding: 10px 10px;
+      font-size: 17px;
+      cursor: pointer;
+      color: #999;
+      /*overflow: scroll;*/
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .change:hover{
+      color: #00aa81;
+    }
+
+    .footer{
+      height: 80px;
+      width: 100%;
+      background-color: #e6e6e6;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .footer ul{
+      padding-top: 20px;
+    }
+    .footer li{
+      display: inline;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .footer li a{
+      text-decoration: none;
+      color: #9c9c9c;
+      font-size: 14px;
+    }
+    .footer li a:hover{
+      color: #000;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span ><a style="color:#2de6ba" href="">用户端</a></span>
+    <span><a>|</a></span>
+    <span style="margin-right:1000px;"><a href="comp/index.html">企业端</a></span>
+    <span><a href="">个人中心</a></span>
+    <span><a>|</a></span>
+    <span><a href="">我的简历</a></span>
+  </div>
+  <div class="nav">
+    <div style="width:1200px;display: inline-block;">
+      <div class="logo"></div>
+      <ul class="navul" style="width:700px;margin-left:330px;">
+        <li  class="navli"><a class="navlia"  href="index.html">首页</a></li>
+        <li class="navli"><a class="navlia" href="job.html">全职</a></li>
+        <li class="navli"><a class="navlia" href="jyjob.html">精英</a></li>
+        <li class="navli"><a class="navlia" href="teamjob.html">团聘</a></li>
+        <li class="navli"><a class="navlia" href="practice.html">实习</a></li>
+        <li class="navli"><a class="navlia"  href="fighting.html">战力</a></li>
+        <li class="navli"><a class="navlia" style="color:#545454;border-bottom: 3px solid #00aa81;"  href="live.html">职播</a></li>
+        <li class="navli"><a class="navlia" href="others.html">周边</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="search-wrapper">
+    <div style="height:140px;  overflow: hidden;  width:1200px;display: inline-block; ">
+      <div>
+        <input placeholder="请输入期望的工作地点、全职、兼职、实习岗位、公司名称" type="text" class="search-box" name="" value=""><div class="search-button">搜素</div>
+      </div>
+      <ul class="reul">
+        <a style="color: #757575; font-size:14px;">热门搜索：</a>
+        <li class="reli"> <a href="" class="relia">人力资源</a> </li>
+        <li class="reli"> <a href="" class="relia">物流管理</a> </li>
+        <li class="reli"> <a href="" class="relia">java</a> </li>
+        <li class="reli"> <a href="" class="relia">web前端</a> </li>
+        <li class="reli"> <a href="" class="relia">行政管理</a> </li>
+        <li class="reli"> <a href="" class="relia">高级会计师</a> </li>
+        <li class="reli"> <a href="" class="relia">数据分析师</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="contain">
+  <span onclick="JavaScript:ChangeDiv('0','JKDiv_',2)" class="change" id="change0" style="color:#696969;border-bottom:2px solid #68ccb3;">直播宣讲</span><span>  </span>
+  <span onclick="JavaScript:ChangeDiv('1','JKDiv_',2)" class="change" id="change1">公开课</span>
+  <span onclick="JavaScript:ChangeDiv('2','JKDiv_',2)" class="change" id="change2">往期回顾</span>
+  <hr style="margin-top:8px;">
+
+<!-- 毕业实习 -->
+<div id="JKDiv_0" style="" class="jobbox">
+  <div class="bigselect">
+    <span class="livenow">正在直播：</span>
+
+    <div class="livebox" style="box-shadow: 0 0 10px #00aa81;">
+      <img src="./pic/wy.jpg" alt="" class="liveimg">
+      <span class="livetitle">网易高管谈高校就业</span>
+      <span class="livewtime">[ 正在直播 ]</span>
+      <span class="livewhat">网易人力资源高管告诉你:如何面对当代就业问题</span>
+    </div>
+    <div class="livebox">
+      <img src="./pic/hw.jpg" alt="" class="liveimg">
+      <span class="livetitle">华为高管谈毕业生面试</span>
+      <span class="livewtime">[ 正在直播 ]</span>
+      <span class="livewhat">华为技术高管传授面试:你需要具备哪些能力</span>
+    </div>
+    <span class="livenow" style="border-right: 4px solid green;">直播预告：</span>
+    <div class="livebox">
+      <img src="./pic/op.jpg" alt="" class="liveimg">
+      <span class="livetitle">OPPO高管谈“读大学”</span>
+      <span class="livewtime" style="color:green">[9月10 8:00 AM]</span>
+      <span class="livewhat">OPPO联合创始人告诉你大学该怎么读</span>
+    </div>
+    <div class="livebox">
+      <img src="./pic/ali.jpg" alt="" class="liveimg">
+      <span class="livetitle">阿里巴巴校招空中宣讲</span>
+      <span class="livewtime" style="color:green">[9月15 10:00 AM]</span>
+      <span class="livewhat">阿里巴巴秋季校招启动，快来活得第一手消息吧</span>
+    </div>
+    <div class="livebox">
+      <img src="./pic/tx.jpg" alt="" class="liveimg">
+      <span class="livetitle">腾讯校招空中宣讲</span>
+      <span class="livewtime" style="color:green">[9月16 4:00 PM ]</span>
+      <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+    </div>
+  </div>
+  <div class="selectright" id="smallbox_0">
+    <span class="livenow" style="width:700px;border:0px solid red;margin-bottom:10px;">正在直播： 网易高管谈高校就业</span>
+    <video width="900" height="550" controls style="margin-left:11px;">
+      <source src="./pic/movie2.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+
+<!-- 寒暑假实习 -->
+<div id="JKDiv_1" style="display:none;" class="jobbox">
+  <div class="bigselect" style="overflow:scroll;">
+    <span class="livenow" style="width:140px; border-right: 4px solid green;">最新公开课：</span>
+  <div class="livebox">
+    <img src="./pic/gk1.jpg" alt="" class="liveimg">
+    <span class="livetitle">文科专业及就业盘点</span>
+    <span class="livewtime" style="color:green">讲师：韩旭</span>
+    <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+  </div>
+  <div class="livebox">
+    <img src="./pic/gk2.jpg" alt="" class="liveimg">
+    <span class="livetitle">寻找人生的第一份工作</span>
+    <span class="livewtime" style="color:green">讲师：郭铭</span>
+    <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+  </div>
+  <div class="livebox">
+    <img src="./pic/gk3.jpg" alt="" class="liveimg">
+    <span class="livetitle">篮球场上的数学原理</span>
+    <span class="livewtime" style="color:green">TED</span>
+    <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+  </div>
+  <span class="livenow" style="width:140px;">热门公开课：</span>
+
+  <div class="livebox">
+    <img src="./pic/gk4.jpg" alt="" class="liveimg">
+    <span class="livetitle">声音千变万化的我</span>
+    <span class="livewtime" style="color:green">TED</span>
+    <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+  </div>
+  <div class="livebox">
+    <img src="./pic/gk5.jpg" alt="" class="liveimg">
+    <span class="livetitle">如何发起一场运动</span>
+    <span class="livewtime" style="color:green">TED</span>
+    <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+  </div>
+  <div class="livebox">
+    <img src="./pic/gk6.jpg" alt="" class="liveimg">
+    <span class="livetitle">为什么隐私如此重要</span>
+    <span class="livewtime" style="color:green">TED</span>
+    <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+  </div>
+  <div class="livebox">
+    <img src="./pic/gk7.jpg" alt="" class="liveimg">
+    <span class="livetitle">记忆的虚构</span>
+    <span class="livewtime" style="color:green">TED</span>
+    <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+  </div>
+  <div class="livebox">
+    <img src="./pic/gk8.jpg" alt="" class="liveimg">
+    <span class="livetitle">数据挖掘玩转婚恋网</span>
+    <span class="livewtime" style="color:green">TED</span>
+    <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+  </div>
+  </div>
+  <div class="selectright" id="smallbox_0">
+    <span class="livenow" style="width:700px;border:0px solid red;margin-bottom:10px;">正在播放： 声音千变万化的我</span>
+    <video width="900" height="550" controls style="margin-left:11px;">
+      <source src="./pic/move4.mp4" type="video/mp4">
+    </video>
+  </div>
+  </div>
+
+
+<!-- 短期实习 -->
+<div id="JKDiv_2" style="display:none;" class="jobbox">
+    <div class="selectright1"  id="smallbox2_0">
+      <div class="livebox">
+        <img src="./pic/gk1.jpg" alt="" class="liveimg">
+        <span class="livetitle">文科专业及就业盘点</span>
+        <span class="livewtime" style="color:green">讲师：韩旭</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk2.jpg" alt="" class="liveimg">
+        <span class="livetitle">寻找人生的第一份工作</span>
+        <span class="livewtime" style="color:green">讲师：郭铭</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk3.jpg" alt="" class="liveimg">
+        <span class="livetitle">篮球场上的数学原理</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk4.jpg" alt="" class="liveimg">
+        <span class="livetitle">声音千变万化的我</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk5.jpg" alt="" class="liveimg">
+        <span class="livetitle">如何发起一场运动</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk6.jpg" alt="" class="liveimg">
+        <span class="livetitle">为什么隐私如此重要</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk7.jpg" alt="" class="liveimg">
+        <span class="livetitle">记忆的虚构</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk8.jpg" alt="" class="liveimg">
+        <span class="livetitle">数据挖掘玩转婚恋网</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk4.jpg" alt="" class="liveimg">
+        <span class="livetitle">声音千变万化的我</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk5.jpg" alt="" class="liveimg">
+        <span class="livetitle">如何发起一场运动</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk6.jpg" alt="" class="liveimg">
+        <span class="livetitle">为什么隐私如此重要</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk7.jpg" alt="" class="liveimg">
+        <span class="livetitle">记忆的虚构</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk8.jpg" alt="" class="liveimg">
+        <span class="livetitle">数据挖掘玩转婚恋网</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk5.jpg" alt="" class="liveimg">
+        <span class="livetitle">如何发起一场运动</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk6.jpg" alt="" class="liveimg">
+        <span class="livetitle">为什么隐私如此重要</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+      <div class="livebox">
+        <img src="./pic/gk6.jpg" alt="" class="liveimg">
+        <span class="livetitle">为什么隐私如此重要</span>
+        <span class="livewtime" style="color:green">TED</span>
+        <span class="livewhat">腾讯首次召开秋招宣讲会</span>
+      </div>
+    </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <ul>
+    <li><a href="">关于我们</a></li>
+    <li><a href="">加入我们</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">联盟合作</a></li>
+    <li><a href="">免责申明</a></li>
+    <li><a href="">投诉建议</a></li>
+
+  </ul>
+  <ul style="margin-top:-20px;">
+    <li style="color:#999">Copyright © 2017.青云校招 All rights reserved.</li>
+  </ul>
+</div>
+
+
+
+<script>
+  function ChangeDiv(divId,divName,zDivCount)
+  {
+    for(i=0;i<=zDivCount;i++)
+    {
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('change'+i).style.borderBottom= " 2px solid transparent";
+      document.getElementById('change'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('change'+divId).style.borderBottom= " 2px solid #68ccb3";
+    document.getElementById('change'+divId).style.color= "#696969";
+
+  //显示当前层
+  }
+
+
+  </script>
+</body>
+</html>

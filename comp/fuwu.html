@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>青云校招</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.bdootcss.com/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.bdootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    .contain{
+      height: 860px;
+      width: 1200px;
+      margin: 0 auto;
+      /*background-color: pink;*/
+      margin-top: 25px;
+    }
+    .top{
+      height: 25px;
+      background-color: #6d6d6d;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .top span{
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+    .top span a{
+      text-decoration: none;
+      color: #d8d8d8;
+    }
+    .top span a:hover{
+      color: white;
+    }
+    .top ul{
+      display: inline-block;
+    }
+    .top ul ul{
+      display: none;
+    }
+    .top ul li:hover >ul{
+      display: block;
+    }
+    .nav{
+      height: 60px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .logo{
+      height: 50px;
+      width: 170px;
+      background-image: url(./../pic/logo.png);
+      float: left;
+    }
+    .navul{
+      float: left;
+      width: 600px;
+      height: 50px;
+      margin-left: 400px;
+    }
+    .navli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+      margin: 0 10px;
+    }
+    .navlia{
+      display: inline-block;
+      height: 50px;
+      width: 75px;
+      text-align: center;
+      line-height: 50px;
+      color: #999;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .navlia:hover{
+      color: #545454;
+      border-bottom: 3px solid #00aa81;
+      text-decoration: none;
+    }
+    .search-wrapper{
+      height: 150px;
+      width: 100%;
+      background-color: #f2f5f4;
+      position: relative;
+      text-align: center;
+    }
+    .search-box{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 46px;
+      width: 720px;
+      border: 1px solid #E8E8E8;
+      padding: 5px;
+      font-size: 14px;
+      margin-left: -120px;
+      margin-top: 30px;
+      outline:none;
+      color: black;
+
+    }
+    .search-box:focus{
+
+      border: 1px solid #00aa81;
+
+    }
+
+    .search-button{
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 5px;
+      height: 46px;
+      width: 140px;
+      background-color: #00aa81;
+      margin-top: 30px;
+      line-height: 36px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover{
+        background-color: #5ce6c5  ;
+      color: #fff;
+    }
+    .reul{
+      float: left;
+      width: 1000px;
+      height: 30px;
+      margin-left: -62px;
+
+    }
+    .reli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+    }
+    .relia{
+      display: inline-block;
+      padding-right: 2px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #00aa81;
+    }
+    .relia:hover{
+      color: #757575;
+      text-decoration: none;
+
+    }
+
+
+    .jobbox{
+      height: 580px;
+      width: 1200px;
+      box-sizing: border-box;
+      border: 2px solid #eeeeee;
+      box-sizing: border-box;
+    }
+
+    .bigselect{
+      width: 180px;
+      height: 600px;
+      display: flex;
+      position: relative;
+      float: left;
+      flex-direction: column;
+      /*justify-content: flex-start;*/
+      box-sizing: border-box;
+
+      align-items: center;
+    }
+    .select{
+      height: 50px;
+      width: 180px;
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 1.6px solid #dedede;
+      color: #a2a2a2;
+      /*margin-top: 4px;*/
+      /*border-right: 1.6px solid #00aa81;*/
+      /*color: #00aa81;*/
+    }
+    .select span:hover{
+      color: #00aa81;
+    }
+    .select span{
+
+      font-size: 17px;
+      line-height: 50px;
+
+    }
+    .selectright{
+      float: left;
+      height:578px;
+      width: 550px;
+      padding: 14px;
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      overflow: scroll;
+    }
+    .jobone{
+      height: 120px;
+      width: 230px;
+      /*margin-left: 30px;*/
+      /*background-color: pink;*/
+      padding: 8px;
+      border: 1px solid #cecece;
+      box-sizing: border-box;
+      margin-top: 16px;
+    }
+    .jobone:hover{
+      box-shadow: 0 0 5px #cecece;
+    }
+    .jobone a{
+      color: #8a8989;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .jobone a:hover{
+      color: #68ccb3;
+    }
+    .spantime{
+
+      display: inline-block;
+      margin-top: -3px;
+      margin-right: 4px;
+      font-size: 16px;
+      color: #269c80;
+      float: right;
+    }
+    .spanmon{
+      margin-left: 40px;
+      color: #ff7373;
+      font-size: 18px;
+      float: right;
+    }
+    .spanlot{
+      margin-top: 5px;
+      margin-right: 3px;
+      background-color: #eaeaea;
+      display: inline-block;
+      /*padding: 0px 6px;*/
+      height: 16px;
+      color: #848484;
+      line-height: 16px;
+      font-size: 12px;
+      float: left;
+    }
+    .combox{
+      height: 80px;
+      width: 100%;
+      /*background-color: pink;*/
+      border-top: 1.4px dashed #d6d6d6;
+      /*border-style: dashed;*/
+      margin-top:35px;
+      /*padding: 5px;*/
+      padding-top: 10px;
+    }
+    .combox img{
+      height: 34px;
+      width: 34px;
+      /*padding: 5px;*/
+      background-size: contain;
+      margin-right:14px;
+      float: left;
+    }
+    .comname{
+      display: inline-block;
+      float: left;
+      width: 160px;
+      height: 16px;
+      line-height: 16px;
+      font-size: 11px;
+      color: #6f6f6f;
+    }
+    .comte{
+      font-size: 11px;
+      color: #888;
+    }
+
+    .rebiye{
+      float: left;
+      height: 570px;
+      width: 260px;;.
+      background-color: red;
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+
+    .change{
+      margin-top: 25px;
+      margin-left: 0px;
+
+      display: inline-block;
+      /*padding-bottom: 25px;*/
+      padding: 10px 10px;
+      font-size: 17px;
+      cursor: pointer;
+      color: #999;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .change:hover{
+      color: #00aa81;
+    }
+
+
+
+
+
+    .footer{
+      height: 80px;
+      width: 100%;
+      background-color: #e6e6e6;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .footer ul{
+      padding-top: 20px;
+    }
+    .footer li{
+      display: inline;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .footer li a{
+      text-decoration: none;
+      color: #9c9c9c;
+      font-size: 14px;
+    }
+    .footer li a:hover{
+      color: #000;
+    }
+
+
+    .findjob{
+      height: 48px;
+      width: 1200px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      border: 2px solid #eeeeee;
+      padding-left: 3px;
+      padding-top: 2px;
+    }
+    .findjob:hover{
+      box-shadow: 0 0 14px #eeeeee;
+    }
+
+    .findjob span{
+      /*position: absolute;*/
+      /*top: -3px;*/
+      color:#999;
+      font-size: 18px;
+      line-height: 40px;
+      padding-right: 10px;
+      padding-left: 0px;
+
+    }
+    .findjob input{
+      height: 34px;
+      width: 150px;
+    }
+    .buttonspan{
+      /*padding-right: 0px;*/
+      margin-top: 3px;
+      display: inline-block;
+      float: right;
+      margin-right: 3px;
+      width: 66px;
+      text-align: center;
+      line-height: 34px;
+      height: 34px;
+      background-color: #00aa81;
+      color: #f7ffff;
+      cursor: pointer;
+    }
+    .buttonspan:hover{
+      background-color: #53ccaf;
+    }
+    .rightpeo1{
+      /*background: pink;*/
+      height: 440px;
+      width: 460px;
+      float: left;
+    }
+    .peobox{
+      height: 150px;
+      width: 266px;
+      /*background: pink;*/
+      padding: 10px;
+    }
+    .peobox img{
+      width: 100px;
+      height: 100px;
+      border-radius: 120px;
+      float: left;
+      margin-top: 10px;
+
+    }
+    .nameright{
+      width: 120px;
+      height: 30px;
+      float: left;
+      font-size: 21px;
+      margin-left: 13px;
+      margin-top: 20px;
+      color: #848484;
+    }
+    .zhiwei{
+      margin-top: 24px;
+      width: 130px;
+      height: 30px;
+      float: left;
+      font-size: 18px;
+      margin-left: 13px;
+      color: #6d6d6d;
+    }
+    .xiangxi{
+      width: 266px;
+      height: 423px;
+      /*background: pink;*/
+      padding: 7px;
+      box-sizing: border-box;
+      margin-top: -12px;
+    }
+    .bottom{
+      white-space: normal;
+      width: 266px;
+      display: block;
+      margin-top: 6px;
+    }
+    .button{
+      margin-top: 12px;
+      padding: 0 10px;
+      height: 27px;
+      line-height: 27px;
+      display:inline-block;
+      border-radius: 16px;
+      background: #00aa81  ;
+      color: white;
+      cursor: pointer;
+    }
+    .button:hover{
+      background: #5dd0b4  ;
+    }
+    .fuwubox{
+      margin-top: 23px;
+      width: 320px;
+      height: 140px;
+      /*background-color: pink;*/
+      border: 2px solid #dedede;
+      cursor: pointer;
+    }
+    .fuwubox:hover{
+      box-shadow: 0 0 20px #b9adad;
+    }
+    .fuwubox img{
+      height: 72px;
+      width: 120px;
+      background-color: green;
+      float: left;
+      margin-top: 2px;
+      margin-left: 10px;
+    }
+    .fuwuname{
+      display: inline-block;
+      height: 30px;
+      width: 140px;
+      font-size: 19px;
+      line-height: 30px;
+      margin-left: 14px;
+      margin-top: 8px;
+      color: #777777;
+    }
+    .fuwumon{
+      display: inline-block;
+      height: 25px;
+      width: 140px;
+      font-size: 18px;
+      line-height: 25px;
+      margin-left: 16px;
+      color: #fb4747;
+      margin-top: 2px;
+    }
+    .fuwuxiang{
+      width: 300px;
+      height:56px;
+      /*background: orange;*/
+      color: #545151;
+      float: left;
+      margin-top: 5px;
+      margin-left: 10px;
+      font-size: 13px;
+    }
+    .xiangimg{
+      width: 230px;
+      height: 130px;
+      background: pink;
+      margin: 10px;
+    }
+    .hrbox{
+      height: 150px;
+      width: 520px;
+      margin: 10px;
+      cursor: pointer;
+      border: 2px solid #e2e2e2;
+    }
+    .hrbox:hover{
+      box-shadow: 0 0 20px #d6d4d4;
+    }
+    .hrimg{
+      height: 120px;
+      width: 190px;
+      background: green;
+      margin: 14px;
+      display: block;
+      float: left;
+    }
+    .hrname{
+      width: 260px;
+      height: 32px;
+      display: inline-block;
+      float: left;
+      margin-top: 14px;
+      font-size: 18px;
+      line-height: 32px;
+      color: #676565;
+    }
+    .hrtime{
+      width: 260px;
+      height: 26px;
+      display: inline-block;
+      float: left;
+      margin-top: 7px;
+      font-size: 15px;
+      line-height: 26px;
+      color: #25ad23;
+    }
+    .hrxiang{
+      width: 260px;
+      height: 22px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      font-size: 14px;
+      color: #484545;
+    }
+    .huatiquan{
+      width: 510px;
+      height: 123px;
+      /*background: green;*/
+      margin: 10px;
+      border-bottom: 2px solid #dedede;
+      cursor: pointer;
+    }
+    .huatiquan:hover{
+      box-shadow: 0 0 20px #b9adad;
+    }
+    .hrpic{
+      height: 100px;
+      width: 100px;
+      border-radius: 50px;
+      background: pink;
+      display: block;
+      float: left;
+      margin: 10px;
+    }
+    .hrwhat{
+      width: 370px;
+      height: 50px;
+      display: inline-block;
+      /*background: pink;*/
+      margin-top: 14px;
+      color: #6d6d6d;
+      font-size: 16px;
+
+    }
+    .hrfatime{
+      width: 370px;
+      height: 20px;
+      display: inline-block;
+      /*background: yellow;*/
+      color: #39ad39;
+      margin-bottom: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span ><a  href="./../index.html">用户端</a></span>
+    <span><a>|</a></span>
+    <span style="margin-right:1000px;"><a href="" style="color:#2de6ba">企业端</a></span>
+    <span><a href="qiye.html">企业中心</a></span>
+    <span><a>|</a></span>
+    <span><a href="rencaiku.html">我的人才库</a></span>
+  </div>
+  <div class="nav">
+    <div style="width:1200px;display: inline-block;">
+      <div class="logo"></div>
+      <ul class="navul" style="width:700px;margin-left:330px;">
+        <li  class="navli"><a class="navlia"  href="index.html">首页</a></li>
+        <li class="navli"><a class="navlia"  href="xiaobai.html">小白</a></li>
+        <li class="navli"><a class="navlia" href="xinxiu.html">新秀</a></li>
+        <li class="navli"><a class="navlia" href="baigujing.html">白骨精</a></li>
+        <li class="navli"><a class="navlia"  href="daka.html">大咖</a></li>
+        <li class="navli"style="width:75px;"><a class="navlia" href="guzhu.html">雇主品牌</a></li>
+        <li class="navli"><a class="navlia" style="color:#545454;border-bottom: 3px solid #00aa81;" href="fuwu.html">周边服务</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="search-wrapper">
+    <div style="height:140px;  overflow: hidden;  width:1200px;display: inline-block; ">
+      <div>
+        <input placeholder="请输入期望的学历、专业、工作经验、意向工作地点、期望工资" type="text" class="search-box" name="" value=""><div class="search-button">搜素</div>
+      </div>
+      <ul class="reul">
+        <a style="color: #757575; font-size:14px;">热门搜索：</a>
+        <li class="reli"> <a href="" class="relia">人力资源</a> </li>
+        <li class="reli"> <a href="" class="relia">物流管理</a> </li>
+        <li class="reli"> <a href="" class="relia">java</a> </li>
+        <li class="reli"> <a href="" class="relia">web前端</a> </li>
+        <li class="reli"> <a href="" class="relia">行政管理</a> </li>
+        <li class="reli"> <a href="" class="relia">高级会计师</a> </li>
+        <li class="reli"> <a href="" class="relia">数据分析师</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="contain">
+  <span onclick="JavaScript:ChangeDiv('0','JKDiv_',3)" class="change" id="change0" style="color:#696969;border-bottom:2px solid #68ccb3;">人事外包</span><span>  </span>
+  <span onclick="JavaScript:ChangeDiv('1','JKDiv_',3)" class="change" id="change1">定向培养</span>
+  <span onclick="JavaScript:ChangeDiv('2','JKDiv_',3)" class="change" id="change2">定制化服务</span>
+  <span onclick="JavaScript:ChangeDiv('3','JKDiv_',3)" class="change" id="change3">HR社交圈</span>
+  <hr style="margin-top:8px;">
+
+
+<div id="JKDiv_0"  class="jobbox">
+  <div class="selectright" style="width:730px;justify-content: space-around;"  >
+    <div class="fuwubox" style="box-shadow: 0 0 20px #b9adad;">
+      <img src="./../pic2/lw.jpg" alt="">
+      <span class="fuwuname">劳务派遣服务</span>
+      <span class="fuwumon">300／位</span>
+      <span class="fuwuxiang">简介：劳务派遣机构与派遣劳工订立劳动合同，把劳动者派向其他用工单位，再由其用工单位向派遣机构支付一笔服务费用的一种用工形式。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/rs.jpg" alt="">
+      <span class="fuwuname">人事代理服务</span>
+      <span class="fuwumon">300／小时</span>
+      <span class="fuwuxiang">简介：人事代理，是一种人力资源外包形式，是企业根据需求将一项或多项人力资源管理工作或职能外包出去，由专业的第三方代理。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/xz.jpg" alt="">
+      <span class="fuwuname">薪资调查</span>
+      <span class="fuwumon">1000／单位</span>
+      <span class="fuwuxiang">简介：薪酬调查是指企业为了以合理的人力成本吸引所需求的人才而进行的了解竞争对手或同类企业的相同或相似岗位的薪酬水平的行动。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/rc.jpg" alt="">
+      <span class="fuwuname">人才背景调查</span>
+      <span class="fuwumon">400／位</span>
+      <span class="fuwuxiang">简介：公司为了保障招聘到的人才“真材实料”,经常采用员工背景调查,对应聘员工的工作、学习、教育等背景资料进行调查。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/px.jpg" alt="">
+      <span class="fuwuname">员工培训服务</span>
+      <span class="fuwumon">费用面议</span>
+      <span class="fuwuxiang">简介：采用各种方式对员工进行有目的、有计划的培养和训练的管理活动，公开课、内训、等均为常见的员工培训及企业培训形式。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/lw.jpg" alt="">
+      <span class="fuwuname">项目外包服务</span>
+      <span class="fuwumon">费用面议</span>
+      <span class="fuwuxiang">简介：企业做自己最能干的事情（扬己所长），把其它的工作外包给能做好这些事情的专业组织（避己之短）。</span>
+    </div>
+  </div>
+  <div class="rightpeo1" >
+    <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+
+    <div style="font-size:20px; display:'block'; margin: 12px; ">服务详情：</div>
+    <img class="xiangimg" src="./../pic2/lw.jpg" alt="">
+    <span class="fuwuname" style="position:absolute; ">劳务派遣服务</span>
+
+    <span class="fuwumon" style="position:absolute; top:480px; ">费用：300/位</span>
+    </div>
+    <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+      <a>内容包括：</a><br>
+      ①劳务/劳务合同签订 <br>
+      ②社保管理、员工福利保障、工资税务管理<br>
+      ③人事档案管理、用/退工手续办理、职称评审服务、集体户籍管理、出具各类人事证明、办理人才引进、办理《就业证》《居住证》、员工活动<br>
+      ④劳动人事法律顾问、代理劳动争议案件、审定各类劳动合同及规范性文件、劳动法律法规培训、调解劳动人事争议<br>
+    </div>
+    <div style="width:450px; height:130px; font-size:16px; line-height:25px;  float:right">
+    <a>服务优势：</a> <br>
+      ①用人单位可免去办理各类人事劳动手续，大幅度降低管理成本 <br>
+      ②用人单位与员工无劳动关系，避免劳动纠纷、转移风险<br>
+      ③用人单位与员工无劳动关系，避免劳动纠纷、转移风险<br>
+      ④灵活机动，满足弹性用人需求<br>
+    </div>
+    <div style="padding-left:60px; width:450px; height:50px; font-size:16px; line-height:25px;  float:right">
+
+    <span class="button">☆ 收藏</span>
+    <span class="button">X 不感兴趣</span>
+    <span class="button"> ✆ 联系预约</span>
+    </div>
+  </div>
+
+</div>
+
+<div id="JKDiv_1" style="display:none"  class="jobbox">
+  <div class="selectright" style="width:730px;justify-content: space-around;"  >
+    <div class="fuwubox" style="box-shadow: 0 0 20px #b9adad;">
+      <img src="./../pic2/t1.jpg" alt="">
+      <span class="fuwuname">首席营销官课程</span>
+      <span class="fuwumon">17000／位</span>
+      <span class="fuwuxiang">简介：CMO不得不对每笔营销投入做出更为明智的决策，严格监督投入与产出比。CMO对于企业的价值，已不仅仅是驱动市场营销活动。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/t2.jpg" alt="">
+      <span class="fuwuname">董事长特设课程</span>
+      <span class="fuwumon">800／小时</span>
+      <span class="fuwuxiang">简介：课程将集结中欧顶尖教授及行业领袖联合授课，从理论到实践进行全面解读和深入剖析。课程共计四大模块，每模块各三天。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/t3.jpg" alt="">
+      <span class="fuwuname">管理文凭课程</span>
+      <span class="fuwumon">1000／小时</span>
+      <span class="fuwuxiang">简介：管理文凭课程是为那些志向远大，并迫切需要获得管理培训的经理而开设的。本课程以学员为中心，学员将了解自身在组织中的职能。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/t4.jpg" alt="">
+      <span class="fuwuname">管理发展课程</span>
+      <span class="fuwumon">4000／位</span>
+      <span class="fuwuxiang">简介：企业在经营到一定规模后，要达成企业预期的战略目标，一定要加上整个中高层管理团队的密切配合，共同努力才有可能实现梦想。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/t5.jpg" alt="">
+      <span class="fuwuname">战略实施课程</span>
+      <span class="fuwumon">8000／位</span>
+      <span class="fuwuxiang">简介：本课程将涵盖当前有关战略实施的最新理念，并帮助学员更好地了解自己能够为企业的成功做出哪些贡献。课程学习方式主要是案例讨论。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/t6.jpg" alt="">
+      <span class="fuwuname">积极领导力</span>
+      <span class="fuwumon">费用面议</span>
+      <span class="fuwuxiang">简介：中国的商业环境瞬息万变，营造更加积极投入的氛围。在《高效能人士的七个习惯》一书中，斯蒂芬•柯维将这种领导品质称为“积极主动性”。</span>
+    </div>
+  </div>
+  <div class="rightpeo1" >
+    <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+
+    <div style="font-size:20px; display:'block'; margin: 12px; ">服务详情：</div>
+    <img class="xiangimg" src="./../pic2/t1.jpg" alt="">
+    <span class="fuwuname" style="position:absolute; ">首席营销官课程</span>
+
+    <span class="fuwumon" style="position:absolute; top:480px; ">费用：17000/位</span>
+    </div>
+    <div style="width:450px; height:140px; font-size:16px; line-height:25px;  float:right">
+      <a>内容包括：</a><br>
+      开课日期：2017年7月12日开课 <br>
+      开课地点：上海/北京<br>
+      校友资格：完成课程后，将获得中欧校友资格。<br>
+      课程费用: 人民币17000元<br>
+    </div>
+    <div style="width:450px; height:170px; font-size:16px; line-height:25px;  float:right">
+    <a>服务优势：</a> <br>
+      世界正以令人炫目的方式变化着，CMO不得不对每笔营销投入做出更为明智的决策，严格监督投入与产出比。CMO对于企业的价值，已不仅仅是驱动市场营销活动，还将影响产品开发策略、供应链策略、商品定价策略、客户服务策略……只有那些能在不断变化的环境中仍能所向披靡的CMO们，才能帮助企业成功打造营销领域的核心竞争力，成为一个卓越的营销企业。 <br>
+
+    </div>
+    <div style="padding-left:60px; width:450px; height:50px; font-size:16px; line-height:25px;  float:right">
+
+    <span class="button">☆ 收藏</span>
+    <span class="button">X 不感兴趣</span>
+    <span class="button"> ✆ 联系预约</span>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div id="JKDiv_2" style="display:none"  class="jobbox">
+  <div class="selectright" style="width:730px;justify-content: space-around;"  >
+    <div class="fuwubox" style="box-shadow: 0 0 20px #b9adad;">
+      <img src="./../pic2/g1.jpg" alt="">
+      <span class="fuwuname">管理咨询服务</span>
+      <span class="fuwumon">1000／一小时</span>
+      <span class="fuwuxiang">简介：通过运用战略规划框架模型及 PEST、SWOT 等工具，帮助企业明晰自身所处内外部环境、战略定位等，在此基础上逐步提出企业总体规划。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/g2.jpg" alt="">
+      <span class="fuwuname">武汉大学校猎</span>
+      <span class="fuwumon">3000／位</span>
+      <span class="fuwuxiang">简介：我们重视企业与求职者的完美结合，为企业严格甄选合适人才。同时，我们会针对不同风格的企业与行业解决方案来提供更周到、更卓越的服务。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/g3.jpg" alt="">
+      <span class="fuwuname">江西财大校猎</span>
+      <span class="fuwumon">2000／位</span>
+      <span class="fuwuxiang">简介：我们重视企业与求职者的完美结合，为企业严格甄选合适人才。同时，我们会针对不同风格的企业与行业解决方案来提供更周到、更卓越的服务。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/g4.jpg" alt="">
+      <span class="fuwuname">校招策划服务</span>
+      <span class="fuwumon">3000／套</span>
+      <span class="fuwuxiang">简介：校园招聘属于企业外部的人员招募的具体形式之一，相对于企业内部的人员选 拔，它具有：能带来新思想，新方法，有利于招收到一流人才；</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/g5.jpg" alt="">
+      <span class="fuwuname">社招策划服务</span>
+      <span class="fuwumon">费用面议</span>
+      <span class="fuwuxiang">简介：采用各种方式对员工进行有目的、有计划的培养和训练的管理活动，公开课、内训、等均为常见的员工培训及企业培训形式。</span>
+    </div>
+    <div class="fuwubox" >
+      <img src="./../pic2/g6.jpg" alt="">
+      <span class="fuwuname">面试策划服务</span>
+      <span class="fuwumon">费用面议</span>
+      <span class="fuwuxiang">简介：企业做自己最能干的事情（扬己所长），把其它的工作外包给能做好这些事情的专业组织（避己之短）。</span>
+    </div>
+
+  </div>
+  <div class="rightpeo1" >
+    <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+
+    <div style="font-size:20px; display:'block'; margin: 12px; ">服务详情：</div>
+    <img class="xiangimg" src="./../pic2/g1.jpg" alt="">
+    <span class="fuwuname" style="position:absolute; ">管理咨询服务</span>
+
+    <span class="fuwumon" style="position:absolute; top:480px; ">1000／一小时</span>
+    </div>
+    <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+      <a>您可能面临的困惑：</a><br>
+      ①部分企业高层领导对公司的发展有初步设想，但缺乏前瞻性和系统性思考； <br>
+      ②战略设想未经研究与论证，缺乏能使之付诸于行动的完整战略体系，战略存在不确定性，对如何选择新业务、如何开拓市场、如何设计可持续的商业模式比较困惑<br>
+      ③没有具体的中长期规划，高层战略思想不够统一，缺乏清晰明确的实施落地计划和责任机制<br>
+    </div>
+    <div style="width:450px; height:130px; font-size:16px; line-height:25px;  float:right">
+    <a>帮助您实现的价值：</a> <br>
+      ①清晰企业未来的发展方向，明确企业使命、愿景及核心价值观，形成具体的发展战略；<br>
+      ②各部门统一认识公司的战略目标，及时作出业务规划；<br>
+      ③清晰的战略规划推动战略的落地实施。<br>
+
+    </div>
+    <div style="padding-left:60px; width:450px; height:50px; font-size:16px; line-height:25px;  float:right">
+
+    <span class="button">☆ 收藏</span>
+    <span class="button">X 不感兴趣</span>
+    <span class="button"> ✆ 联系预约</span>
+    </div>
+  </div>
+
+</div>
+<div id="JKDiv_3" style="display:none"  class="jobbox">
+
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv('0','smallbox_',3)" id="smallselect1_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span>HR峰会</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('1','smallbox_',3)" id="smallselect1_1">
+      <span>HR主题沙龙</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('2','smallbox_',3)" id="smallselect1_2">
+      <span>HR俱乐部</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('3','smallbox_',3)" id="smallselect1_3">
+      <span>HR话题圈</span>
+    </div>
+  </div>
+    <div  id="smallbox_0">
+      <div class="selectright" style="">
+        <div class="hrbox">
+          <img class="hrimg" src="./../pic2/fh2.jpg" alt="">
+          <span class="hrname">江西首届"远志"HR峰会</span>
+          <span class="hrtime">时间： 2017/9/23</span>
+          <span class="hrxiang">举办单位：江西财经大学工商学院</span>
+          <span class="hrxiang">举办地点：南昌市香格里拉大酒店</span>
+        </div>
+        <div class="hrbox">
+          <img class="hrimg" src="./../pic2/fh1.jpg" alt="">
+          <span class="hrname">武汉大学第四届“洪峰”HR峰会</span>
+          <span class="hrtime">时间： 2017/10/13</span>
+          <span class="hrxiang">举办单位：武汉大学工商学院</span>
+          <span class="hrxiang">举办地点：武汉市才子大酒店</span>
+        </div>
+        <div class="hrbox">
+          <img class="hrimg" src="./../pic2/fh3.jpg" alt="">
+          <span class="hrname">第二届中国蓝天HR全国峰会</span>
+          <span class="hrtime">时间： 2017/11/1</span>
+          <span class="hrxiang">举办单位：中国人民大学工商学院</span>
+          <span class="hrxiang">举办地点：北京市北京饭店</span>
+        </div>
+        <div class="hrbox">
+          <img class="hrimg" src="./../pic2/fh4.jpg" alt="">
+          <span class="hrname">第六届宇飞HR全国峰会</span>
+          <span class="hrtime">时间： 2017/12/4</span>
+          <span class="hrxiang">举办单位：中山大学工商学院</span>
+          <span class="hrxiang">举办地点：广州市半岛大酒店</span>
+        </div>
+
+      </div>
+      <div class="rightpeo1" >
+        <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+
+        <div style="font-size:20px; display:'block'; margin: 12px; ">峰会详情：</div>
+        <img class="xiangimg" src="./../pic2/fh2.jpg" alt="">
+        <span class="fuwuname" style="position:absolute; width:2090px; ">江西首届"远志"HR峰会</span>
+
+        <span class="fuwumon" style="position:absolute; top:480px; ">费用：1000／人</span>
+        </div>
+        <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+          <a>您可能面临的困惑：</a><br>
+          放眼大环境，人才资源丰富，市场也庞大，企业之间对于人才招揽的竞争力其实非常激烈。作为HR在招纳人才的时候，难免遇到久久觅不到高度适配的人选，或者在塞选的过程中被其他企业捷足先登的窘境。对于公司内部人员的管理，薪酬福利体系的规划与完善，又要同时维护公司和员工的利益，夹在中间“腹背受敌”，哎...只想安静的做一个温情又威信的好Boss，肿么办~~~！要打好人力资源管理这一仗，必须背水一战！
+        </div>
+        <div style="width:450px; height:120px; font-size:16px; line-height:25px;  float:right">
+        <a>峰会嘉宾：</a> <br>
+          ①中国人民大学工商管理学院教授：李新元<br>
+          ②华为人力资源管理部总监：陈斌<br>
+          ③网易CFO：刘源<br>
+
+        </div>
+        <div style="padding-left:60px; width:450px; height:50px; font-size:16px; line-height:25px;  float:right">
+
+        <span class="button">☆ 收藏</span>
+        <span class="button">X 不感兴趣</span>
+        <span class="button"> ✆ 马上参加</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="display:none;" id="smallbox_1">
+      <div class="selectright" >
+        <div class="hrbox">
+          <img class="hrimg" src="./../pic2/fh4.jpg" alt="">
+          <span class="hrname">第六届宇飞HR全国沙龙</span>
+          <span class="hrtime">时间： 2017/9/4</span>
+          <span class="hrxiang">举办单位：南昌用友股份集团</span>
+          <span class="hrxiang">举办地点：南昌市香格里拉大酒店</span>
+        </div>
+        <div class="hrbox">
+          <img class="hrimg" src="./../pic2/fh2.jpg" alt="">
+          <span class="hrname">江西首届"远志"HR沙龙</span>
+          <span class="hrtime">时间： 2017/9/23</span>
+          <span class="hrxiang">举办单位：南昌奥龙集团</span>
+          <span class="hrxiang">举办地点：南昌市香格里拉大酒店</span>
+        </div>
+        <div class="hrbox">
+          <img class="hrimg" src="./../pic2/fh1.jpg" alt="">
+          <span class="hrname">第四届“洪峰”HR沙龙</span>
+          <span class="hrtime">时间： 2017/9/13</span>
+          <span class="hrxiang">举办单位：武汉大学工商学院</span>
+          <span class="hrxiang">举办地点：武汉市才子大酒店</span>
+        </div>
+        <div class="hrbox">
+          <img class="hrimg" src="./../pic2/fh3.jpg" alt="">
+          <span class="hrname">中国元成HR全国沙龙</span>
+          <span class="hrtime">时间： 2017/11/1</span>
+          <span class="hrxiang">举办单位：中国钢铁集团</span>
+          <span class="hrxiang">举办地点：北京市北京饭店</span>
+        </div>
+
+      </div>
+      <div class="rightpeo1" >
+        <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+
+        <div style="font-size:20px; display:'block'; margin: 12px; ">沙龙详情：</div>
+        <img class="xiangimg" src="./../pic2/fh4.jpg" alt="">
+        <span class="fuwuname" style="position:absolute; width:2090px; ">第六届宇飞HR全国沙龙</span>
+
+        <span class="fuwumon" style="position:absolute; top:480px; ">费用：500／人</span>
+        </div>
+        <div style="width:450px; height:200px; font-size:16px; line-height:25px;  float:right">
+          <a>沙龙介绍：</a><br>
+          在“大众创新、万众创业”的大背景下，创新与共享成为时代的主旋律。恰逢协会20 周年庆典，吸引了来自中国企业家代表及HR（企业人力资源管理者，下同）精英共计1200余人齐聚首，一同交流探讨新经济经济形势下的人力资源行业发展机遇与挑战。如此强大的嘉宾阵容及与会者规模，在宇飞HR全国沙龙史上尚属首次，堪称中国人力资源行业巅峰盛宴！
+        </div>
+        <div style="width:450px; height:120px; font-size:16px; line-height:25px;  float:right">
+        <a>参与嘉宾：</a> <br>
+          ①中山大学人力资源学院院长：张勇<br>
+          ②用友人力资源管理部总监：陈惠<br>
+          ③腾讯人力资源高管：任军<br>
+
+        </div>
+        <div style="padding-left:60px; width:450px; height:50px; font-size:16px; line-height:25px;  float:right">
+
+        <span class="button">☆ 收藏</span>
+        <span class="button">X 不感兴趣</span>
+        <span class="button"> ✆ 马上报名</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:none;" id="smallbox_2">
+    <div class="selectright"  >
+      <div class="hrbox">
+        <img class="hrimg" src="./../pic2/fh3.jpg" alt="">
+        <span class="hrname">元成HR全国俱乐部</span>
+        <span class="hrtime">时间： 2011/11/1</span>
+        <span class="hrxiang">创办单位：中国钢铁集团</span>
+        <span class="hrxiang">活动地点：北京市北京饭店</span>
+      </div>
+      <div class="hrbox">
+        <img class="hrimg" src="./../pic2/fh4.jpg" alt="">
+        <span class="hrname">宇飞HR俱乐部</span>
+        <span class="hrtime">创办时间： 2013/9/4</span>
+        <span class="hrxiang">创办单位：南昌用友股份集团</span>
+        <span class="hrxiang">活动地点：南昌市香格里拉大酒店</span>
+      </div>
+      <div class="hrbox">
+        <img class="hrimg" src="./../pic2/fh2.jpg" alt="">
+        <span class="hrname">"远志"HR俱乐部</span>
+        <span class="hrtime">时间： 2012/9/23</span>
+        <span class="hrxiang">创办单位：南昌奥龙集团</span>
+        <span class="hrxiang">活动地点：南昌市香格里拉大酒店</span>
+      </div>
+      <div class="hrbox">
+        <img class="hrimg" src="./../pic2/fh1.jpg" alt="">
+        <span class="hrname">“洪峰”HR俱乐部</span>
+        <span class="hrtime">时间： 2010/9/13</span>
+        <span class="hrxiang">创办单位：武汉大学工商学院</span>
+        <span class="hrxiang">活动地点：武汉市才子大酒店</span>
+      </div>
+
+    </div>
+    <div class="rightpeo1" >
+      <div style="width:450px; height:190px; font-size:16px; line-height:25px;  float:right">
+
+      <div style="font-size:20px; display:'block'; margin: 12px; ">俱乐部详情：</div>
+      <img class="xiangimg" src="./../pic2/fh4.jpg" alt="">
+      <span class="fuwuname" style="position:absolute; width:2090px; ">元成HR全国俱乐部</span>
+
+      <span class="fuwumon" style="position:absolute; top:480px; ">会费：500／年</span>
+      </div>
+      <div style="width:450px; height:180px; font-size:16px; line-height:25px;  float:right">
+        <a>俱乐部介绍：</a><br>
+        元成HR全国俱乐部，是中国专业的人力资源论坛，是HR及企业管理者学习、交流的平台。HR俱乐部，汇聚HR精英，成立于2011年1月，由北京HR俱乐群发展而来，HR俱乐部共计12大分类，50多个模块，包括了人力资源各大模块及职场、管理、线下活动、义工等方面，每天都会同步推荐案例到论坛、群、微信、微博，方便大家随时随地的交流学习。
+      </div>
+      <div style="width:450px; height:163px; font-size:16px; line-height:25px;  float:right">
+      <a>活动介绍：</a> <br>
+        HR俱乐部线下活动：HR俱乐部不定期组织HR聚会、沙龙、商务、户外、旅游、竞技、拓展等线下活动。<br>
+        HR问问：您在工作中遇到人力资源相关的问题可以在此发贴求助。热心的会员会为您解答，。<br>
+        话题讨论：汇集每周焦点，发现HR工作中的问题，共同探讨。欢迎发布有价值的讨论主题！
+<br>
+
+      </div>
+      <div style="padding-left:60px; width:450px; height:50px; font-size:16px; line-height:25px;  float:right">
+
+      <span class="button">☆ 收藏</span>
+      <span class="button">X 不感兴趣</span>
+      <span class="button"> ✆ 假如我们</span>
+      </div>
+    </div>
+  </div>
+  <div style="display:none;" id="smallbox_3">
+    <div class="selectright" >
+      <div class="huatiquan" style="box-shadow: 0 0 14px #b7aeae;">
+        <img src="./../pic/tx9.jpg" class="hrpic" alt="">
+        <span class="hrwhat">雅虎李云熙：各位HR们，当面试一个职员的时候，最需要去研究他哪方面呢？</span>
+        <span class="hrfatime">发布时间：14:29</span>
+        <span style="color:#9c9c9c;">4人回复  |   14人喜欢</span>
+      </div>
+      <div class="huatiquan">
+        <img src="./../pic2/1.jpg" class="hrpic" alt="">
+        <span class="hrwhat">用友黄磊：大伙们来说说自己在招聘的时候都遇到哪些有趣的事情～</span>
+        <span class="hrfatime">发布时间：11:29</span>
+        <span style="color:#9c9c9c;">15人回复  |   24人喜欢</span>
+      </div>
+      <div class="huatiquan">
+        <img src="./../pic2/2.jpg" class="hrpic" alt="">
+        <span class="hrwhat">北京科蓝冯言：如何挽留申请离职的员工，大家说说看？</span>
+        <span class="hrfatime">发布时间：10:29</span>
+        <span style="color:#9c9c9c;">14人回复  |   23人喜欢</span>
+      </div>
+      <div class="huatiquan">
+        <img src="./../pic2/3.jpg" class="hrpic" alt="">
+        <span class="hrwhat">科瑞刘嶂：如何辨别面试者是否真正愿意为公司付出激情？</span>
+        <span class="hrfatime">发布时间：8:25</span>
+        <span style="color:#9c9c9c;">1人回复  |   8人喜欢</span>
+      </div>
+      <div class="huatiquan">
+        <img src="./../pic2/4.jpg" class="hrpic" alt="">
+        <span class="hrwhat">奥龙邱勇：如何面对面试者对于给定薪资不满意现象，该不该加薪呢？</span>
+        <span class="hrfatime">发布时间：9:15</span>
+        <span style="color:#9c9c9c;">16人回复  |   12人喜欢</span>
+      </div>
+
+
+    </div>
+    <div class="rightpeo" style="overflow:scroll">
+      <div class="huatiquan" style="width:430px;">
+        <img src="./../pic/tx9.jpg" class="hrpic" alt="">
+        <span class="hrwhat" style="width:300px;">雅虎李云熙：各位HR们，当面试一个职员的时候，最需要去研究他哪方面呢？</span>
+        <span class="hrfatime"style="width:300px;">发布时间：14:29</span>
+        <span style="color:#9c9c9c;">4人回复  |   14人喜欢</span>
+      </div>
+      <span style="font-size:16px; color:#8c8c8c; margin-left:10px;">HR圈友回复：</span>
+      <div  style="width:430px; height:80px; margin-left:13px;margin-top:10px; margin-left:15px; margin-right:12px; ">
+        <img src="./../pic2/12.jpg" style="width:80px; height:80px; border-radius:40px; float:left; " alt="">
+        <span class="hrwhat" style="font-size:15px; margin-top:6px; margin-left10px; width:300px;">滴滴张洪：主要考究面试者对于工作的激情和对专业的热爱，其次是能够挖掘的潜力</span>
+        <span class="hrfatime"style="width:230px;">发布时间：12:19</span>
+        <span style="color:#9c9c9c;">7人赞同</span>
+      </div>
+      <hr>
+      <div  style="width:430px;  height:80px; margin-left:13px;margin-top:10px; margin-left:15px; margin-right:12px;">
+        <img src="./../pic2/13.jpg" style="width:80px; height:80px; border-radius:40px; float:left; " alt="">
+        <span class="hrwhat" style="font-size:15px; margin-top:6px; margin-left10px; width:300px;">美团亚雷：当然是综合能力呀，假如能力很强，沟通能力不足，那么是无法协同工作的。</span>
+        <span class="hrfatime"style="width:230px;">发布时间：7:12</span>
+        <span style="color:#9c9c9c;">4人赞同</span>
+      </div>
+      <hr>
+      <div  style="width:430px;  height:80px; margin-left:13px;margin-top:10px; hmargin-left:15px; margin-right:12px;">
+        <img src="./../pic2/14.jpg" style="width:80px; height:80px; border-radius:40px; float:left; " alt="">
+        <span class="hrwhat" style="font-size:15px; margin-top:6px; margin-left10px; width:300px;">当当何川：我公司主要考究面试者对于自己专研的领域是否研究够深，是否基础知识厚实。</span>
+        <span class="hrfatime"style="width:230px;">发布时间：11:22</span>
+        <span style="color:#9c9c9c;">6人赞同</span>
+      </div>
+      <hr>
+      <div  style="width:430px;  height:80px; margin-left:13px;margin-top:10px; margin-left:15px; margin-right:12px;">
+        <img src="./../pic2/15.jpg" style="width:80px; height:80px; border-radius:40px; float:left; " alt="">
+        <span class="hrwhat" style="font-size:15px; margin-top:6px; margin-left10px; width:300px;">百度悠悠：主要是综合素质吧，能力可以提升，但是有些综合素质很难提升上去的。</span>
+        <span class="hrfatime"style="width:230px;">发布时间：12:29</span>
+        <span style="color:#9c9c9c;">3人赞同</span>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+<div class="footer">
+  <ul>
+    <li><a href="">关于我们</a></li>
+    <li><a href="">加入我们</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">联盟合作</a></li>
+    <li><a href="">免责申明</a></li>
+    <li><a href="">投诉建议</a></li>
+
+  </ul>
+  <ul style="margin-top:-20px;">
+    <li style="color:#999">Copyright © 2017.青云校招 All rights reserved.</li>
+  </ul>
+</div>
+
+
+
+<script>
+  function ChangeDiv(divId,divName,zDivCount)
+  {
+    for(i=0;i<=zDivCount;i++)
+    {
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('change'+i).style.borderBottom= " 2px solid transparent";
+      document.getElementById('change'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('change'+divId).style.borderBottom= " 2px solid #68ccb3";
+    document.getElementById('change'+divId).style.color= "#696969";
+
+  //显示当前层
+  }
+
+  function Changesmalldiv(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect1_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect1_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect1_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect1_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv1(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect2_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect2_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect2_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect2_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv2(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect3_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect3_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect3_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect3_'+divId).style.color= "#00aa81";
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>青云校招</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.bdootcss.com/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.bdootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    .contain{
+      height: 760px;
+      width: 1200px;
+      margin: 0 auto;
+      /*background-color: pink;*/
+      margin-top: 25px;
+    }
+    .top{
+      height: 25px;
+      background-color: #6d6d6d;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .top span{
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+    .top span a{
+      text-decoration: none;
+      color: #d8d8d8;
+    }
+    .top span a:hover{
+      color: white;
+    }
+    .top ul{
+      display: inline-block;
+    }
+    .top ul ul{
+      display: none;
+    }
+    .top ul li:hover >ul{
+      display: block;
+    }
+    .nav{
+      height: 60px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .logo{
+      height: 50px;
+      width: 170px;
+      background-image: url(./pic/logo.png);
+      float: left;
+    }
+    .navul{
+      float: left;
+      width: 600px;
+      height: 50px;
+      margin-left: 400px;
+    }
+    .navli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+      margin: 0 10px;
+    }
+    .navlia{
+      display: inline-block;
+      height: 50px;
+      width: 60px;
+      text-align: center;
+      line-height: 50px;
+      color: #999;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .navlia:hover{
+      color: #545454;
+      border-bottom: 3px solid #00aa81;
+      text-decoration: none;
+    }
+    .search-wrapper{
+      height: 150px;
+      width: 100%;
+      background-color: #f2f5f4;
+      position: relative;
+      text-align: center;
+    }
+    .search-box{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 46px;
+      width: 720px;
+      border: 1px solid #E8E8E8;
+      padding: 5px;
+      font-size: 14px;
+      margin-left: -120px;
+      margin-top: 30px;
+      outline:none;
+      color: black;
+
+    }
+    .search-box:focus{
+
+      border: 1px solid #00aa81;
+
+    }
+
+    .search-button{
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 5px;
+      height: 46px;
+      width: 140px;
+      background-color: #00aa81;
+      margin-top: 30px;
+      line-height: 36px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover{
+        background-color: #5ce6c5  ;
+      color: #fff;
+    }
+    .reul{
+      float: left;
+      width: 1000px;
+      height: 30px;
+      margin-left: -62px;
+
+    }
+    .reli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+    }
+    .relia{
+      display: inline-block;
+      padding-right: 2px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #00aa81;
+    }
+    .relia:hover{
+      color: #757575;
+      text-decoration: none;
+
+    }
+
+
+    .jobbox{
+      height: 600px;
+      width: 1200px;
+      box-sizing: border-box;
+      border: 2px solid #eeeeee;
+      box-sizing: border-box;
+    }
+
+    .bigselect{
+      width: 180px;
+      height: 600px;
+      display: flex;
+      position: relative;
+      float: left;
+      flex-direction: column;
+      /*justify-content: flex-start;*/
+      box-sizing: border-box;
+
+      align-items: center;
+    }
+    .select{
+      height: 50px;
+      width: 180px;
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 1.6px solid #dedede;
+      color: #a2a2a2;
+      /*margin-top: 4px;*/
+      /*border-right: 1.6px solid #00aa81;*/
+      /*color: #00aa81;*/
+    }
+    .select span:hover{
+      color: #00aa81;
+    }
+    .select span{
+
+      font-size: 17px;
+      line-height: 50px;
+
+    }
+    .selectright{
+      float: left;
+      height:598px;
+      width: 1016px;
+      padding: 12px 40px;
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      border-right: 0px solid #eee;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .knowbox{
+      height: 170px;
+      width: 450px;
+      /*background-color: pink;*/
+      padding: 10px;
+      padding-top: 18px;
+      box-sizing: border-box;
+      border: 2px solid #d4d4d4;
+    }
+    .knowbox:hover{
+      box-shadow: 0 0 10px #d4d4d4;
+    }
+    .konwimg{
+      height: 130px;
+      width: 130px;
+      padding: 3px;
+      /*background-color: ed;*/
+      float: left;
+      margin-right: 13px;
+    }
+
+    .title{
+      float: left;
+      height: 60px;
+      width: 280px;
+      font-size: 19px;
+      white-space:wrap;
+      color: #6f6f6f;
+    }
+
+    .saywhat{
+      float: left;
+      height: 60px;
+      width: 280px;
+      overflow: hidden;
+     text-overflow: ellipsis;
+      color: #737373;
+    }
+    .change{
+      margin-top: 25px;
+      margin-left: 0px;
+
+      display: inline-block;
+      /*padding-bottom: 25px;*/
+      padding: 10px 10px;
+      font-size: 17px;
+      cursor: pointer;
+      color: #999;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .change:hover{
+      color: #00aa81;
+    }
+
+    .footer{
+      height: 80px;
+      width: 100%;
+      background-color: #e6e6e6;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .footer ul{
+      padding-top: 20px;
+    }
+    .footer li{
+      display: inline;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .footer li a{
+      text-decoration: none;
+      color: #9c9c9c;
+      font-size: 14px;
+    }
+    .footer li a:hover{
+      color: #000;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span ><a style="color:#2de6ba" href="">用户端</a></span>
+    <span><a>|</a></span>
+    <span style="margin-right:1000px;"><a href="comp/index.html">企业端</a></span>
+    <span><a href="">个人中心</a></span>
+    <span><a>|</a></span>
+    <span><a href="">我的简历</a></span>
+  </div>
+  <div class="nav">
+    <div style="width:1200px;display: inline-block;">
+      <div class="logo"></div>
+      <ul class="navul" style="width:700px;margin-left:330px;">
+        <li  class="navli"><a class="navlia"  href="index.html">首页</a></li>
+        <li class="navli"><a class="navlia" href="job.html">全职</a></li>
+        <li class="navli"><a class="navlia" href="jyjob.html">精英</a></li>
+        <li class="navli"><a class="navlia" href="teamjob.html">团聘</a></li>
+        <li class="navli"><a class="navlia" href="practice.html">实习</a></li>
+        <li class="navli"><a class="navlia"  style="color:#545454;border-bottom: 3px solid #00aa81;"  href="fighting.html">战力</a></li>
+        <li class="navli"><a class="navlia" href="live.html">职播</a></li>
+        <li class="navli"><a class="navlia" href="others.html">周边</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="search-wrapper">
+    <div style="height:140px;  overflow: hidden;  width:1200px;display: inline-block; ">
+      <div>
+        <input placeholder="请输入期望的工作地点、全职、兼职、实习岗位、公司名称" type="text" class="search-box" name="" value=""><div class="search-button">搜素</div>
+      </div>
+      <ul class="reul">
+        <a style="color: #757575; font-size:14px;">热门搜索：</a>
+        <li class="reli"> <a href="" class="relia">人力资源</a> </li>
+        <li class="reli"> <a href="" class="relia">物流管理</a> </li>
+        <li class="reli"> <a href="" class="relia">java</a> </li>
+        <li class="reli"> <a href="" class="relia">web前端</a> </li>
+        <li class="reli"> <a href="" class="relia">行政管理</a> </li>
+        <li class="reli"> <a href="" class="relia">高级会计师</a> </li>
+        <li class="reli"> <a href="" class="relia">数据分析师</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="contain">
+  <span onclick="JavaScript:ChangeDiv('0','JKDiv_',2)" class="change" id="change0" style="color:#696969;border-bottom:2px solid #68ccb3;">自我评测</span><span>  </span>
+  <span onclick="JavaScript:ChangeDiv('1','JKDiv_',2)" class="change" id="change1">职场攻略</span>
+  <span onclick="JavaScript:ChangeDiv('2','JKDiv_',2)" class="change" id="change2">素养提升</span>
+  <hr style="margin-top:8px;">
+
+<!-- 毕业实习 -->
+<div id="JKDiv_0" style="" class="jobbox">
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv('0','smallbox_',2)" id="smallselect1_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span >性格测试</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('1','smallbox_',2)" id="smallselect1_1">
+      <span>职业测评</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('2','smallbox_',2)" id="smallselect1_2">
+      <span>能力测评</span>
+    </div>
+  </div>
+  <div class="selectright" id="smallbox_0">
+    <div class="knowbox">
+      <img src="./pic/111.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.d1xz.net/test/gexing/art202992.aspx">测你在生活中是不是一个居安思危的人</a></span>
+      <span class="saywhat">生活无处不惊喜，也无处不惊讶。即便我们每天的生活还算充实和安稳，但是不可否认，很有可能我们会遇到一些出其不意的事物和事件。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/112.jpg" alt="" class="konwimg">
+      <span class="title"><a href="https://www.d1xz.net/test/gexing/art205191.aspx">你在面对大是大非有何不同态度？</a></span>
+      <span class="saywhat">人生总是五味杂陈，多姿多彩。你会经历成功，也会遭遇失败。人生的大起大落可能会击败你，也可能会让你烈火重生，变得更加优秀。</span>
+    </div>
+
+    <div class="knowbox">
+      <img src="./pic/113.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank'  href="https://www.d1xz.net/test/gexing/art204550.aspx">你的哪点性格影响你走向成功</a></span>
+      <span class="saywhat">人总是需要历经风雨才能见彩虹，人生的道路会是诸多坎坷，历经坎坷才能离成功更进一步。成功不会是天上掉馅饼般的降临，总是要经过自己的努力奋斗</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/114.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.d1xz.net/test/gexing/art206721.aspx">测测看你真实的性格好不好</a></span>
+      <span class="saywhat">　你对自己的性格了解吗？应该说在这个世界上，自己才应该是最了解自己的人，整日朝夕相处，没有秘密，那么你能够很清楚的诠释自己的性格吗？</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/115.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.d1xz.net/test/gexing/art206724.aspx">失业会改变你性格的哪点？</a></span>
+      <span class="saywhat">　工作作为每个人生活的重大一部分，失业就宣告你生活的一大部分就坍塌了，在你从新修建你生活的这部分，继续寻找新的工作之前，这份坍塌的废墟</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/116.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.d1xz.net/test/gexing/art214777.aspx">测你的个性和社会角色是否矛盾</a></span>
+      <span class="saywhat">每个人都有自己的脾气，正是这些脾气组成了各种各样的个性。每个人的个性都是多样而不同的，但是因为角色的原因，有些个性就不符合本身的角色。</span>
+    </div>
+  </div>
+  <div class="selectright"  style="display:none;" id="smallbox_1">
+    <div class="knowbox">
+      <img src="./pic/216.png" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.apesk.com/holland/index.html">霍兰德职业兴趣量表及在线测试(完整专业版)</a></span>
+      <span class="saywhat">每很多网友会问我们，才储除了大名鼎鼎的MBTI职业性格测试，在志愿选择或专业选择的时候，还有其他工具可以作为推荐参考吗？答案是有的 —— 霍兰德职业兴趣量表便将职业与兴趣做出了某种更为直接的关联</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/211.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.welefen.com/lab/mbti/">MBTI职业性格测试 -- 在线版</a></span>
+      <span class="saywhat">引导语：“我性格内向/外向，适合什么工作？”“哪些职业正好匹配我的性格？”“以我的个性从事什么行业好？”“我性格中的优势和劣势是什么？”</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/212.png" alt="" class="konwimg">
+      <span class="title"><a href="http://www.xinli001.com/ceshi/99897397">超准职业测试：测你最适合干什么样的工作？</a></span>
+      <span class="saywhat">命中注定，你是该成为医生还是打字员?在你本能好好去教书的时候，为什么选择了去卖书?做做下面的职业测试，也许能帮你决定该沿着哪一条职业道路前进。</span>
+    </div>
+
+    <div class="knowbox">
+      <img src="./pic/213.png" alt="" class="konwimg">
+      <span class="title"><a target='_blank'  href="https://www.d1xz.net/test/gexing/art204550.aspx">你的哪点性格影响你走向成功</a></span>
+      <span class="saywhat">人总是需要历经风雨才能见彩虹，人生的道路会是诸多坎坷，历经坎坷才能离成功更进一步。成功不会是天上掉馅饼般的降临，总是要经过自己的努力奋斗</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/214.png" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.xycareer.com/anchor/">职业锚测评</a></span>
+      <span class="saywhat">　职业锚是指当一个人面临职业选择的时候，他无论如何都不会放弃的职业中至关重要的东西或价值观。研究表明职业锚是内心深处对自己的看法，它是自己的才干、价值观、动机经过自省后形成的</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/215.png" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.xycareer.com/ability/">求职能力测试</a></span>
+      <span class="saywhat">　本求职能力测试是由向阳生涯管理咨询集团的职业规划师团队凝结11年的职业规划咨询和求职辅导经验而精心设计。旨在帮助求职正确认识自身的求职能力，并有针对性地作出调整。 </span>
+    </div>
+
+  </div>
+  <div class="selectright"  style="display:none;" id="smallbox_2">
+    <div class="knowbox">
+      <img src="./pic/315.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.apesk.com/aptitude-self-tests/">职业能力倾向(自评)测验</a></span>
+      <span class="saywhat">　普通能力倾向成套测验（general aptitude test battery ,简称GATB）,最初是美国劳工部队从1934年利用了10多年时间研究制定的。它是对许多职业群同时检查各自的不适合者的一种成套测验。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/316.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://types.yuzeli.com/survey/careerability">职业能力测试</a></span>
+      <span class="saywhat">日常生活和职业活动的观察和研究都证明，人的职业能力各不相同，有人善于言语交谈，有人善于操作，有人善于理论分析，有人善于事务性工作。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/311.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.offcn.com/sydw/2014/0808/116922.html">职业能力测试：常识判断一</a></span>
+      <span class="saywhat">常识判断主要考查考生的知识积累，为了帮助大家更好的进行备考，中公教育特别整理了一批常识判断题，助力考生取得成功!</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/312.jpg" alt="" class="konwimg">
+      <span class="title"><a href="http://www.uqude.com/quiz/13219/">职业能力倾向测试</a></span>
+      <span class="saywhat">职业能力倾向测试是通过职业能力心理测试来预测职业定位以及适合的职业类型的专业心理测试。所以职业能力倾向测试是一种心理测试。</span>
+    </div>
+
+    <div class="knowbox">
+      <img src="./pic/313.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank'  href="https://www.d1xz.net/test/gexing/art204550.aspx">你的哪点性格影响你走向成功</a></span>
+      <span class="saywhat">人总是需要历经风雨才能见彩虹，人生的道路会是诸多坎坷，历经坎坷才能离成功更进一步。成功不会是天上掉馅饼般的降临，总是要经过自己的努力奋斗</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/314.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.d1xz.net/test/gexing/art206721.aspx">测测看你真实的性格好不好</a></span>
+      <span class="saywhat">　你对自己的性格了解吗？应该说在这个世界上，自己才应该是最了解自己的人，整日朝夕相处，没有秘密，那么你能够很清楚的诠释自己的性格吗？</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- 寒暑假实习 -->
+<div id="JKDiv_1" style="display:none;" class="jobbox">
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv1('0','smallbox1_',2)" id="smallselect2_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span >简历助攻</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv1('1','smallbox1_',2)" id="smallselect2_1">
+      <span>面试宝典</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv1('2','smallbox1_',2)" id="smallselect2_2">
+      <span>每日笔试</span>
+    </div>
+  </div>
+  <div class="selectright"  id="smallbox1_0">
+    <div class="knowbox">
+      <img src="./pic/121.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://blog.sina.com.cn/s/blog_6c522bb001010h9l.html">HR对应届毕业生简历的几点建议  </a></span>
+      <span class="saywhat"> 大家普遍存在一的个误区是以为简历没通过筛选或面试没通过就表示被BS，表示自
+己不如别人了。其实一般公司招人的是选择最合适的人，而不是能力最强的人。</span>
+    </div><div class="knowbox">
+      <img src="./pic/122.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.geren-jianli.com/n2875c20.aspx">个人简历细节建议 </a></span>
+      <span class="saywhat">不知道你是否经历过这样一个矛盾的过程：到底求职个人简历上写不写年龄好，写吧，又担心自己年纪太大，对方不要，或者年纪太小，对方也不要 </span>
+    </div><div class="knowbox">
+      <img src="./pic/123.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://bbs.tianya.cn/post-no20-247192-1.shtml">100%真实的常见简历问题及其修改建议 </a></span>
+      <span class="saywhat"> 本文所列出的简历问题都来自于求职者提交的真实简历：CareerPlus在天涯论坛的“职场天地”举办的免费简历评估活动中，一共评估了100位朋友的简历。</span>
+    </div><div class="knowbox">
+      <img src="./pic/124.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.jianli-sky.com/school/29859.htm">提高简历竞争力的四点建议 </a></span>
+      <span class="saywhat">为了提高求职者的简历竞争力，从而提升成功就业的机会，今天我们邀请资深简历设计师给出简历制作的四点建议： </span>
+    </div><div class="knowbox">
+      <img src="./pic/125.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://news.ifeng.com/a/20170726/51505530_0.shtml">简历不能超过一张纸？有很多这种不靠谱的求职建议 </a></span>
+      <span class="saywhat">找工作的时候，你会听到来自家长，朋友，同学的各种建议，但问题是，其中不乏有不成熟的建议。朋友和家人都是好心，但是劳动力市场瞬息万变，几年前的做法已经不能适用于现在的情况了，而且给出建议的人可能得到了错误的信息。
+ </span>
+    </div><div class="knowbox">
+      <img src="./pic/126.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.500d.me/?f=4754">好用的简历制作工具 , 不解释 </a></span>
+      <span class="saywhat">应届生简历 简历代写 打印简历 PDF格式简历 多页纸简历 小升初简历  </span>
+    </div>
+  </div>
+
+  <div class="selectright" style="display:none;" id="smallbox1_1" >
+    <div class="knowbox">
+      <img src="./pic/221.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://arts.51job.com/arts/05/336951.html">[面试技巧]16个经典面试问题回答思路 </a></span>
+      <span class="saywhat">　面试过程中，面试官会向应聘者发问，而应聘者的回答将成为面试官考虑是否接受他的重要依据。对应聘者而言，了解这些问题背后的“猫腻”至关重要 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/222.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.douban.com/note/104905253/">大学生面试技巧及注意事项 </a></span>
+      <span class="saywhat"> 在大学生毕业就业时，面试是一个非常重要的过程，有些大学生在这个过程中感到不知所措，或者做得不好，使自己在求职中因小失大，达不到成功。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/223.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.zhihu.com/question/22357547">面试官问你的缺点是什么，应该如何回答？ </a></span>
+      <span class="saywhat">EXM？你确定不是在变相夸自己？你夸自己不重要，重要的是，我觉得我的智商被藐视了。 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/224.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.zhihu.com/question/34478434">最厉害的面试技巧都有哪些？ </a></span>
+      <span class="saywhat">我发现一个现象，在每一场面试中，面试官对我的印象都很好，甚至有一次通知复试时，HR还特意对我说：“主管对你的印象非常不错。” </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/225.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.qncye.com/fenxiang/shenghuo/<09275896 class="html"></09275896>">面试时如何谈离职原因才靠谱？ </a></span>
+      <span class="saywhat"> 在面试初次跳槽的人员时常会听到：上司不好、老板的情人不好、老板娘很烦、老板很刻薄、公司很差等诸如此类“踩”别人的答案。</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/226.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.qncye.com/fenxiang/shenghuo/08295678.html">盘点外企面试需注意的关键性错误 </a></span>
+      <span class="saywhat">当接到外企的面试通知时，很多人都高高兴兴去应试，但往往第一关都还没有过，就输了，我们常会自问，自己的能力并不差，为什么就这么被刷下来了? </span>
+    </div>
+  </div>
+
+
+
+
+  <div class="selectright"  style="display:none;" id="smallbox1_2">
+    <div class="knowbox">
+      <img src="./pic/131.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://sydw.offcn.com/2017/slxz_0710/285989.html">申论技巧：巧用事例让文章写作更为轻松 </a></span>
+      <span class="saywhat">中公事业单位招聘考试网为大家带来申论技巧：巧用事例让文章写作更为轻松，希望可以帮助大家顺利备考事业单位招聘考试！ </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/132.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://sydw.offcn.com/2017/xzcy_0727/290427.html">事业单位职业能力测试：一分钟速解各类复杂数学运算 </a></span>
+      <span class="saywhat">在事业单位考试中，往往每次考试都会有一道复杂的数学运算题目，我们很多同学平时做题少，总想着去算，结果一道题半天也整不出来，今天我们给大家介绍几种常用的方法，帮助大家在考试中节约时间，提高正确率 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/133.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://sydw.offcn.com/2017/msbk_0801/291435.html">事业单位面试技巧：专家教你面试考试中如何构思 </a></span>
+      <span class="saywhat">面试考试的一个突出特点是时间紧迫，假如不能合理高效地利用，就无法取得理想的成绩。众所周知，面试考试中的时间无非是两大块——构思与答题。 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/134.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://sydw.offcn.com/2017/slxz_0809/293803.html">申论考试技巧：申论作文立意常见的几种误区 </a></span>
+      <span class="saywhat">在申论考试中，有一种题型占据着申论考试的半壁江山，分值占据了申论考试的50%左右，这就是申发论述。需要引起同学们的重视。 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/135.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://sydw.offcn.com/2017/ggjc_0815/295116.html">事业编考试基础知识：一分钟掌握国情地理 </a></span>
+      <span class="saywhat"> 在事业单位等考试当中，国情地理部分所占的比重与重要性都属于前列，由于习惯性的思维和认识习惯，考生往往只特别注意到了政治和法律部分的知识点，而恰恰忽略了排版在最后一篇的国情地理</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/136.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://sydw.offcn.com/2017/xzcy_0823/297230.html">行测答题技巧：言语这些题型你知道吗？ </a></span>
+      <span class="saywhat"> 上半年有些同学经历了省考，经历了事业单位的统考;也有一部分同学即将踏入下半年事业单位考试的行列。</span>
+    </div>
+  </div>
+  </div>
+
+<!-- 短期实习 -->
+<div id="JKDiv_2" style="display:none;" class="jobbox">
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv2('0','smallbox2_',2)" id="smallselect3_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span >职业规划</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv2('1','smallbox2_',2)" id="smallselect3_1">
+      <span>职业导航</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv2('2','smallbox2_',2)" id="smallselect3_2">
+      <span>素质培训</span>
+    </div>
+  </div>
+  <div class="selectright"  id="smallbox2_0">
+    <div class="knowbox">
+      <img src="./pic/231.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.rc114.com/html/ebook/cdrc/2010/1224/6082.htm">浅谈职业生涯规划 </a></span>
+      <span class="saywhat"> 职业生涯是每个人职场发展的过程，而规划就如同发展过程的蓝图和计划。有效地规划职业生涯就就好比标出了职业生涯各阶段的里程碑，来指导各个阶段的具体工作</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/232.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.hjenglish.com/new/p581926/">面试中如何回答"你的五年工作规划是什么" </a></span>
+      <span class="saywhat">无论你是应届生还是有了几年工作经验的职场人，你都会在面试中碰到与职业选择有关的问题。有个最常见的版本是，“你的五年工作规划是什么？” </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/233.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://jingyan.baidu.com/article/a681b0deda385c3b18434606.html">职场达人告诉你职业规划五要点 </a></span>
+      <span class="saywhat">经验的朋友们，大家好，我是毛文，很高兴来到这样将自己在实际工作中获得的职业规划经验分享给大家，希望这些经验能够对职场新人们有所帮助。 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/234.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://lusongsong.com/info/post/742.html">迄今见过最好的职业规划的文章 </a></span>
+      <span class="saywhat">职业的选择，总的来说，无非就是销售、市场、客服、物流、行政、人事、财务、技术、管理几个大类，有个有趣的现象就是，500强的CEO当中最多的是销售出身 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/235.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.douban.com/group/topic/37504694/">你的职业规划是什么？面试经典回答 </a></span>
+      <span class="saywhat">这个问题的背后是了解求职者的求职动机和对自己中长期职业发展的思考。而此时需要传递给HR的信息是： </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/236.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://study.163.com/course/introduction/1003599028.htm">EDP：职业生涯规划与事业发展 </a></span>
+      <span class="saywhat">你是否一直勤奋努力，却对未来一片迷茫？
+你是否不满意现在的工作，经常跳槽？但却为了跳槽而跳槽，不知道为什么跳槽？ </span>
+    </div>
+
+  </div>
+  <div class="selectright" style="display:none;"  id="smallbox2_1">
+    <div class="knowbox">
+      <img src="./pic/236.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://study.163.com/course/introduction/1003599028.htm">EDP：职业生涯规划与事业发展 </a></span>
+      <span class="saywhat">你是否一直勤奋努力，却对未来一片迷茫？
+你是否不满意现在的工作，经常跳槽？但却为了跳槽而跳槽，不知道为什么跳槽？ </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/231.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.rc114.com/html/ebook/cdrc/2010/1224/6082.htm">浅谈职业生涯规划 </a></span>
+      <span class="saywhat"> 职业生涯是每个人职场发展的过程，而规划就如同发展过程的蓝图和计划。有效地规划职业生涯就就好比标出了职业生涯各阶段的里程碑，来指导各个阶段的具体工作</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/232.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.hjenglish.com/new/p581926/">面试中如何回答"你的五年工作规划是什么" </a></span>
+      <span class="saywhat">无论你是应届生还是有了几年工作经验的职场人，你都会在面试中碰到与职业选择有关的问题。有个最常见的版本是，“你的五年工作规划是什么？” </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/233.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://jingyan.baidu.com/article/a681b0deda385c3b18434606.html">职场达人告诉你职业规划五要点 </a></span>
+      <span class="saywhat">经验的朋友们，大家好，我是毛文，很高兴来到这样将自己在实际工作中获得的职业规划经验分享给大家，希望这些经验能够对职场新人们有所帮助。 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/234.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://lusongsong.com/info/post/742.html">迄今见过最好的职业规划的文章 </a></span>
+      <span class="saywhat">职业的选择，总的来说，无非就是销售、市场、客服、物流、行政、人事、财务、技术、管理几个大类，有个有趣的现象就是，500强的CEO当中最多的是销售出身 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/235.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.douban.com/group/topic/37504694/">你的职业规划是什么？面试经典回答 </a></span>
+      <span class="saywhat">这个问题的背后是了解求职者的求职动机和对自己中长期职业发展的思考。而此时需要传递给HR的信息是： </span>
+    </div>
+
+
+  </div>
+  <div class="selectright"  style="display:none;" id="smallbox2_2">
+    <div class="knowbox">
+      <img src="./pic/235.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="https://www.douban.com/group/topic/37504694/">你的职业规划是什么？面试经典回答 </a></span>
+      <span class="saywhat">这个问题的背后是了解求职者的求职动机和对自己中长期职业发展的思考。而此时需要传递给HR的信息是： </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/236.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://study.163.com/course/introduction/1003599028.htm">EDP：职业生涯规划与事业发展 </a></span>
+      <span class="saywhat">你是否一直勤奋努力，却对未来一片迷茫？
+你是否不满意现在的工作，经常跳槽？但却为了跳槽而跳槽，不知道为什么跳槽？ </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/231.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.rc114.com/html/ebook/cdrc/2010/1224/6082.htm">浅谈职业生涯规划 </a></span>
+      <span class="saywhat"> 职业生涯是每个人职场发展的过程，而规划就如同发展过程的蓝图和计划。有效地规划职业生涯就就好比标出了职业生涯各阶段的里程碑，来指导各个阶段的具体工作</span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/232.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://www.hjenglish.com/new/p581926/">面试中如何回答"你的五年工作规划是什么" </a></span>
+      <span class="saywhat">无论你是应届生还是有了几年工作经验的职场人，你都会在面试中碰到与职业选择有关的问题。有个最常见的版本是，“你的五年工作规划是什么？” </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/233.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://jingyan.baidu.com/article/a681b0deda385c3b18434606.html">职场达人告诉你职业规划五要点 </a></span>
+      <span class="saywhat">经验的朋友们，大家好，我是毛文，很高兴来到这样将自己在实际工作中获得的职业规划经验分享给大家，希望这些经验能够对职场新人们有所帮助。 </span>
+    </div>
+    <div class="knowbox">
+      <img src="./pic/234.jpg" alt="" class="konwimg">
+      <span class="title"><a target='_blank' href="http://lusongsong.com/info/post/742.html">迄今见过最好的职业规划的文章 </a></span>
+      <span class="saywhat">职业的选择，总的来说，无非就是销售、市场、客服、物流、行政、人事、财务、技术、管理几个大类，有个有趣的现象就是，500强的CEO当中最多的是销售出身 </span>
+    </div>
+
+
+
+  </div>
+</div>
+</div>
+
+
+<div class="footer">
+  <ul>
+    <li><a href="">关于我们</a></li>
+    <li><a href="">加入我们</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">联盟合作</a></li>
+    <li><a href="">免责申明</a></li>
+    <li><a href="">投诉建议</a></li>
+
+  </ul>
+  <ul style="margin-top:-20px;">
+    <li style="color:#999">Copyright © 2017.青云校招 All rights reserved.</li>
+  </ul>
+</div>
+
+
+
+<script>
+  function ChangeDiv(divId,divName,zDivCount)
+  {
+    for(i=0;i<=zDivCount;i++)
+    {
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('change'+i).style.borderBottom= " 2px solid transparent";
+      document.getElementById('change'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('change'+divId).style.borderBottom= " 2px solid #68ccb3";
+    document.getElementById('change'+divId).style.color= "#696969";
+
+  //显示当前层
+  }
+
+  function Changesmalldiv(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect1_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect1_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect1_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect1_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv1(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect2_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect2_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect2_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect2_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv2(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect3_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect3_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect3_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect3_'+divId).style.color= "#00aa81";
+  }
+  </script>
+</body>
+</html>

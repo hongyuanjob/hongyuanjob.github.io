@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>青云校招</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.bdootcss.com/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.bdootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    .contain{
+      height: 860px;
+      width: 1200px;
+      margin: 0 auto;
+      /*background-color: pink;*/
+      margin-top: 25px;
+    }
+    .top{
+      height: 25px;
+      background-color: #6d6d6d;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .top span{
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+    .top span a{
+      text-decoration: none;
+      color: #d8d8d8;
+    }
+    .top span a:hover{
+      color: white;
+    }
+    .top ul{
+      display: inline-block;
+    }
+    .top ul ul{
+      display: none;
+    }
+    .top ul li:hover >ul{
+      display: block;
+    }
+    .nav{
+      height: 60px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .logo{
+      height: 50px;
+      width: 170px;
+      background-image: url(./pic/logo.png);
+      float: left;
+    }
+    .navul{
+      float: left;
+      width: 600px;
+      height: 50px;
+      margin-left: 400px;
+    }
+    .navli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+      margin: 0 10px;
+    }
+    .navlia{
+      display: inline-block;
+      height: 50px;
+      width: 60px;
+      text-align: center;
+      line-height: 50px;
+      color: #999;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .navlia:hover{
+      color: #545454;
+      border-bottom: 3px solid #00aa81;
+      text-decoration: none;
+    }
+    .search-wrapper{
+      height: 150px;
+      width: 100%;
+      background-color: #f2f5f4;
+      position: relative;
+      text-align: center;
+    }
+    .search-box{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 46px;
+      width: 720px;
+      border: 1px solid #E8E8E8;
+      padding: 5px;
+      font-size: 14px;
+      margin-left: -120px;
+      margin-top: 30px;
+      outline:none;
+      color: black;
+
+    }
+    .search-box:focus{
+
+      border: 1px solid #00aa81;
+
+    }
+
+    .search-button{
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 5px;
+      height: 46px;
+      width: 140px;
+      background-color: #00aa81;
+      margin-top: 30px;
+      line-height: 36px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover{
+        background-color: #5ce6c5  ;
+      color: #fff;
+    }
+    .reul{
+      float: left;
+      width: 1000px;
+      height: 30px;
+      margin-left: -62px;
+
+    }
+    .reli{
+      display: inline;
+      height: 50px;
+      list-style: none;
+    }
+    .relia{
+      display: inline-block;
+      padding-right: 2px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #00aa81;
+    }
+    .relia:hover{
+      color: #757575;
+      text-decoration: none;
+
+    }
+
+
+    .jobbox{
+      height: 580px;
+      width: 1200px;
+      box-sizing: border-box;
+      border: 2px solid #eeeeee;
+      box-sizing: border-box;
+    }
+
+    .bigselect{
+      width: 180px;
+      height: 600px;
+      display: flex;
+      position: relative;
+      float: left;
+      flex-direction: column;
+      /*justify-content: flex-start;*/
+      box-sizing: border-box;
+
+      align-items: center;
+    }
+    .select{
+      height: 50px;
+      width: 180px;
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 1.6px solid #dedede;
+      color: #a2a2a2;
+      /*margin-top: 4px;*/
+      /*border-right: 1.6px solid #00aa81;*/
+      /*color: #00aa81;*/
+    }
+    .select span:hover{
+      color: #00aa81;
+    }
+    .select span{
+
+      font-size: 17px;
+      line-height: 50px;
+
+    }
+    .selectright{
+      float: left;
+      height:578px;
+      width: 750px;
+      padding: 14px;
+      box-sizing: border-box;
+      border: 2px solid #eee;
+      border-top: 0px solid #eee;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .jobone{
+      height: 120px;
+      width: 230px;
+      /*margin-left: 30px;*/
+      /*background-color: pink;*/
+      padding: 8px;
+      border: 1px solid #cecece;
+      box-sizing: border-box;
+    }
+    .jobone:hover{
+      box-shadow: 0 0 5px #cecece;
+    }
+    .jobone a{
+      color: #8a8989;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .jobone a:hover{
+      color: #68ccb3;
+    }
+    .spantime{
+      display: inline-block;
+      margin-top: -2px;
+      margin-left: 6px;
+      font-size: 13px;
+      color: #cecece;
+    }
+    .spanmon{
+      margin-left: 40px;
+      color: #ff7373;
+      font-size: 18px;
+      float: right;
+    }
+    .spanlot{
+      margin-top: 5px;
+      margin-right: 8px;
+      background-color: #eaeaea;
+      display: inline-block;
+      padding: 0px 6px;
+      height: 16px;
+      color: #848484;
+      line-height: 16px;
+      font-size: 12px;
+    }
+    .combox{
+      height: 80px;
+      width: 100%;
+      /*background-color: pink;*/
+      border-top: 1.4px dashed #d6d6d6;
+      /*border-style: dashed;*/
+      margin-top:15px;
+      /*padding: 5px;*/
+      padding-top: 10px;
+    }
+    .combox img{
+      height: 34px;
+      width: 34px;
+      /*padding: 5px;*/
+      background-size: contain;
+      margin-right:14px;
+      float: left;
+    }
+    .comname{
+      display: inline-block;
+      float: left;
+      width: 160px;
+      height: 16px;
+      line-height: 16px;
+      font-size: 11px;
+      color: #6f6f6f;
+    }
+    .comte{
+      font-size: 11px;
+      color: #888;
+    }
+
+    .rebiye{
+      float: left;
+      height: 570px;
+      width: 260px;;.
+      background-color: red;
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+
+    .change{
+      margin-top: 25px;
+      margin-left: 0px;
+
+      display: inline-block;
+      /*padding-bottom: 25px;*/
+      padding: 10px 10px;
+      font-size: 17px;
+      cursor: pointer;
+      color: #999;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .change:hover{
+      color: #00aa81;
+    }
+
+
+
+
+
+    .footer{
+      height: 80px;
+      width: 100%;
+      background-color: #e6e6e6;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .footer ul{
+      padding-top: 20px;
+    }
+    .footer li{
+      display: inline;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .footer li a{
+      text-decoration: none;
+      color: #9c9c9c;
+      font-size: 14px;
+    }
+    .footer li a:hover{
+      color: #000;
+    }
+
+
+    .findjob{
+      height: 48px;
+      width: 1200px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      border: 2px solid #eeeeee;
+      padding-left: 3px;
+      padding-top: 2px;
+    }
+    .findjob:hover{
+      box-shadow: 0 0 14px #eeeeee;
+    }
+
+    .findjob span{
+      /*position: absolute;*/
+      /*top: -3px;*/
+      color:#999;
+      font-size: 18px;
+      line-height: 40px;
+      padding-right: 10px;
+      padding-left: 0px;
+
+    }
+    .findjob input{
+      height: 34px;
+      width: 150px;
+    }
+    .buttonspan{
+      /*padding-right: 0px;*/
+      margin-top: 3px;
+      display: inline-block;
+      float: right;
+      margin-right: 3px;
+      width: 66px;
+      text-align: center;
+      line-height: 34px;
+      height: 34px;
+      background-color: #00aa81;
+      color: #f7ffff;
+      cursor: pointer;
+    }
+    .buttonspan:hover{
+      background-color: #53ccaf;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span ><a style="color:#2de6ba" href="">用户端</a></span>
+    <span><a>|</a></span>
+    <span style="margin-right:1000px;"><a href="comp/index.html">企业端</a></span>
+    <span><a href="">个人中心</a></span>
+    <span><a>|</a></span>
+    <span><a href="">我的简历</a></span>
+  </div>
+  <div class="nav">
+    <div style="width:1200px;display: inline-block;">
+      <div class="logo"></div>
+      <ul class="navul" style="width:700px;margin-left:330px;">
+        <li  class="navli"><a class="navlia"  href="index.html">首页</a></li>
+        <li class="navli"><a class="navlia"  style="color:#545454;border-bottom: 3px solid #00aa81;" href="job.html">全职</a></li>
+        <li class="navli"><a class="navlia" href="jyjob.html">精英</a></li>
+        <li class="navli"><a class="navlia" href="teamjob.html">团聘</a></li>
+        <li class="navli"><a class="navlia" href="practice.html">实习</a></li>
+        <li class="navli"><a class="navlia"  href="fighting.html">战力</a></li>
+        <li class="navli"><a class="navlia" href="live.html">职播</a></li>
+        <li class="navli"><a class="navlia" href="others.html">周边</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="search-wrapper">
+    <div style="height:140px;  overflow: hidden;  width:1200px;display: inline-block; ">
+      <div>
+        <input placeholder="请输入期望的工作地点、全职、兼职、实习岗位、公司名称" type="text" class="search-box" name="" value=""><div class="search-button">搜素</div>
+      </div>
+      <ul class="reul">
+        <a style="color: #757575; font-size:14px;">热门搜索：</a>
+        <li class="reli"> <a href="" class="relia">人力资源</a> </li>
+        <li class="reli"> <a href="" class="relia">物流管理</a> </li>
+        <li class="reli"> <a href="" class="relia">java</a> </li>
+        <li class="reli"> <a href="" class="relia">web前端</a> </li>
+        <li class="reli"> <a href="" class="relia">行政管理</a> </li>
+        <li class="reli"> <a href="" class="relia">高级会计师</a> </li>
+        <li class="reli"> <a href="" class="relia">数据分析师</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="contain">
+  <span onclick="JavaScript:ChangeDiv('0','JKDiv_',2)" class="change" id="change0" style="color:#696969;border-bottom:2px solid #68ccb3;">急聘</span><span>  </span>
+  <span onclick="JavaScript:ChangeDiv('1','JKDiv_',2)" class="change" id="change1">优聘</span>
+  <span onclick="JavaScript:ChangeDiv('2','JKDiv_',2)" class="change" id="change2">悠聘</span>
+  <hr style="margin-top:8px;">
+
+<!-- 毕业实习 -->
+<div class="findjob">
+  <span style="color:#00aa81">职位搜索></span>
+  <span>岗位:</span><input type="text">
+  <span>行业:</span><input type="text">
+  <span>公司:</span><input type="text">
+  <span>薪资:</span><input type="text">
+  <span>地点:</span><input type="text">
+  <span class="buttonspan" style="padding:0px;line-height: 34px;color: #f7ffff;">搜索</span>
+</div>
+<div id="JKDiv_0" style="" class="jobbox">
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv('0','smallbox_',2)" id="smallselect1_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span >3日内到岗</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('1','smallbox_',2)" id="smallselect1_1">
+      <span>3-7日内到岗</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv('2','smallbox_',2)" id="smallselect1_2">
+      <span>7-15内到岗</span>
+    </div>
+  </div>
+  <div class="selectright" id="smallbox_0">
+    <div class="jobone">
+      <a href="">数据分析师 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">9k-13k</sapn>
+      <span class="spanlot">五险一金</span>
+      <div class="combox">
+        <img src="./pic/1.png" alt="">
+        <span class="comname">阿里巴巴北京分部</span>
+        <span class="comte">互联网公司</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级渠道销售 </a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">5k-8k</sapn>
+      <span class="spanlot">氛围</span>
+      <div class="combox">
+        <img src="./pic/2.png" alt="">
+        <span class="comname">一周CP</span>
+        <span class="comte">移动互联网,社交网络</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深投资经理        </a>
+      <span class="spantime">[7:20]发布</span>
+      <sapn class="spanmon">7k-9k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/3.png" alt="">
+        <span class="comname">有赞</span>
+        <span class="comte">企业服务,电子商务</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深交易员 </a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级企业律师</a>
+      <span class="spantime">[15:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">结婚礼包</span>
+      <div class="combox">
+        <img src="./pic/5.png" alt="">
+        <span class="comname">筑家易</span>
+        <span class="comte">移动互联网,金融 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">商品房产经理</a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+
+  </div>
+  <div class="selectright"  style="display:none;" id="smallbox_1">
+    <div class="jobone">
+      <a href="">资深投资经理        </a>
+      <span class="spantime">[7:20]发布</span>
+      <sapn class="spanmon">7k-9k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/3.png" alt="">
+        <span class="comname">有赞</span>
+        <span class="comte">企业服务,电子商务</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深交易员 </a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级企业律师</a>
+      <span class="spantime">[15:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">结婚礼包</span>
+      <div class="combox">
+        <img src="./pic/5.png" alt="">
+        <span class="comname">筑家易</span>
+        <span class="comte">移动互联网,金融 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">商品房产经理</a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">数据分析师 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">9k-13k</sapn>
+      <span class="spanlot">五险一金</span>
+      <div class="combox">
+        <img src="./pic/1.png" alt="">
+        <span class="comname">阿里巴巴北京分部</span>
+        <span class="comte">互联网公司</span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级渠道销售 </a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">5k-8k</sapn>
+      <span class="spanlot">氛围</span>
+      <div class="combox">
+        <img src="./pic/2.png" alt="">
+        <span class="comname">一周CP</span>
+        <span class="comte">移动互联网,社交网络</span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+  </div>
+  <div class="selectright"  style="display:none;" id="smallbox_2">
+    <div class="jobone">
+      <a href="">数据分析师 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">9k-13k</sapn>
+      <span class="spanlot">五险一金</span>
+      <div class="combox">
+        <img src="./pic/1.png" alt="">
+        <span class="comname">阿里巴巴北京分部</span>
+        <span class="comte">互联网公司</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级渠道销售 </a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">5k-8k</sapn>
+      <span class="spanlot">氛围</span>
+      <div class="combox">
+        <img src="./pic/2.png" alt="">
+        <span class="comname">一周CP</span>
+        <span class="comte">移动互联网,社交网络</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深投资经理        </a>
+      <span class="spantime">[7:20]发布</span>
+      <sapn class="spanmon">7k-9k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/3.png" alt="">
+        <span class="comname">有赞</span>
+        <span class="comte">企业服务,电子商务</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深交易员 </a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级企业律师</a>
+      <span class="spantime">[15:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">结婚礼包</span>
+      <div class="combox">
+        <img src="./pic/5.png" alt="">
+        <span class="comname">筑家易</span>
+        <span class="comte">移动互联网,金融 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">商品房产经理</a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+
+
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+  </div>
+  <div class="rebiye">
+    <span style="margin-top:10px;font-size:19px;width:90px;margin-bottom:9px;color:#909090;display:block; border-right: 2px solid red;">热门职位   </span>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深交易员 </a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级企业律师</a>
+      <span class="spantime">[15:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">结婚礼包</span>
+      <div class="combox">
+        <img src="./pic/5.png" alt="">
+        <span class="comname">筑家易</span>
+        <span class="comte">移动互联网,金融 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">商品房产经理</a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="JKDiv_1" style="display:none;" class="jobbox">
+
+<div class="selectright"  id="smallbox1_0" style="overflow:scroll;width:1200px; padding:30px;  ">
+    <span style="position:absolute;margin-left:-26px;margin-top:-28px;font-size:18px; color:#949494">优秀职位推荐：</span>
+    <div class="jobone">
+      <a href="">高级企业律师</a>
+      <span class="spantime">[15:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">结婚礼包</span>
+      <div class="combox">
+        <img src="./pic/5.png" alt="">
+        <span class="comname">筑家易</span>
+        <span class="comte">移动互联网,金融 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">数据分析师 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">9k-13k</sapn>
+      <span class="spanlot">五险一金</span>
+      <div class="combox">
+        <img src="./pic/1.png" alt="">
+        <span class="comname">阿里巴巴北京分部</span>
+        <span class="comte">互联网公司</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级渠道销售 </a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">5k-8k</sapn>
+      <span class="spanlot">氛围</span>
+      <div class="combox">
+        <img src="./pic/2.png" alt="">
+        <span class="comname">一周CP</span>
+        <span class="comte">移动互联网,社交网络</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深投资经理        </a>
+      <span class="spantime">[7:20]发布</span>
+      <sapn class="spanmon">7k-9k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/3.png" alt="">
+        <span class="comname">有赞</span>
+        <span class="comte">企业服务,电子商务</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深交易员 </a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">商品房产经理</a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">技术员员 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深交易员 </a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">商品房产经理</a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">技术员员 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深交易员 </a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">商品房产经理</a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">技术员员 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资深交易员 </a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">商品房产经理</a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">技术员员 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">人力资源（HR）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">前端技术员</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="JKDiv_2" style="display:none;" class="jobbox">
+  <div class="bigselect">
+    <div class="select" onclick="Changesmalldiv2('0','smallbox2_',2)" id="smallselect3_0" style="color:#00aa81; border-right:3px solid #00aa81">
+      <span >三年以下经验</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv2('1','smallbox2_',2)" id="smallselect3_1">
+      <span>三到五年经验</span>
+    </div>
+    <div class="select" onclick="Changesmalldiv2('2','smallbox2_',2)" id="smallselect3_2">
+      <span>五年以上经验</span>
+    </div>
+  </div>
+  <div class="selectright"  id="smallbox2_0">
+    <div class="jobone">
+      <a href="">Java开发 </a>
+      <span class="spantime">[7:20]发布</span>
+      <sapn class="spanmon">7k-9k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/3.png" alt="">
+        <span class="comname">有赞</span>
+        <span class="comte">企业服务,电子商务</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">产品经理 </a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href=""> iOS开发 </a>
+      <span class="spantime">[15:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">结婚礼包</span>
+      <div class="combox">
+        <img src="./pic/5.png" alt="">
+        <span class="comname">筑家易</span>
+        <span class="comte">移动互联网,金融 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href=""> Android开发 </a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">Html5开发 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">UI设计师 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">9k-13k</sapn>
+      <span class="spanlot">五险一金</span>
+      <div class="combox">
+        <img src="./pic/1.png" alt="">
+        <span class="comname">阿里巴巴北京分部</span>
+        <span class="comte">互联网公司</span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">PHP开发 </a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">Python开发 </a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">Java开发 </a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">PHP开发 </a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">Java开发 </a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">5k-8k</sapn>
+      <span class="spanlot">氛围</span>
+      <div class="combox">
+        <img src="./pic/2.png" alt="">
+        <span class="comname">一周CP</span>
+        <span class="comte">移动互联网,社交网络</span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">PHP开发 </a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+  </div>
+  <div class="selectright" style="display:none;"  id="smallbox2_1">
+    <div class="jobone">
+      <a href="">公司业务营销总监</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">9k-13k</sapn>
+      <span class="spanlot">五险一金</span>
+      <div class="combox">
+        <img src="./pic/1.png" alt="">
+        <span class="comname">阿里巴巴北京分部</span>
+        <span class="comte">互联网公司</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">私人银行部团队经理</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">5k-8k</sapn>
+      <span class="spanlot">氛围</span>
+      <div class="combox">
+        <img src="./pic/2.png" alt="">
+        <span class="comname">一周CP</span>
+        <span class="comte">移动互联网,社交网络</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">理财规划师</a>
+      <span class="spantime">[7:20]发布</span>
+      <sapn class="spanmon">7k-9k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/3.png" alt="">
+        <span class="comname">有赞</span>
+        <span class="comte">企业服务,电子商务</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">银行商务副总经理</a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">支行商务行长</a>
+      <span class="spantime">[15:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">结婚礼包</span>
+      <div class="combox">
+        <img src="./pic/5.png" alt="">
+        <span class="comname">筑家易</span>
+        <span class="comte">移动互联网,金融 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href=""> 高级评审经理</a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">资产部风险经理</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">经理（BI系统）</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">投资业务负责人</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">投资部团队负责人</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">商务招聘经理</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">商务运营经理</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+
+  </div>
+  <div class="selectright"  style="display:none;" id="smallbox2_2">
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">9k-13k</sapn>
+      <span class="spanlot">五险一金</span>
+      <div class="combox">
+        <img src="./pic/1.png" alt="">
+        <span class="comname">阿里巴巴北京分部</span>
+        <span class="comte">互联网公司</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">5k-8k</sapn>
+      <span class="spanlot">氛围</span>
+      <div class="combox">
+        <img src="./pic/2.png" alt="">
+        <span class="comname">一周CP</span>
+        <span class="comte">移动互联网,社交网络</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[7:20]发布</span>
+      <sapn class="spanmon">7k-9k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/3.png" alt="">
+        <span class="comname">有赞</span>
+        <span class="comte">企业服务,电子商务</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[15:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">结婚礼包</span>
+      <div class="combox">
+        <img src="./pic/5.png" alt="">
+        <span class="comname">筑家易</span>
+        <span class="comte">移动互联网,金融 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[12:20]发布</span>
+      <sapn class="spanmon">7k-11k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/8.png" alt="">
+        <span class="comname">跃链</span>
+        <span class="comte">游戏,企业服务)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href=""> 建筑公司经营副总</a>
+      <span class="spantime">[14:20]发布</span>
+      <sapn class="spanmon">4k-8k</sapn>
+      <span class="spanlot">双休</span>
+      <div class="combox">
+        <img src="./pic/6.png" alt="">
+        <span class="comname">畅唐网络</span>
+        <span class="comte">游戏 </span>
+      </div>
+    </div>
+
+
+    <div class="jobone">
+      <a href="">绩效考核师</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[6:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/9.png" alt="">
+        <span class="comname">牛邦科技</span>
+        <span class="comte">移动互联网 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[9:20]发布</span>
+      <sapn class="spanmon">11k-13k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/7.png" alt="">
+        <span class="comname">禾连健康</span>
+        <span class="comte">移动互联网,医疗健康 </span>
+      </div>
+    </div>
+  </div>
+  <div class="rebiye">
+    <span style="margin-top:10px;font-size:19px;width:90px;margin-bottom:9px;color:#909090;display:block; border-right: 2px solid red;">热门职位   </span>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[7:20]发布</span>
+      <sapn class="spanmon">7k-9k</sapn>
+      <span class="spanlot">晋升较快</span>
+      <div class="combox">
+        <img src="./pic/3.png" alt="">
+        <span class="comname">有赞</span>
+        <span class="comte">企业服务,电子商务</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">高级企业律师</a>
+      <span class="spantime">[15:20]发布</span>
+      <sapn class="spanmon">4k-6k</sapn>
+      <span class="spanlot">结婚礼包</span>
+      <div class="combox">
+        <img src="./pic/5.png" alt="">
+        <span class="comname">筑家易</span>
+        <span class="comte">移动互联网,金融 </span>
+      </div>
+    </div>
+    <div class="jobone">
+      <a href="">建筑公司经营副总</a>
+      <span class="spantime">[16:20]发布</span>
+      <sapn class="spanmon">5k-7k</sapn>
+      <span class="spanlot">环境高大上</span>
+      <div class="combox">
+        <img src="./pic/4.png" alt="">
+        <span class="comname">微贷网</span>
+        <span class="comte">金融 / 成熟型(C轮)</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<div class="footer">
+  <ul>
+    <li><a href="">关于我们</a></li>
+    <li><a href="">加入我们</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">联盟合作</a></li>
+    <li><a href="">免责申明</a></li>
+    <li><a href="">投诉建议</a></li>
+
+  </ul>
+  <ul style="margin-top:-20px;">
+    <li style="color:#999">Copyright © 2017.青云校招 All rights reserved.</li>
+  </ul>
+</div>
+
+
+
+<script>
+  function ChangeDiv(divId,divName,zDivCount)
+  {
+    for(i=0;i<=zDivCount;i++)
+    {
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('change'+i).style.borderBottom= " 2px solid transparent";
+      document.getElementById('change'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('change'+divId).style.borderBottom= " 2px solid #68ccb3";
+    document.getElementById('change'+divId).style.color= "#696969";
+
+  //显示当前层
+  }
+
+  function Changesmalldiv(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect1_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect1_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect1_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect1_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv1(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect2_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect2_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect2_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect2_'+divId).style.color= "#00aa81";
+  }
+
+  function Changesmalldiv2(divId,divName,zDivCount) {
+    for(i=0;i<=zDivCount;i++)
+    {
+      // console.log('2323');
+      document.getElementById(divName+i).style.display="none";
+      document.getElementById('smallselect3_'+i).style.borderRight="3px solid transparent"
+      document.getElementById('smallselect3_'+i).style.color= "#999";
+      //将所有的层都隐藏
+    }
+    document.getElementById(divName+divId).style.display="flex";
+    document.getElementById('smallselect3_'+divId).style.borderRight= " 3px solid #68ccb3";
+    document.getElementById('smallselect3_'+divId).style.color= "#00aa81";
+  }
+  </script>
+</body>
+</html>
